@@ -4,133 +4,20 @@
   <meta charset="UTF-8">
   <title>Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    .container {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    /* LEFT COLUMN */
-    .left {
-      width: 220px;
-      flex-shrink: 0;
-    }
-
-    .carousel {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    .carousel img {
-      width: 100%;
-      border-radius: 6px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    .profile-info {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .profile-info .name {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.2rem;
-    }
-
-    .profile-info .subtitle {
-      font-size: 1.2 rem;
-      color: #555;
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-info li a {
-      font-size: 0.95rem;
-      text-decoration: none;
-      color: #0066cc;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
-    /* RIGHT COLUMN */
-    .right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    h1, h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Projects cards */
-    .projects {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .project-card img {
-      width: 120px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-    }
-
-    .project-info p {
-      margin: 0.2rem 0 0 0;
-      font-size: 0.95rem;
-      color: #333;
-    }
-
-    /* Publications */
-    .publications p {
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-      }
-      .project-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .project-card img {
-        width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="fun.html">Fun Stuff</a>
+  </nav>
+
   <div class="container">
 
     <!-- LEFT COLUMN -->
@@ -145,11 +32,11 @@
         <li class="name">Vaidehi Wagh</li>
         <li class="subtitle">MS in Robotics, Carnegie Mellon</li>
         <li class="subtitle">ML · Robotics · HRI</li>
-        <li><a href="mailto:vwagh@cs.cmu.edu">Email</a></li>
-        <li><a href="https://github.com/vwagh21">GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ">Google Scholar</a></li>
-        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197">LinkedIn</a></li>
-        <li><a href="Wagh_Vaidehi_web_version.pdf">CV</a></li>
+        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
       </ul>
     </div>
 
@@ -157,24 +44,35 @@
     <div class="right">
       <h2>About</h2>
       <p>
-        My research focuses on using LLMs and SLMs on edge for building HRI interfaces for assistive, wearable robots,
-        with an emphasis on personalization of robot actions based on user feedback. I have also worked on using transfer learning
-        for user-based personalization of exoskeleton control based on temporal deep learning methods.
+        I’m a second-year Master’s student in Robotics at Carnegie Mellon University, 
+        working with <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a> 
+        in the <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>. My research focuses on using 
+        large and small language models on edge to personalize wearable robot control and build 
+        human-robot interaction interfaces, with an emphasis on adapting exoskeletons to diverse 
+        user needs through transfer learning and temporal deep learning methods.
+      </p> 
+      <p> 
+        Before CMU, I worked with <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a> 
+        at the University of British Columbia, validating computer-vision-based kinematic assessment tools for post-stroke rehabilitation, and spent time 
+        as a Financial Analyst at Deloitte. I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
       </p>
       <p>
-        Beyond this, I have experience in computer vision, mechatronics, and end-to-end robotic deployment.
+        I have experience spanning computer vision, mechatronics, and edge deployment, 
+        and I’m broadly interested in medical and healthcare robotics where AI and human-centered 
+        design create assistive technologies that meaningfully improve lives.
       </p>
       <p>
-        I am looking for full-time opportunities for ML, AI, robotics, or research engineer roles starting May 2026.
+        <strong>I am seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
       </p>
 
+      <!-- PROJECTS -->
       <h2>Projects</h2>
       <div class="projects">
-
         <div class="project-card">
           <img src="images/llm_hri.png" alt="LLM Human-Robot Interface">
           <div class="project-info">
             <strong>LLM-based Human-Robot Voice Interface – Talking to Robots</strong>
+            <p><em>SLMs, Phi4, SFT, Jetson Orin Nano</em></p>
             <p>Developed a human-robot interface using speech and vision inputs to finetune a mini VLM for long-horizon planning and execution of user-personalized lower limb exoskeleton control.</p>
           </div>
         </div>
@@ -183,7 +81,8 @@
           <img src="images/iv_bot.png" alt="Automated IV Insertion Bot">
           <div class="project-info">
             <strong>Automated IV Insertion Bot – Medical Robotics</strong>
-            <p>Designed linear-actuation mechanisms for needle insertion (Inventor), integrating Arduino control, computer vision-based vein localization (OpenCV), and control algorithms for the robot arm.</p>
+            <p><em>Autodesk, CAD, 3D Printing, Electronics, Control</em></p>
+            <p>Designed linear-actuation mechanisms for needle insertion, integrating Arduino control, computer vision-based vein localization, and control algorithms for the robot arm.</p>
           </div>
         </div>
 
@@ -191,27 +90,21 @@
           <img src="images/gail.png" alt="Generative Adversarial Imitation Learning">
           <div class="project-info">
             <strong>Generative Adversarial Imitation Learning – Intro to Robot Learning</strong>
+            <p><em>Inverse reinforcement learning, GAIL</em></p>
             <p>Applied inverse reinforcement learning with GAN-based reward models to simulate human locomotion, exploring state-level and trajectory-level GAIL approaches.</p>
           </div>
         </div>
-
       </div>
 
+      <!-- PUBLICATIONS -->
       <h2>Publications & Presentations</h2>
       <div class="publications">
-      <p>
-        <em><strong>Wagh, V.</strong>, Park, D., Young, A. J., & Kang, I.</em> Transfer learning for biological joint moment estimation in stroke populations. <a href="https://asbweb.org/wp-content/uploads/ASB-2025-Abstract-Book-Posters-v2.pdf">Abstract</a>
-      </p>
-    
-      <p>
-        <em><strong>Wagh, V.</strong>, Scott, M. W., Andrushko, J. W., Jones, C. B., Boyd, L.A, & Kraeutner, S. N.</em> Using MediaPipe to track upper-limb movement after stroke: a proof-of-principle study. <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">Journal Paper</a>
-      </p>
-    
-      <p>
-        <em><strong>Wagh, V.</strong>, Scott, M. W., & Kraeutner, S. N.</em> Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study. <a href="https://formative.jmir.org/2024/1/e56682/">Journal Paper</a>
-      </p>
-    </div>
+        <p>[1] <em><strong>Wagh, V.</strong>, Park, D., Young, A. J., & Kang, I.</em> Transfer learning for biological joint moment estimation in stroke populations. <a href="https://asbweb.org/wp-content/uploads/ASB-2025-Abstract-Book-Posters-v2.pdf">Abstract</a></p>
 
+        <p>[2] <em><strong>Wagh, V.</strong>, Scott, M. W., Andrushko, J. W., Jones, C. B., Boyd, L.A, & Kraeutner, S. N.</em> Using MediaPipe to track upper-limb movement after stroke: a proof-of-principle study. <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">Journal Paper</a></p>
+
+        <p>[3] <em><strong>Wagh, V.</strong>, Scott, M. W., & Kraeutner, S. N.</em> Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study. <a href="https://formative.jmir.org/2024/1/e56682/">Journal Paper</a></p>
+      </div>
 
     </div>
   </div>
@@ -220,7 +113,6 @@
   <script>
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
-
     setInterval(() => {
       images[current].classList.remove('active');
       current = (current + 1) % images.length;
