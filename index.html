@@ -5,10 +5,145 @@
   <title>Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
 
+    nav {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* LEFT COLUMN */
+    .left {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .carousel {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .carousel img {
+      width: 100%;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .profile-info {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .profile-info .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-info .subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info li a {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #0066cc;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    /* RIGHT COLUMN */
+    .right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    h2 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Projects cards */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-card img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .project-info p {
+      margin: 0.2rem 0 0 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* Publications */
+    .publications p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
 <body>
+
   <!-- NAVBAR -->
   <nav>
     <a href="index.html">Home</a>
@@ -50,8 +185,8 @@
         large and small language models on edge to personalize wearable robot control and build 
         human-robot interaction interfaces, with an emphasis on adapting exoskeletons to diverse 
         user needs through transfer learning and temporal deep learning methods.
-      </p> 
-      <p> 
+      </p>
+      <p>
         Before CMU, I worked with <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a> 
         at the University of British Columbia, validating computer-vision-based kinematic assessment tools for post-stroke rehabilitation, and spent time 
         as a Financial Analyst at Deloitte. I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
@@ -65,7 +200,6 @@
         <strong>I am seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
       </p>
 
-      <!-- PROJECTS -->
       <h2>Projects</h2>
       <div class="projects">
         <div class="project-card">
@@ -96,7 +230,6 @@
         </div>
       </div>
 
-      <!-- PUBLICATIONS -->
       <h2>Publications & Presentations</h2>
       <div class="publications">
         <p>[1] <em><strong>Wagh, V.</strong>, Park, D., Young, A. J., & Kang, I.</em> Transfer learning for biological joint moment estimation in stroke populations. <a href="https://asbweb.org/wp-content/uploads/ASB-2025-Abstract-Book-Posters-v2.pdf">Abstract</a></p>
