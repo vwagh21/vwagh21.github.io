@@ -18,6 +18,7 @@
     .container {
       display: flex;
       gap: 3rem;
+      flex-wrap: wrap;
     }
 
     /* LEFT COLUMN */
@@ -59,14 +60,61 @@
     /* RIGHT COLUMN */
     .right {
       flex: 1;
+      min-width: 300px;
     }
 
-    h1 {
+    h1, h2 {
       margin-top: 0;
+      margin-bottom: 0.5rem;
     }
 
-    h2 {
-      margin-top: 2rem;
+    /* Projects cards */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-card img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .project-info p {
+      margin: 0.2rem 0 0 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* Publications */
+    .publications p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .project-card img {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -90,13 +138,13 @@
         <li><a href="https://github.com/vwagh21">GitHub</a></li>
         <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ">Google Scholar</a></li>
         <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197">LinkedIn</a></li>
-        <li><a href="Wagh_Vaidehi.pdf">CV</a></li>
+        <li><a href="Wagh_Vaidehi_web_version.pdf">CV</a></li>
       </ul>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right">
-      <h1>Bio</h1>
+      <h2>About</h2>
       <p>
         My research focuses on using LLMs and SLMs on edge for building HRI interfaces for assistive, wearable robots,
         with an emphasis on personalization of robot actions based on user feedback. I have also worked on using transfer learning
@@ -110,44 +158,49 @@
       </p>
 
       <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>LLM-based Human-Robot Voice Interface – Talking to Robots</strong> (August 2025 – Present)
-      <ul>
-        <li>Developed a human-robot interface using speech and vision inputs to finetune a mini VLM for long-horizon planning and execution of user-personalized lower limb exoskeleton control.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Automated IV Insertion Bot – Medical Robotics</strong> (August 2025 – Present)
-      <ul>
-        <li>Designed linear-actuation mechanisms for needle insertion (Inventor), integrating Arduino control, computer vision-based vein localization (OpenCV), and control algorithms for the robot arm.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Generative Adversarial Imitation Learning – Introduction to Robot Learning</strong> (January 2025 – April 2025)
-      <ul>
-        <li>Applied inverse reinforcement learning with GAN-based reward models to simulate human locomotion, exploring both state-level and trajectory-level GAIL approaches.</li>
-      </ul>
-    </li>
-  </ul>
+      <div class="projects">
 
-  <h2>Publications & Presentations</h2>
-  <ul>
-    <li>
-      <strong>Transfer learning for biological joint moment estimation in stroke populations</strong> – Wagh, V., Park, D., Young, A. J., & Kang, I.  
-      American Society of Biomechanics – Poster, August 2025
-    </li>
-    <li>
-      <strong>Using MediaPipe to track upper-limb movement after stroke: a proof-of-principle study</strong> – Wagh, V., Scott, M. W., Andrushko, J. W., Jones, C. B., Boyd, L.A, & Kraeutner, S. N.  
-      Journal of NeuroEngineering and Rehabilitation – Accepted, February 2025
-    </li>
-    <li>
-      <strong>Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</strong> – Wagh, V., Scott, M. W., & Kraeutner, S. N. (link)  
-      Journal of Medical Internet Research – Formative Research, December 2024
-    </li>
-  </ul>
-</div>
-</div>
+        <div class="project-card">
+          <img src="images/llm_hri.png" alt="LLM Human-Robot Interface">
+          <div class="project-info">
+            <strong>LLM-based Human-Robot Voice Interface – Talking to Robots</strong>
+            <p>Developed a human-robot interface using speech and vision inputs to finetune a mini VLM for long-horizon planning and execution of user-personalized lower limb exoskeleton control.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/iv_bot.png" alt="Automated IV Insertion Bot">
+          <div class="project-info">
+            <strong>Automated IV Insertion Bot – Medical Robotics</strong>
+            <p>Designed linear-actuation mechanisms for needle insertion (Inventor), integrating Arduino control, computer vision-based vein localization (OpenCV), and control algorithms for the robot arm.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="images/gail.png" alt="Generative Adversarial Imitation Learning">
+          <div class="project-info">
+            <strong>Generative Adversarial Imitation Learning – Intro to Robot Learning</strong>
+            <p>Applied inverse reinforcement learning with GAN-based reward models to simulate human locomotion, exploring state-level and trajectory-level GAIL approaches.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>Publications & Presentations</h2>
+      <div class="publications">
+        <p>
+          Wagh, V., Park, D., Young, A. J., & Kang, I. (2025). <em>Transfer learning for biological joint moment estimation in stroke populations</em>. American Society of Biomechanics – Poster.
+        </p>
+        <p>
+          Wagh, V., Scott, M. W., Andrushko, J. W., Jones, C. B., Boyd, L.A, & Kraeutner, S. N. (2025). <em>Using MediaPipe to track upper-limb movement after stroke: a proof-of-principle study</em>. Journal of NeuroEngineering and Rehabilitation – Accepted.
+        </p>
+        <p>
+          Wagh, V., Scott, M. W., & Kraeutner, S. N. (2024). <em>Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</em>. Journal of Medical Internet Research – Formative Research. <a href="#">Link</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
 
   <!-- CAROUSEL SCRIPT -->
   <script>
