@@ -1,34 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name – Academic Page</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem; line-height: 1.6; }
-        h1, h2 { color: #2c3e50; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        ul { list-style-type: none; padding-left: 0; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      gap: 3rem;
+    }
+
+    /* LEFT COLUMN */
+    .left {
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .carousel {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .carousel img {
+      width: 100%;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .left li {
+      margin-bottom: 0.5rem;
+    }
+
+    .left a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    /* RIGHT COLUMN */
+    .right {
+      flex: 1;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Your Name</h1>
-    <p>PhD student / Researcher in [Your Field]. Focus on ML, biomechanics, and rehabilitation robotics.</p>
+  <div class="container">
 
-    <h2>Research</h2>
-    <ul>
-        <li><a href="#">Paper 1 – Title</a></li>
-        <li><a href="#">Paper 2 – Title</a></li>
-    </ul>
+    <!-- LEFT COLUMN -->
+    <div class="left">
+      <div class="carousel">
+        <img src="profile1.jpg" class="active" alt="Profile photo 1">
+        <img src="profile2.jpg" alt="Profile photo 2">
+        <img src="profile3.jpg" alt="Profile photo 3">
+      </div>
 
-    <h2>Projects</h2>
-    <ul>
-        <li><a href="#">Project 1</a></li>
-        <li><a href="#">Project 2</a></li>
-    </ul>
+      <ul>
+        <li><strong>Your Name</strong></li>
+        <li>PhD Student / Researcher</li>
+        <li>ML · Biomechanics · Rehab Robotics</li>
+        <li><a href="mailto:you@email.com">Email</a></li>
+        <li><a href="https://github.com/yourusername">GitHub</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </div>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      <h1>Bio</h1>
+      <p>
+        Short academic bio goes here. Describe your research interests, current
+        position, and overall focus. Keep it clean and readable.
+      </p>
+
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project Name</strong> – one-line description.</li>
+        <li><strong>Another Project</strong> – one-line description.</li>
+      </ul>
+
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          Author, Author. <em>Paper Title</em>. Conference / Journal, Year.
+        </li>
+        <li>
+          Author, Author. <em>Another Paper</em>. Conference / Journal, Year.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CAROUSEL SCRIPT -->
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000);
+  </script>
 </body>
 </html>
