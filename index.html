@@ -87,20 +87,20 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Projects cards */
-    .projects {
+    /* Cards shared style */
+    .cards {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
-    .project-card {
+    .card {
       display: flex;
       gap: 1rem;
       align-items: flex-start;
     }
 
-    .project-card img {
+    .card img {
       width: 120px;
       height: 90px;
       object-fit: cover;
@@ -108,7 +108,7 @@
       flex-shrink: 0;
     }
 
-    .project-info p {
+    .card-info p {
       margin: 0.2rem 0 0 0;
       font-size: 0.95rem;
       color: #333;
@@ -126,11 +126,11 @@
       .container {
         flex-direction: column;
       }
-      .project-card {
+      .card {
         flex-direction: column;
         align-items: flex-start;
       }
-      .project-card img {
+      .card img {
         width: 100%;
         height: auto;
       }
@@ -186,30 +186,62 @@
         <strong>I am seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
       </p>
 
-      <h2>Projects</h2>
-      <div class="projects">
+      <!-- Research Section -->
+      <h2>Research</h2>
+      <div class="cards research">
+        <div class="card">
+          <img src="images/exoskeleton.png" alt="Personalized Exoskeleton Control">
+          <div class="card-info">
+            <strong>Personalized Exoskeleton Control</strong>
+            <p><em>Transfer Learning, Temporal Deep Learning</em></p>
+            <p>Developed models to adapt exoskeleton assistance to diverse user needs, using transfer learning from able-bodied to clinical populations and temporal deep learning for accurate torque prediction.</p>
+          </div>
+        </div>
 
-        <div class="project-card">
+        <div class="card">
+          <img src="images/hri_interface.png" alt="Human-Robot Interaction Interfaces">
+          <div class="card-info">
+            <strong>Human-Robot Interaction Interfaces</strong>
+            <p><em>Speech & Vision, Edge AI</em></p>
+            <p>Designed multimodal interfaces for wearable robots using language and vision inputs to enable personalized, real-time human-robot interaction and assistive control.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/edge_ai.png" alt="Edge Deployment of AI Models">
+          <div class="card-info">
+            <strong>Edge Deployment of AI Models</strong>
+            <p><em>Small & Large Language Models, Jetson Orin</em></p>
+            <p>Implemented small and large language models on edge devices to achieve low-latency, real-time robot control for wearable and assistive devices.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <h2>Projects</h2>
+      <div class="cards projects">
+
+        <div class="card">
           <img src="images/llm_hri.png" alt="LLM Human-Robot Interface">
-          <div class="project-info">
+          <div class="card-info">
             <strong>LLM-based Human-Robot Voice Interface – Talking to Robots</strong>
             <p><em>SLMs, Phi4, SFT, Jetson Orin Nano</em></p>
             <p>Developed a human-robot interface using speech and vision inputs to finetune a mini VLM for long-horizon planning and execution of user-personalized lower limb exoskeleton control.</p>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="card">
           <img src="images/iv_bot.png" alt="Automated IV Insertion Bot">
-          <div class="project-info">
+          <div class="card-info">
             <strong>Automated IV Insertion Bot – Medical Robotics</strong>
             <p><em>Autodesk, CAD, 3D Printing, Electronics, Control</em></p>
             <p>Designed linear-actuation mechanisms for needle insertion (Inventor), integrating Arduino control, computer vision-based vein localization (OpenCV), and control algorithms for the robot arm.</p>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="card">
           <img src="images/gail.png" alt="Generative Adversarial Imitation Learning">
-          <div class="project-info">
+          <div class="card-info">
             <strong>Generative Adversarial Imitation Learning – Intro to Robot Learning</strong>
             <p><em>Inverse reinforcement learning, GAIL</em></p>
             <p>Applied inverse reinforcement learning with GAN-based reward models to simulate human locomotion, exploring state-level and trajectory-level GAIL approaches.</p>
@@ -218,6 +250,7 @@
 
       </div>
 
+      <!-- Publications -->
       <h2>Publications & Presentations</h2>
       <div class="publications">
         <p>
