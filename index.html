@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aXUp+ZL77h9+WPt0H7clu3ghD+O+S1Vqhjf3gjF3+7M8rN8k6zF+O4qZt3/JGc0JffRtgrt0+2K1w4GxRnl+eA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/5e0736a124.js" crossorigin="anonymous"></script>
 
   <style>
+    /* ===== BODY ===== */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 2rem;
       max-width: 1000px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.6;
     }
 
+    /* ===== CONTAINER ===== */
     .container {
       display: flex;
       gap: 3rem;
       flex-wrap: wrap;
     }
 
-    /* LEFT COLUMN */
+    /* ===== LEFT COLUMN ===== */
     .left {
       width: 220px;
       flex-shrink: 0;
     }
 
+    /* Carousel */
     .carousel {
       width: 100%;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .carousel img {
@@ -45,81 +50,77 @@
       display: block;
     }
 
+    /* Profile Info Compact */
     .profile-info {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .profile-info .name {
+    .profile-info li {
+      margin-bottom: 0.15rem;
+    }
+
+    .profile-info li.name {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.05rem;
+    }
+
+    .profile-info li.name span {
+      font-size: 0.8em;
+      color: #555555;
+      margin-left: 0.2rem;
     }
 
     .profile-info .subtitle {
       font-size: 1.1rem;
       color: #555;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.15rem;
     }
 
-    .profile-info .role {
-    font-size: 1rem;   /* slightly smaller than subtitle */
-    color: #666;       /* slightly lighter gray */
-    margin-bottom: 0.3rem;
-    font-style: italic; /* optional, gives a subtle professional look */
-  }
-
-    /* ===== Left Column Profile Info ===== */
-    .profile-info li {
-      margin-bottom: 0.5rem;  /* spacing between items */
-      list-style: none;
+    .profile-info .role,
+    .profile-info .role.role-sub {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 0.15rem;
+      font-style: italic;
     }
 
-    /* Links inside profile info */
     .profile-info li a {
-      font-size: 0.95rem;     
-      text-decoration: none;   /* remove default underline */
-      color: #0066cc;          /* link text color */
-      margin-bottom: 0.2rem;
-      display: inline-flex;    
-      align-items: center;     
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #0066cc;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0;
       transition: color 0.2s;
     }
 
-    /* Optional: underline only on hover */
     .profile-info li a:hover {
       text-decoration: underline;
     }
 
-    /* Font Awesome icons inside links */
     .profile-info li a i.fas,
     .profile-info li a i.fab {
-      color: #333333;          /* dark grey icons */
-      margin-right: 0.4rem;    /* spacing between icon and text */
-      font-size: 0.95rem;      /* match text size */
-      line-height: 1;          /* prevents vertical misalignment */
+      color: #333333;
+      margin-right: 0.35rem;
+      font-size: 0.95rem;
+      line-height: 1;
       transition: color 0.2s;
     }
 
-    /* Icon hover effect */
     .profile-info li a i.fas:hover,
     .profile-info li a i.fab:hover {
-      color: #555555;          /* slightly lighter grey on hover */
+      color: #555555;
     }
 
-    /* Name line */
-    .profile-info li.name span {
-      font-size: 0.8em;
-      color: #555555;           /* subtle grey for pronunciation */
-      margin-left: 0.3rem;      /* spacing from name */
+    .profile-info hr {
+      margin: 0.3rem 0;
+      border: 0.5px solid #ccc;
     }
 
-    .profile-info li a i {
-      margin-right: 0.4rem;
-    }
-
-    /* RIGHT COLUMN */
+    /* ===== RIGHT COLUMN ===== */
     .right {
       flex: 1;
       min-width: 300px;
@@ -130,7 +131,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Cards shared style */
+    /* Cards */
     .cards {
       display: flex;
       flex-direction: column;
@@ -155,6 +156,7 @@
       margin: 0.2rem 0 0 0;
       font-size: 0.95rem;
       color: #333;
+      line-height: 1.4;
     }
 
     /* Publications */
@@ -164,7 +166,15 @@
       line-height: 1.4;
     }
 
-    /* Responsive */
+    /* About section text same as project cards */
+    .right p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.4;
+      margin: 0.2rem 0 0 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .container {
         flex-direction: column;
@@ -177,15 +187,6 @@
         width: 100%;
         height: auto;
       }
-
-      /* About section text to match project card text */
-    .right p {
-      font-size: 0.95rem;       /* same as .card-info p */
-      color: #333333;           /* same as project text */
-      line-height: 1.4;         /* comfortable spacing */
-      margin: 0.2rem 0 0 0;     /* match project card spacing */
-    }
-
     }
   </style>
 </head>
