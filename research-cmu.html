@@ -5,62 +5,127 @@
   <title>Research @ CMU</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdfdfd;
+      color: #222;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
+
+    header {
+      background-color: #00539C; /* CMU-blue-inspired */
+      color: white;
+      padding: 2rem 1rem;
       text-align: center;
-      margin-bottom: 2rem;
     }
+
+    header h1 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
     .project {
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      cursor: pointer;
-      background-color: #f9f9f9;
-      transition: background-color 0.2s;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .project:hover {
-      background-color: #f0f0f0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .project-content {
-      display: none;
-      margin-top: 0.5rem;
+      padding: 1.5rem;
     }
-    .project-content p {
-      margin: 0.5rem 0;
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #00539C;
+    }
+
+    .project-subtitle {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 700px) {
+      .project {
+        flex-direction: row;
+      }
+
+      .project img {
+        width: 40%;
+        object-fit: cover;
+      }
+
+      .project-content {
+        width: 60%;
+      }
     }
   </style>
 </head>
 <body>
 
+<header>
   <h1>Research @ CMU</h1>
+</header>
+
+<main>
 
   <!-- Project 1 -->
-  <div class="project" onclick="toggleProject(this)">
-    <strong>LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech</strong>
+  <div class="project">
+    <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
     <div class="project-content">
-      <p>Deploying small language models (Phi2, Sheared-LlaMa 3.2) for on-edge (Jetson Orin), closed-loop, lower limb exoskeleton control, enabling real-time personalization based on user feedback and seamless human–robot interaction.</p>
-      <!-- <p>Leveraged transfer learning to adapt models from able-bodied to stroke datasets.</p> -->
+      <div class="project-title">LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech</div>
+      <div class="project-subtitle">SLMs, Phi2, Whisper-tiny, Jetson Orin Nano</div>
+      <div class="project-description">
+        Deploying small language models for on-edge, closed-loop, lower limb exoskeleton control, enabling real-time personalization based on user feedback and seamless human–robot interaction.
+      </div>
     </div>
   </div>
 
   <!-- Project 2 -->
-  <div class="project" onclick="toggleProject(this)">
-    <strong><a href="research-cmu.html" class="card-title-link">Personalized torque prediction for stroke populations</a></strong>
+  <div class="project">
     <div class="project-content">
-      <p>Leveraged transfer learning to adapt models from able-bodied to stroke datasets.</p>
-      <!-- <p>Analyzed stability and robustness across multiple gaits and perturbations.</p> -->
+      <div class="project-title">Personalized Torque Prediction for Stroke Populations</div>
+      <div class="project-subtitle">Transfer Learning, Temporal Convolutional Networks</div>
+      <div class="project-description">
+        Leveraged transfer learning to adapt models from able-bodied to stroke datasets, analyzing stability and robustness across multiple gaits and perturbations.
+      </div>
     </div>
   </div>
 
-  <script>
-    function toggleProject(elem) {
-      const content = elem.querySelector('.project-content');
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <!-- Add more projects here -->
+
+</main>
 
 </body>
 </html>
