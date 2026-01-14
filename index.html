@@ -159,6 +159,16 @@
       line-height: 1.4;
     }
 
+    .card-title-link {
+      text-decoration: none; /* removes underline */
+      color: inherit;        /* keeps original text color */
+    }
+
+    .card-title-link:hover {
+      text-decoration: underline; /* optional: show underline on hover for clarity */
+      color: #007bff;             /* optional: change color on hover */
+    }
+
     /* Publications */
     .publications p {
       margin: 0.5rem 0;
@@ -259,38 +269,38 @@
         <div class="card">
           <img src="images/research1.gif" alt="Personalized Exoskeleton Control">
           <div class="card-info">
-            <strong>LLM-enabled user feedback based exoskeleton personalization</strong>
+            <strong><a href="research-cmu.html" class="card-title-link">LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech</a></strong>
             <p><em>SLMs, Phi2, Whisper-tiny, Jetson Orin Nano</em></p>
-            <p>Deployed small language models (Phi2, Sheared-LlaMa 3.2) for on-edge (Jetson Orin), closed-loop, lower limb exoskeleton control, 
-            enabling real-time personalization based on user feedback and seamless human–robot interaction.</p>
+            <p>How can we build natural language interfaces that can map qualitative user feedback to quantitative changes in control frameworks 
+              to bring about real-time personalization?</p>
           </div>
         </div>
 
         <div class="card">
           <img src="images/research1.gif" alt="Human-Robot Interaction Interfaces">
           <div class="card-info">
-            <strong> User personalization of exoskeleton control for stroke populations</strong>
+            <strong> Personalized torque prediction for stroke populations</strong>
             <p><em>Transfer learning, Temporal ML, Deep learning, TCNs</em></p>
-            <p>Applied transfer learning to personalize models for post-stroke individuals, 
-              achieving a 27% gain in prediction accuracy with < 0.2% subject-specific data.</p>
+            <p>How can we enable accurate torque estimation for clinical (stroke) populations without large-scale training datasets 
+              and heterogenous gaits across subjects? </p>
           </div>
         </div>
 
         <div class="card">
           <img src="images/nimbl2.gif" alt="Edge Deployment of AI Models">
           <div class="card-info">
-            <strong>Clinical use validation of computer vision software for post-stroke assessment</strong>
+            <strong> Evaluating MediaPipe for post-stroke assessment</strong>
             <p><em>MediaPipe, R, Matlab, Kinematics</em></p>
-            <p>Deployed a motion tracking pipeline using OpenCV and MediaPipe pose estimation to analyse upper-limb kinematics (~0.14M actions, ~0.3M frames) & identify key markers of maladaptive compensation strategies in post-stroke individuals.</p>
+            <p>Can off-the-shelf, easy to deploy toolkits assist or replace subjective assessments of stroke recovery? </p>
           </div>
         </div>
 
         <div class="card">
           <img src="images/nimbl2.gif" alt="NIMBL research exp 1">
           <div class="card-info">
-            <strong>Clinical use validation of computer vision software for fine limb motion capture</strong>
+            <strong>Evaluating MediaPipe for fine upper limb motion capture</strong>
             <p><em>MediaPipe, R, Matlab, Python</em></p>
-            <p>Led a validation study comparing low-cost hand tracking to traditional motion capture using shape similarity analysis (16K fine upper-limb motion trajectories, ~70% accuracy) demonstrating a scalable solution for monitoring fine motor movements in clinical settings.</p>
+            <p>Are off-the-shelf, easy to deploy CV toolkits accurate enough for tracking fast and dextrous movements of fine limbs?</p>
           </div>
         </div>
         
