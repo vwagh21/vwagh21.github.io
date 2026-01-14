@@ -70,17 +70,49 @@
     font-style: italic; /* optional, gives a subtle professional look */
   }
 
-    /* Only target icons inside profile links */
-    .profile-info li a i.fas,
-    .profile-info li a i.fab {
-      color: #333333;  /* dark grey */
-      margin-right: 0.5rem;  /* optional spacing from text */
+    /* ===== Left Column Profile Info ===== */
+    .profile-info li {
+      margin-bottom: 0.5rem;  /* spacing between items */
+      list-style: none;
+    }
+
+    /* Links inside profile info */
+    .profile-info li a {
+      font-size: 0.95rem;     
+      text-decoration: none;   /* remove default underline */
+      color: #0066cc;          /* link text color */
+      margin-bottom: 0.3rem;
+      display: inline-flex;    
+      align-items: center;     
       transition: color 0.2s;
     }
 
+    /* Optional: underline only on hover */
+    .profile-info li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Font Awesome icons inside links */
+    .profile-info li a i.fas,
+    .profile-info li a i.fab {
+      color: #333333;          /* dark grey icons */
+      margin-right: 0.5rem;    /* spacing between icon and text */
+      font-size: 0.95rem;      /* match text size */
+      line-height: 1;          /* prevents vertical misalignment */
+      transition: color 0.2s;
+    }
+
+    /* Icon hover effect */
     .profile-info li a i.fas:hover,
     .profile-info li a i.fab:hover {
-      color: #555555;  /* subtle hover */
+      color: #555555;          /* slightly lighter grey on hover */
+    }
+
+    /* Name line */
+    .profile-info li.name span {
+      font-size: 0.8em;
+      color: #555555;           /* subtle grey for pronunciation */
+      margin-left: 0.3rem;      /* spacing from name */
     }
 
     .profile-info li a i {
@@ -196,15 +228,14 @@
         I’m a second-year Master’s student in Robotics at Carnegie Mellon University, 
         working with <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a> 
         in the <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>. My research focuses on personalizing control for exoskeletons 
-        using LLMs in the loop & on edge, temporal deep learning and transfer learning for real-time, continuous adaptation to both healthy and clinical populations.
+        using LLMs in the loop & on edge, temporal ML and transfer learning for real-time, continuous user adaptation.
       </p> 
       <p> 
-        Before CMU, I worked with <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a> 
-        at the University of British Columbia, validating computer-vision toolkits for post-stroke kinematic analysis, and spent time 
-        as a Financial Analyst at Deloitte. I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
+        Before CMU, I was a MITACS intern working with <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a> 
+        at the University of British Columbia and a Financial Analyst at Deloitte. I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
       </p>
       <p>
-        I have experience spanning computer vision, mechatronics, and edge deployment, 
+        I have experience spanning ML, CV, mechatronics, and edge deployment, 
         and I’m broadly interested in ML, AI and robotics technologies that meaningfully improve lives. 
       </p>
       <p>
