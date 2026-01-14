@@ -58,9 +58,9 @@
     }
 
     .profile-info .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #555;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     .profile-info .role {
@@ -70,13 +70,17 @@
     font-style: italic; /* optional, gives a subtle professional look */
   }
 
-    .profile-info li a {
-      font-size: 0.95rem;
-      text-decoration: none;
-      color: #0066cc;
-      margin-bottom: 0.3rem;
-      display: inline-flex;  /* keeps text inline */
-      align-items: center;
+    /* Only target icons inside profile links */
+    .profile-info li a i.fas,
+    .profile-info li a i.fab {
+      color: #333333;  /* dark grey */
+      margin-right: 0.5rem;  /* optional spacing from text */
+      transition: color 0.2s;
+    }
+
+    .profile-info li a i.fas:hover,
+    .profile-info li a i.fab:hover {
+      color: #555555;  /* subtle hover */
     }
 
     .profile-info li a i {
@@ -89,7 +93,7 @@
       min-width: 300px;
     }
 
-    h1, h2 {
+    h1, h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
     }
@@ -176,7 +180,7 @@
   <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
   <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
   <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
-  <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
+  <li><a href="https://github.com/vwagh31"><i class="fab fa-github"></i> GitHub</a></li>
   <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
   <li><hr></li>
   <li><a href="beyondwork.html">Beyond work!</a></li>
@@ -187,19 +191,16 @@
 
     <!-- RIGHT COLUMN -->
     <div class="right">
-      <h2>About</h2>
+      <h3>About</h3>
       <p>
         I’m a second-year Master’s student in Robotics at Carnegie Mellon University, 
         working with <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a> 
-        in the <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>. My research focuses on personalizing wearable robot control 
-        using large and small language models deployed on the edge, acting as natural language human–robot interfaces between the user and exoskeleton. 
-        My prior work was in temporal deep learning and transfer learning for exo control personalization, where I used minimal subject specific data to 
-        adapt pre-existing exo control models to clinical populations.
-
+        in the <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>. My research focuses on personalizing control for exoskeletons 
+        using LLMs in the loop & on edge, temporal deep learning and transfer learning for real-time, continuous adaptation to both healthy and clinical populations.
       </p> 
       <p> 
         Before CMU, I worked with <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a> 
-        at the University of British Columbia, validating computer-vision-based kinematic assessment tools for post-stroke rehabilitation, and spent time 
+        at the University of British Columbia, validating computer-vision toolkits for post-stroke kinematic analysis, and spent time 
         as a Financial Analyst at Deloitte. I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
       </p>
       <p>
@@ -211,7 +212,7 @@
       </p>
 
       <!-- Research Section -->
-      <h2>Research</h2>
+      <h3>Research</h3>
       <div class="cards research">
         <div class="card">
           <img src="images/research1.gif" alt="Personalized Exoskeleton Control">
@@ -254,7 +255,7 @@
       </div>
 
       <!-- Projects Section -->
-      <h2>Projects</h2>
+      <h3>Projects</h3>
       <div class="cards projects">
 
         <div class="card">
@@ -295,7 +296,7 @@
       </div>
 
       <!-- Publications -->
-      <h2>Publications & Presentations</h2>
+      <h3>Publications & Presentations</h3>
       <div class="publications">
         <p>
           [1] <em><strong>Wagh, V.</strong>, Park, D., Young, A. J., & Kang, I.</em> Transfer learning for biological joint moment estimation in stroke populations. <a href="https://asbweb.org/wp-content/uploads/ASB-2025-Abstract-Book-Posters-v2.pdf">Abstract</a>

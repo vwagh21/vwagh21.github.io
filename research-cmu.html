@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research @ CMU</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .project {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: background-color 0.2s;
+    }
+    .project:hover {
+      background-color: #f0f0f0;
+    }
+    .project-content {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    .project-content p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Research @ CMU</h1>
+
+  <!-- Project 1 -->
+  <div class="project" onclick="toggleProject(this)">
+    <strong>Project 1: Gait Prediction with TCNs</strong>
+    <div class="project-content">
+      <p>Implemented temporal convolutional networks to predict joint torques for lower limb exoskeletons.</p>
+      <p>Leveraged transfer learning to adapt models from able-bodied to stroke datasets.</p>
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project" onclick="toggleProject(this)">
+    <strong>Project 2: Walker2D Optimal Control</strong>
+    <div class="project-content">
+      <p>Developed iLQR-based controllers to teach Walker2D to walk in simulation.</p>
+      <p>Analyzed stability and robustness across multiple gaits and perturbations.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleProject(elem) {
+      const content = elem.querySelector('.project-content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
