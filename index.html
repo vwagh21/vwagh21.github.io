@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== GLOBAL ===== */
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
@@ -35,7 +34,6 @@
       text-decoration: underline;
     }
 
-    /* ===== LAYOUT ===== */
     .container {
       display: flex;
       gap: 3.5rem;
@@ -53,7 +51,7 @@
       min-width: 300px;
     }
 
-    /* ===== LEFT COLUMN ===== */
+    /* LEFT COLUMN */
     .carousel {
       width: 100%;
       margin-bottom: 0.75rem;
@@ -114,7 +112,7 @@
       margin-right: 0.4rem;
     }
 
-    /* ===== HEADINGS ===== */
+    /* HEADINGS */
     h3 {
       font-size: 1.4rem;
       margin-top: 2.75rem;
@@ -132,7 +130,7 @@
       margin-top: 0.4rem;
     }
 
-    /* ===== ABOUT ===== */
+    /* ABOUT */
     .about {
       max-width: 650px;
     }
@@ -144,7 +142,7 @@
       color: #374151;
     }
 
-    /* ===== CARDS ===== */
+    /* CARDS */
     .cards {
       display: flex;
       flex-direction: column;
@@ -186,7 +184,6 @@
       color: #374151;
     }
 
-    /* Research subtle separation */
     .cards.research .card {
       padding-bottom: 1.25rem;
       border-bottom: 1px solid #e5e7eb;
@@ -196,7 +193,7 @@
       border-bottom: none;
     }
 
-    /* ===== PUBLICATIONS ===== */
+    /* PUBLICATIONS */
     .publications p {
       margin: 0.8rem 0;
       font-size: 0.9rem;
@@ -208,7 +205,7 @@
       font-weight: 600;
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       body {
         padding: 2.5rem 1.5rem;
@@ -244,8 +241,7 @@
 
       <ul class="profile-info">
         <li class="name">
-          Vaidehi Wagh
-          <span title="it's pronounced VY-day-hee :)">&#9432;</span>
+          Vaidehi Wagh <span title="it's pronounced VY-day-hee :)">&#9432;</span>
         </li>
         <li class="subtitle">MS in Robotics, CMU</li>
         <li class="subtitle">ML · Robotics · HRI</li>
@@ -255,7 +251,7 @@
         <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
         <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
         <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
-        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a></li>
+        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
 
         <li><hr></li>
 
@@ -286,36 +282,107 @@
           as well as temporal ML and transfer learning for real-time, continuous user adaptation.
         </p>
         <p>
+          Before CMU, I was a MITACS intern working with
+          <a href="https://news.ok.ubc.ca/2024/01/22/ubco-research-gives-stroke-survivors-control/">Dr. Sarah Kraeutner</a>
+          at the University of British Columbia and a Financial Analyst at Deloitte.
+          I completed my Bachelor’s in Mechanical Engineering at COEP Tech University in Pune, India.
+        </p>
+        <p>
           <strong>I am seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
         </p>
       </div>
 
-      <!-- Research -->
       <h3>Research</h3>
       <div class="cards research">
-        <!-- unchanged content -->
+        <div class="card">
+          <img src="images/research1.gif">
+          <div class="card-info">
+            <strong>LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech</strong>
+            <em>SLMs, Phi-2, Whisper-tiny, Jetson Orin Nano</em>
+            <p>Mapping qualitative user feedback to quantitative changes in control frameworks for real-time personalization.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/research1.gif">
+          <div class="card-info">
+            <strong>Personalized torque prediction for stroke populations</strong>
+            <em>Transfer learning, Temporal ML, TCNs</em>
+            <p>Accurate joint torque estimation for clinical populations with limited and heterogeneous datasets.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/nimbl2.gif">
+          <div class="card-info">
+            <strong>Evaluating MediaPipe for post-stroke assessment</strong>
+            <em>MediaPipe, R, Matlab</em>
+            <p>Assessing whether off-the-shelf vision tools can replace subjective stroke recovery metrics.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/nimbl2.gif">
+          <div class="card-info">
+            <strong>Evaluating MediaPipe for fine upper limb motion capture</strong>
+            <em>MediaPipe, R, Matlab, Python</em>
+            <p>Accuracy of CV toolkits for fast, dexterous upper limb tracking.</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Projects -->
       <h3>Projects</h3>
       <div class="cards projects">
-        <!-- unchanged content -->
+        <div class="card">
+          <img src="images/ttr.png">
+          <div class="card-info">
+            <strong>VLM-based Human-Robot Voice Interface – Talking to Robots</strong>
+            <em>SLMs, Phi-4, SFT, Jetson Orin Nano</em>
+            <p>Speech + vision interface for long-horizon planning in personalized exoskeleton control.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/iv-bot.jpeg">
+          <div class="card-info">
+            <strong>Automated IV Insertion Bot – Medical Robotics</strong>
+            <em>CAD, 3D Printing, CV, Arduino</em>
+            <p>Designed linear actuation mechanisms with vision-based vein localization.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/gail.gif">
+          <div class="card-info">
+            <strong>Generative Adversarial Imitation Learning</strong>
+            <em>Inverse RL, GAIL</em>
+            <p>Human locomotion imitation using GAN-based reward models.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/ocrl.gif">
+          <div class="card-info">
+            <strong>LQR for humanoid balancing</strong>
+            <em>MuJoCo, LQR</em>
+            <p>Stabilizing a human model on a dynamically moving platform.</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Publications -->
       <h3>Publications & Presentations</h3>
       <div class="publications">
-        <!-- unchanged content -->
+        <p>[1] <strong>Wagh, V.</strong> et al. Transfer learning for biological joint moment estimation in stroke populations.</p>
+        <p>[2] <strong>Wagh, V.</strong> et al. Using MediaPipe to track upper-limb movement after stroke.</p>
+        <p>[3] <strong>Wagh, V.</strong> et al. Quantifying similarities between MediaPipe and known standards.</p>
       </div>
 
     </div>
   </div>
 
-  <!-- CAROUSEL SCRIPT -->
   <script>
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
-
     setInterval(() => {
       images[current].classList.remove('active');
       current = (current + 1) % images.length;
@@ -323,5 +390,4 @@
     }, 3000);
   </script>
 </body>
-
 </html>
