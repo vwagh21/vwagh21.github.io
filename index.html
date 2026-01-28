@@ -41,17 +41,17 @@
     }
 
     .left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .right {
       width: 220px;
       flex-shrink: 0;
       font-size: 0.95rem;
     }
 
-    .right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* LEFT COLUMN */
+    /* PROFILE SIDEBAR */
     .carousel {
       width: 100%;
       margin-bottom: 0.75rem;
@@ -77,22 +77,9 @@
       margin-bottom: 0.25rem;
     }
 
-    .profile-info li.name {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .profile-info li.name span {
-      font-size: 0.8em;
+    .profile-info li a i {
       color: #6b7280;
-      margin-left: 0.2rem;
-      cursor: help;
-    }
-
-    .profile-info .subtitle {
-      font-size: 1rem;
-      color: #4b5563;
+      margin-right: 0.4rem;
     }
 
     .profile-info .role {
@@ -105,11 +92,6 @@
       margin: 0.75rem 0;
       border: none;
       border-top: 1px solid #e5e7eb;
-    }
-
-    .profile-info li a i {
-      color: #6b7280;
-      margin-right: 0.4rem;
     }
 
     /* HEADINGS */
@@ -128,6 +110,36 @@
       height: 2px;
       background: #e5e7eb;
       margin-top: 0.4rem;
+    }
+
+    /* NAME HEADER ABOVE ABOUT */
+    .name-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .name-header .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .name-header .name span {
+      font-size: 0.8em;
+      color: #6b7280;
+      margin-left: 0.2rem;
+      cursor: help;
+    }
+
+    .name-header .subtitle {
+      font-size: 1.05rem;
+      color: #4b5563;
+      margin-bottom: 0.2rem;
+    }
+
+    .name-header .keywords {
+      font-size: 0.95rem;
+      color: #4b5563;
+      font-style: italic;
     }
 
     /* ABOUT */
@@ -231,44 +243,15 @@
 <body>
   <div class="container">
 
-    <!-- LEFT COLUMN -->
+    <!-- MAIN CONTENT (LEFT) -->
     <div class="left">
-      <div class="carousel">
-        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
-        <img src="images/profpic2.jpg" alt="Profile photo 2">
-        <img src="images/profpic3.jpg" alt="Profile photo 3">
+
+      <!-- NAME + SUBTITLE + KEYWORDS -->
+      <div class="name-header">
+        <div class="name">Vaidehi Wagh <span title="it's pronounced VY-day-hee :)">&#9432;</span></div>
+        <div class="subtitle">MS in Robotics, CMU</div>
+        <div class="keywords">ML · Robotics · HRI</div>
       </div>
-
-      <ul class="profile-info">
-        <li class="name">
-          Vaidehi Wagh <span title="it's pronounced VY-day-hee :)">&#9432;</span>
-        </li>
-        <li class="subtitle">MS in Robotics, CMU</li>
-        <li class="subtitle">ML · Robotics · HRI</li>
-
-        <li><hr></li>
-
-        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
-        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
-        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
-        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
-
-        <li><hr></li>
-
-        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
-        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
-        <li><a href="https://github.com/vwagh31"><i class="fab fa-github"></i> GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-
-        <li><hr></li>
-
-        <li><a href="beyondwork.html">Beyond work!</a></li>
-      </ul>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <div class="right">
 
       <h3>About</h3>
       <div class="about">
@@ -278,7 +261,7 @@
           in the <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>.
         </p>
         <p>
-          My research focuses on personalized exoskeleton control using LLMs in the loop and on edge,
+          My research focuses on human in the loop, wearable robot control using LLMs & VLMs on edge,
           as well as temporal ML and transfer learning for real-time, continuous user adaptation.
         </p>
         <p>
@@ -378,6 +361,37 @@
       </div>
 
     </div>
+
+    <!-- PROFILE SIDEBAR (RIGHT) -->
+    <div class="right">
+      <div class="carousel">
+        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
+        <img src="images/profpic2.jpg" alt="Profile photo 2">
+        <img src="images/profpic3.jpg" alt="Profile photo 3">
+      </div>
+
+      <ul class="profile-info">
+        <li><hr></li>
+
+        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
+        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
+        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
+        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
+
+        <li><hr></li>
+
+        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
+        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+
+        <li><hr></li>
+
+        <li><a href="beyondwork.html">Beyond work!</a></li>
+      </ul>
+    </div>
+
   </div>
 
   <script>
@@ -390,4 +404,5 @@
     }, 3000);
   </script>
 </body>
+
 </html>
