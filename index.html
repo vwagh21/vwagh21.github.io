@@ -34,46 +34,46 @@
       text-decoration: underline;
     }
 
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      padding: 1rem 0;
-      z-index: 100;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .navbar a {
-      font-weight: 500;
-      font-size: 1rem;
-    }
-
     .container {
       display: flex;
       gap: 3.5rem;
       flex-wrap: wrap;
-      margin-top: 2rem;
     }
 
     .left {
+      width: 220px;
+      flex-shrink: 0;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .right {
       flex: 1;
       min-width: 300px;
     }
 
-    .right {
-      width: 220px;
-      flex-shrink: 0;
-      font-size: 0.95rem;
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
     }
 
-    /* PROFILE SIDEBAR */
+    .navbar a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* LEFT COLUMN */
     .carousel {
       width: 100%;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .carousel img {
@@ -86,67 +86,58 @@
       display: block;
     }
 
-    .profile-info {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .profile-info li {
-      margin-bottom: 0.25rem;
-    }
-
-    .profile-info li a i {
-      color: #6b7280;
-      margin-right: 0.4rem;
-    }
-
-    .profile-info .role {
-      font-size: 0.95rem;
+    .profile-pronunciation {
+      font-size: 0.9rem;
       color: #4b5563;
-      font-style: italic;
+      margin-top: 0.5rem;
     }
 
-    .profile-info hr {
-      margin: 0.75rem 0;
-      border: none;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    /* NAME HEADER ABOVE MAIN CONTENT */
-    .name-header {
-      margin-bottom: 1.25rem;
-    }
-
-    .name-header .name {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .name-header .name span {
-      font-size: 0.8em;
-      color: #6b7280;
-      margin-left: 0.2rem;
-      cursor: help;
-    }
-
-    .name-header .subtitle {
-      font-size: 1.05rem;
-      color: #4b5563;
+    /* NAME & SUBTITLE TOP RIGHT */
+    .profile-header {
       margin-bottom: 0.5rem;
     }
 
-    /* ABOUT TEXT (no heading) */
+    .profile-header .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .profile-header .subtitle {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-top: 0.2rem;
+    }
+
+    /* HEADINGS */
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 2.75rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: #e5e7eb;
+      margin-top: 0.4rem;
+    }
+
+    /* ABOUT */
     .about {
       max-width: 650px;
-      font-size: 0.95rem;
-      color: #374151;
-      line-height: 1.6;
+      margin-bottom: 2rem;
     }
 
     .about p {
       margin-bottom: 1.1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #374151;
     }
 
     /* CARDS */
@@ -200,23 +191,17 @@
       border-bottom: none;
     }
 
-    /* PUBLICATIONS (Al-Folio style) */
+    /* PUBLICATIONS */
     .publications {
-      margin-top: 2rem;
-    }
-
-    .publications ol {
-      padding-left: 1.25rem;
-      margin: 0;
+      font-size: 0.9rem;
     }
 
     .publications li {
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      margin-bottom: 0.5rem;
+      line-height: 1.45;
     }
 
-    .publications li strong {
+    .publications strong {
       font-weight: 600;
     }
 
@@ -239,32 +224,45 @@
         width: 100%;
         height: auto;
       }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#recruiters">For Recruiters</a>
-    <a href="beyondwork.html">Beyond Work</a>
-  </div>
-
   <div class="container">
 
-    <!-- MAIN CONTENT (LEFT) -->
+    <!-- LEFT COLUMN -->
     <div class="left">
+      <div class="carousel">
+        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
+        <img src="images/profpic2.jpg" alt="Profile photo 2">
+        <img src="images/profpic3.jpg" alt="Profile photo 3">
+      </div>
+      <div class="profile-pronunciation">vy-day-he vau-gh</div>
+    </div>
 
-      <!-- NAME + SUBTITLE -->
-      <div class="name-header" id="about">
-        <div class="name">Vaidehi Wagh <span title="it's pronounced VY-day-hee :)">&#9432;</span></div>
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      <div class="profile-header">
+        <div class="name">Vaidehi Wagh</div>
         <div class="subtitle">MS in Robotics, CMU</div>
       </div>
 
-      <!-- ABOUT TEXT (no heading) -->
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <a href="#">about</a>
+        <a href="#">research</a>
+        <a href="#">teaching</a>
+        <a href="#">for recruiters</a>
+        <a href="#">beyond work</a>
+      </div>
+
+      <!-- ABOUT TEXT -->
       <div class="about">
         <p>
           I’m a second-year Master’s student in Robotics at Carnegie Mellon University,
@@ -286,8 +284,7 @@
         </p>
       </div>
 
-      <!-- RESEARCH -->
-      <h3 id="research">Research</h3>
+      <h3>Research</h3>
       <div class="cards research">
         <div class="card">
           <img src="images/research1.gif">
@@ -326,7 +323,6 @@
         </div>
       </div>
 
-      <!-- PROJECTS -->
       <h3>Projects</h3>
       <div class="cards projects">
         <div class="card">
@@ -366,49 +362,13 @@
         </div>
       </div>
 
-      <!-- PUBLICATIONS -->
       <h3>Publications & Presentations</h3>
-      <div class="publications">
-        <ol>
-          <li><strong>Wagh, V.</strong> et al. Transfer learning for biological joint moment estimation in stroke populations.</li>
-          <li><strong>Wagh, V.</strong> et al. Using MediaPipe to track upper-limb movement after stroke.</li>
-          <li><strong>Wagh, V.</strong> et al. Quantifying similarities between MediaPipe and known standards.</li>
-        </ol>
-      </div>
-
-    </div>
-
-    <!-- PROFILE SIDEBAR (RIGHT) -->
-    <div class="right">
-      <div class="carousel">
-        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
-        <img src="images/profpic2.jpg" alt="Profile photo 2">
-        <img src="images/profpic3.jpg" alt="Profile photo 3">
-      </div>
-
-      <ul class="profile-info">
-        <li class="keywords">ML · Robotics · HRI</li>
-        <li><hr></li>
-
-        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
-        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
-        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
-        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
-
-        <li><hr></li>
-
-        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
-        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
-        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-
-        <li><hr></li>
-
-        <li><a href="beyondwork.html">Beyond work!</a></li>
+      <ul class="publications">
+        <li>[1] <strong>Wagh, V.</strong> et al. Transfer learning for biological joint moment estimation in stroke populations.</li>
+        <li>[2] <strong>Wagh, V.</strong> et al. Using MediaPipe to track upper-limb movement after stroke.</li>
+        <li>[3] <strong>Wagh, V.</strong> et al. Quantifying similarities between MediaPipe and known standards.</li>
       </ul>
     </div>
-
   </div>
 
   <script>
@@ -421,5 +381,4 @@
     }, 3000);
   </script>
 </body>
-
 </html>
