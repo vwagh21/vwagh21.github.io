@@ -157,80 +157,79 @@
     }
 
     /* Publications Grid / Cards */
+    /* PUBLICATIONS LIST STYLE */
     .publications {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     }
 
-    .pub-card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.2s, transform 0.2s;
+    .pub-card.list {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.5rem;
+    align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
     }
 
-    .pub-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    .pub-card.list:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .pub-thumb {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
     }
 
     .pub-content {
-      padding: 1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
     }
 
     .pub-title {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-      color: #111827;
+    font-weight: 600;
+    font-size: 0.95rem;
     }
 
     .pub-authors {
-      font-size: 0.9rem;
-      margin-bottom: 0.2rem;
-      color: #374151;
+    font-size: 0.85rem;
+    color: #374151;
     }
 
     .pub-venue {
-      font-size: 0.85rem;
-      font-style: italic;
-      color: #4b5563;
-      margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #4b5563;
+    font-style: italic;
     }
 
     .pub-links {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
     }
 
     .pub-links a {
-      padding: 0.3rem 0.6rem;
-      background: #2563eb;
-      color: white;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      text-decoration: none;
-      transition: background 0.2s;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
     }
 
     .pub-links a:hover {
-      background: #1e40af;
+    background: #1e40af;
     }
+
 
     @media (max-width: 600px) {
       body {
@@ -290,50 +289,49 @@
       <h3>Publications</h3>
       <div class="publications">
         <!-- Example Publication -->
-        <div class="pub-card">
-          <img class="pub-thumb" src="images/research1.gif" alt="Paper Thumbnail">
-          <div class="pub-content">
-            <div>
-              <div class="pub-title">Transfer learning for biological joint moment estimation in stroke populations</div>
-              <div class="pub-authors">Wagh V., Park D., Young A., Kang I.</div>
-              <div class="pub-venue">American Society of Biomechanics, 2025</div>
-            </div>
+                <!-- PUBLICATIONS LIST VERSION -->
+        <div class="publications">
+        <!-- Example Publication -->
+        <div class="pub-card list">
+            <img class="pub-thumb" src="images/research1.gif" alt="Paper Thumbnail">
+            <div class="pub-content">
+            <div class="pub-title">Transfer learning for biological joint moment estimation in stroke populations</div>
+            <div class="pub-authors">Wagh V., Park D., Young A., Kang I.</div>
+            <div class="pub-venue">American Society of Biomechanics, 2025</div>
             <div class="pub-links">
-              <a href="pdfs/ASB.pdf">PDF</a>
-              <a href="#">Poster</a>
+                <a href="pdfs/ASB.pdf">PDF</a>
+                <a href="pdfs/poster.png">Poster</a>
             </div>
-          </div>
+            </div>
         </div>
 
-        <div class="pub-card">
-          <img class="pub-thumb" src="images/nimbl2.gif" alt="Paper Thumbnail">
-          <div class="pub-content">
-            <div>
-              <div class="pub-title">Using MediaPipe to track upper-limb reaching movements after stroke: a proof-of-principle study</div>
-              <div class="pub-authors">Wagh V., Scott M., Andrushko J., Jones C., Larrsen B., Boyd L., Kraeutner S.</div>
-              <div class="pub-venue">Journal of Neuroengineering and Rehabilitation, 2025</div>
-            </div>
+        <div class="pub-card list">
+            <img class="pub-thumb" src="images/nimbl2.gif" alt="Paper Thumbnail">
+            <div class="pub-content">
+            <div class="pub-title">Using MediaPipe to track upper-limb reaching movements after stroke: a proof-of-principle study</div>
+            <div class="pub-authors">Wagh V., Scott M., Andrushko J., Jones C., Larrsen B., Boyd L., Kraeutner S.</div>
+            <div class="pub-venue">Journal of Neuroengineering and Rehabilitation, 2025</div>
             <div class="pub-links">
-              <a href="pdfs/JNER.pdf">PDF</a>
-              <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
+                <a href="pdfs/JNER.pdf">PDF</a>
+                <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
             </div>
-          </div>
+            </div>
         </div>
 
-        <div class="pub-card">
-          <img class="pub-thumb" src="images/nimbl1.png" alt="Paper Thumbnail">
-          <div class="pub-content">
-            <div>
-              <div class="pub-title">Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</div>
-              <div class="pub-authors">Wagh V., Scott M., Kraeutner S.</div>
-              <div class="pub-venue">Journal of Medical Internet Research, Formative Research, 2024</div>
-            </div>
+        <div class="pub-card list">
+            <img class="pub-thumb" src="images/nimbl1.png" alt="Paper Thumbnail">
+            <div class="pub-content">
+            <div class="pub-title">Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</div>
+            <div class="pub-authors">Wagh V., Scott M., Kraeutner S.</div>
+            <div class="pub-venue">Journal of Medical Internet Research, Formative Research, 2024</div>
             <div class="pub-links">
-              <a href="pdfs/JMIR.pdf">PDF</a>
-              <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
+                <a href="pdfs/JMIR.pdf">PDF</a>
+                <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
             </div>
-          </div>
+            </div>
         </div>
+        </div>
+
 
         <!-- Add more publications here -->
       </div>
