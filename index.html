@@ -34,10 +34,29 @@
       text-decoration: underline;
     }
 
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      padding: 1rem 0;
+      z-index: 100;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navbar a {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
     .container {
       display: flex;
       gap: 3.5rem;
       flex-wrap: wrap;
+      margin-top: 2rem;
     }
 
     .left {
@@ -94,25 +113,7 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    /* HEADINGS */
-    h3 {
-      font-size: 1.4rem;
-      margin-top: 2.75rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: #e5e7eb;
-      margin-top: 0.4rem;
-    }
-
-    /* NAME HEADER ABOVE ABOUT */
+    /* NAME HEADER ABOVE MAIN CONTENT */
     .name-header {
       margin-bottom: 1.25rem;
     }
@@ -133,25 +134,19 @@
     .name-header .subtitle {
       font-size: 1.05rem;
       color: #4b5563;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.5rem;
     }
 
-    .name-header .keywords {
-      font-size: 0.95rem;
-      color: #4b5563;
-      font-style: italic;
-    }
-
-    /* ABOUT */
+    /* ABOUT TEXT (no heading) */
     .about {
       max-width: 650px;
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.6;
     }
 
     .about p {
       margin-bottom: 1.1rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #374151;
     }
 
     /* CARDS */
@@ -205,15 +200,23 @@
       border-bottom: none;
     }
 
-    /* PUBLICATIONS */
-    .publications p {
-      margin: 0.8rem 0;
-      font-size: 0.9rem;
-      line-height: 1.45;
-      color: #374151;
+    /* PUBLICATIONS (Al-Folio style) */
+    .publications {
+      margin-top: 2rem;
     }
 
-    .publications strong {
+    .publications ol {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .publications li {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .publications li strong {
       font-weight: 600;
     }
 
@@ -241,19 +244,27 @@
 </head>
 
 <body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#recruiters">For Recruiters</a>
+    <a href="beyondwork.html">Beyond Work</a>
+  </div>
+
   <div class="container">
 
     <!-- MAIN CONTENT (LEFT) -->
     <div class="left">
 
-      <!-- NAME + SUBTITLE + KEYWORDS -->
-      <div class="name-header">
+      <!-- NAME + SUBTITLE -->
+      <div class="name-header" id="about">
         <div class="name">Vaidehi Wagh <span title="it's pronounced VY-day-hee :)">&#9432;</span></div>
         <div class="subtitle">MS in Robotics, CMU</div>
-        <div class="keywords">ML · Robotics · HRI</div>
       </div>
 
-      <h3>About</h3>
+      <!-- ABOUT TEXT (no heading) -->
       <div class="about">
         <p>
           I’m a second-year Master’s student in Robotics at Carnegie Mellon University,
@@ -275,7 +286,8 @@
         </p>
       </div>
 
-      <h3>Research</h3>
+      <!-- RESEARCH -->
+      <h3 id="research">Research</h3>
       <div class="cards research">
         <div class="card">
           <img src="images/research1.gif">
@@ -314,6 +326,7 @@
         </div>
       </div>
 
+      <!-- PROJECTS -->
       <h3>Projects</h3>
       <div class="cards projects">
         <div class="card">
@@ -353,11 +366,14 @@
         </div>
       </div>
 
+      <!-- PUBLICATIONS -->
       <h3>Publications & Presentations</h3>
       <div class="publications">
-        <p>[1] <strong>Wagh, V.</strong> et al. Transfer learning for biological joint moment estimation in stroke populations.</p>
-        <p>[2] <strong>Wagh, V.</strong> et al. Using MediaPipe to track upper-limb movement after stroke.</p>
-        <p>[3] <strong>Wagh, V.</strong> et al. Quantifying similarities between MediaPipe and known standards.</p>
+        <ol>
+          <li><strong>Wagh, V.</strong> et al. Transfer learning for biological joint moment estimation in stroke populations.</li>
+          <li><strong>Wagh, V.</strong> et al. Using MediaPipe to track upper-limb movement after stroke.</li>
+          <li><strong>Wagh, V.</strong> et al. Quantifying similarities between MediaPipe and known standards.</li>
+        </ol>
       </div>
 
     </div>
@@ -371,6 +387,7 @@
       </div>
 
       <ul class="profile-info">
+        <li class="keywords">ML · Robotics · HRI</li>
         <li><hr></li>
 
         <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
