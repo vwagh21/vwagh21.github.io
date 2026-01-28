@@ -44,7 +44,6 @@
       width: 220px;
       flex-shrink: 0;
       font-size: 0.95rem;
-      text-align: center;
     }
 
     .right {
@@ -59,6 +58,7 @@
       font-size: 0.85rem;
       color: #6b7280;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
     .navbar a {
@@ -90,9 +90,32 @@
       font-size: 0.9rem;
       color: #4b5563;
       margin-top: 0.5rem;
+      text-align: left;
     }
 
-    /* NAME & SUBTITLE TOP RIGHT */
+    .profile-info {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+    }
+
+    .profile-info li {
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .profile-info .role {
+      font-style: italic;
+      color: #4b5563;
+    }
+
+    .profile-info hr {
+      margin: 0.75rem 0;
+      border: none;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* RIGHT COLUMN */
     .profile-header {
       margin-bottom: 0.5rem;
     }
@@ -226,7 +249,6 @@
       }
 
       .navbar {
-        flex-wrap: wrap;
         gap: 0.8rem;
       }
     }
@@ -244,14 +266,29 @@
         <img src="images/profpic3.jpg" alt="Profile photo 3">
       </div>
       <div class="profile-pronunciation">vy-day-he vau-gh</div>
+
+      <ul class="profile-info">
+        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
+        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
+        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
+        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
+
+        <li><hr></li>
+
+        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
+        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
+        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
+
+        <li><hr></li>
+
+        <li><a href="beyondwork.html">Beyond work!</a></li>
+      </ul>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right">
-      <div class="profile-header">
-        <div class="name">Vaidehi Wagh</div>
-        <div class="subtitle">MS in Robotics, CMU</div>
-      </div>
 
       <!-- NAVBAR -->
       <div class="navbar">
@@ -260,6 +297,12 @@
         <a href="#">teaching</a>
         <a href="#">for recruiters</a>
         <a href="#">beyond work</a>
+      </div>
+
+      <!-- PROFILE HEADER -->
+      <div class="profile-header">
+        <div class="name">Vaidehi Wagh</div>
+        <div class="subtitle">MS in Robotics, CMU</div>
       </div>
 
       <!-- ABOUT TEXT -->
