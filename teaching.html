@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Vaidehi Wagh – Teaching</title>
+  <title>Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
@@ -25,8 +25,8 @@
       background: #ffffff;
     }
 
+    /* GLOBAL LINKS */
     a {
-      color: #4b5563;
       text-decoration: none;
     }
 
@@ -64,7 +64,6 @@
 
     .navbar a {
       color: #6b7280;
-      text-decoration: none;
     }
 
     .navbar a:hover {
@@ -87,13 +86,6 @@
       display: block;
     }
 
-    .profile-pronunciation {
-      font-size: 0.9rem;
-      color: #4b5563;
-      margin-top: 0.5rem;
-      text-align: left;
-    }
-
     .profile-info {
       list-style: none;
       padding: 0;
@@ -105,9 +97,27 @@
       font-size: 0.95rem;
     }
 
+    /* Roles grey */
     .profile-info .role {
       font-style: italic;
       color: #4b5563;
+    }
+
+    /* Links inside roles blue */
+    .profile-info .role a {
+      color: #2563eb;
+    }
+
+    /* CV / LinkedIn / Email / GitHub / Scholar links blue, icons grey */
+    .profile-info li a:not(.role a) {
+      color: #2563eb;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .profile-info li a:not(.role a) i {
+      color: #4b5563;
+      margin-right: 0.4rem;
     }
 
     .profile-info hr {
@@ -151,7 +161,20 @@
       margin-top: 0.4rem;
     }
 
-    /* TEACHING CARDS */
+    /* ABOUT */
+    .about {
+      max-width: 650px;
+      margin-bottom: 2rem;
+    }
+
+    .about p {
+      margin-bottom: 1.1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    /* CARDS */
     .cards {
       display: flex;
       flex-direction: column;
@@ -191,6 +214,29 @@
       font-size: 0.9rem;
       line-height: 1.5;
       color: #374151;
+    }
+
+    .cards.research .card {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .cards.research .card:last-child {
+      border-bottom: none;
+    }
+
+    /* PUBLICATIONS */
+    .publications {
+      font-size: 0.9rem;
+    }
+
+    .publications li {
+      margin-bottom: 0.5rem;
+      line-height: 1.45;
+    }
+
+    .publications strong {
+      font-weight: 600;
     }
 
     /* RESPONSIVE */

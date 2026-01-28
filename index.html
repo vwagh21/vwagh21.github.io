@@ -25,8 +25,8 @@
       background: #ffffff;
     }
 
+    /* GLOBAL LINKS */
     a {
-      color: #4b5563;
       text-decoration: none;
     }
 
@@ -57,13 +57,13 @@
       gap: 1.25rem;
       font-size: 0.85rem;
       color: #6b7280;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .navbar a {
       color: #6b7280;
-      text-decoration: none;
     }
 
     .navbar a:hover {
@@ -86,13 +86,6 @@
       display: block;
     }
 
-    .profile-pronunciation {
-      font-size: 0.9rem;
-      color: #4b5563;
-      margin-top: 0.5rem;
-      text-align: left;
-    }
-
     .profile-info {
       list-style: none;
       padding: 0;
@@ -104,9 +97,27 @@
       font-size: 0.95rem;
     }
 
+    /* Roles grey */
     .profile-info .role {
       font-style: italic;
       color: #4b5563;
+    }
+
+    /* Links inside roles blue */
+    .profile-info .role a {
+      color: #2563eb;
+    }
+
+    /* CV / LinkedIn / Email / GitHub / Scholar links blue, icons grey */
+    .profile-info li a:not(.role a) {
+      color: #2563eb;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .profile-info li a:not(.role a) i {
+      color: #4b5563;
+      margin-right: 0.4rem;
     }
 
     .profile-info hr {
@@ -247,21 +258,6 @@
         width: 100%;
         height: auto;
       }
-
-      .navbar {
-        gap: 0.8rem;
-      }
-
-    .navbar {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-      color: #6b7280;
-      margin-bottom: 2rem; /* space between navbar and columns */
-      flex-wrap: wrap;
-      justify-content: flex-end; /* right-aligned */
-    }
-
     }
   </style>
 </head>
