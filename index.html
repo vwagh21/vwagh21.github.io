@@ -251,11 +251,43 @@
       .navbar {
         gap: 0.8rem;
       }
+
+    .navbar {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 2rem; /* space between navbar and columns */
+      flex-wrap: wrap;
+      justify-content: flex-end; /* right-aligned */
+    }
+
     }
   </style>
 </head>
 
 <body>
+  <!-- NAVBAR ON TOP RIGHT -->
+  <div class="navbar" style="justify-content: flex-end;">
+    <a href="index.html">about</a>
+    <a href="research-cmu.html">research</a>
+    <a href="teaching.html">teaching</a>
+    <a href="recruiters.html">for recruiters</a>
+    <a href="beyondwork.html">beyond work</a>
+  </div>
+
+  <div class="container">
+    <!-- LEFT COLUMN -->
+    <div class="left">
+      ...
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      ...
+    </div>
+  </div>
+
   <div class="container">
 
     <!-- LEFT COLUMN -->
@@ -265,7 +297,9 @@
         <img src="images/profpic2.jpg" alt="Profile photo 2">
         <img src="images/profpic3.jpg" alt="Profile photo 3">
       </div>
-      <div class="profile-pronunciation">vy-day-he vau-gh</div>
+      <div class="profile-pronunciation">It's pronounced 'vy-day-he'</div>
+
+      <li><hr></li>
 
       <ul class="profile-info">
         <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
@@ -282,22 +316,20 @@
         <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
 
         <li><hr></li>
-
-        <li><a href="beyondwork.html">Beyond work!</a></li>
       </ul>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right">
 
-      <!-- NAVBAR -->
+      <!-- NAVBAR
       <div class="navbar">
-        <a href="#">about</a>
-        <a href="#">research</a>
-        <a href="#">teaching</a>
-        <a href="#">for recruiters</a>
-        <a href="#">beyond work</a>
-      </div>
+        <a href="index.html">about</a>
+        <a href="research-cmu.html">research</a>
+        <a href="teaching.html">teaching</a>
+        <a href="recruiters.html">for recruiters</a>
+        <a href="beyondwork.html">beyond work</a>
+      </div> -->
 
       <!-- PROFILE HEADER -->
       <div class="profile-header">
