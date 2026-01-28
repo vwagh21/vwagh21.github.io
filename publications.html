@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Research @ CMU</title>
+  <title>Vaidehi Wagh - Publications</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
@@ -17,7 +17,7 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 3.5rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.65;
@@ -50,7 +50,7 @@
       min-width: 300px;
     }
 
-    /* NAVBAR */
+    /* Navbar */
     .navbar {
       display: flex;
       gap: 1.25rem;
@@ -69,7 +69,7 @@
       text-decoration: underline;
     }
 
-    /* LEFT COLUMN */
+    /* Profile Info */
     .carousel {
       width: 100%;
       margin-bottom: 0.5rem;
@@ -122,7 +122,23 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    /* HEADINGS */
+    /* Right Column Header */
+    .profile-header {
+      margin-bottom: 1rem;
+    }
+
+    .profile-header .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .profile-header .subtitle {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-top: 0.2rem;
+    }
+
     h3 {
       font-size: 1.4rem;
       margin-top: 2.75rem;
@@ -140,66 +156,82 @@
       margin-top: 0.4rem;
     }
 
-    /* CARDS */
-    .cards {
-      display: flex;
-      flex-direction: column;
+    /* Publications Grid / Cards */
+    .publications {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
-    .card {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border-radius: 6px;
+    .pub-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .pub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     }
 
-    .card img {
-      width: 120px;
-      height: 120px;
+    .pub-thumb {
+      width: 100%;
+      height: 150px;
       object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
     }
 
-    .card-info strong {
-      font-size: 1.05rem;
+    .pub-content {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pub-title {
       font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
       color: #111827;
     }
 
-    .card-info em {
-      display: block;
-      margin-top: 0.2rem;
-      font-style: normal;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-
-    .card-info p {
-      margin-top: 0.4rem;
+    .pub-authors {
       font-size: 0.9rem;
-      line-height: 1.5;
+      margin-bottom: 0.2rem;
       color: #374151;
     }
 
-    .cards.research .card {
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid #e5e7eb;
+    .pub-venue {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
     }
 
-    .cards.research .card:last-child {
-      border-bottom: none;
+    .pub-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
-    /* RESPONSIVE */
+    .pub-links a {
+      padding: 0.3rem 0.6rem;
+      background: #2563eb;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .pub-links a:hover {
+      background: #1e40af;
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 2.5rem 1.5rem;
@@ -208,15 +240,6 @@
       .container {
         flex-direction: column;
         gap: 2.5rem;
-      }
-
-      .card {
-        flex-direction: column;
-      }
-
-      .card img {
-        width: 100%;
-        height: auto;
       }
     }
   </style>
@@ -247,64 +270,72 @@
         <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
         <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
         <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
-
         <li><hr></li>
-
         <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
         <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
         <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
         <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
         <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-
         <li><hr></li>
       </ul>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="right">
-      <h3>Research</h3>
-      <div class="cards research">
-        <div class="card">
-          <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
-          <div class="card-info">
-            <strong>LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech and Scene Context</strong>
-            <em> On-device VLMs and LLMs, AI agents, Continual Learning</em>
-            <p> Closing the loop in wearable robots by using LLMs and VLMs to interpret real-time audio based user feedback
-              and scene context from videos to personalize control for exoskeleton users.
-            </p>
+      <div class="profile-header">
+        <div class="name">Vaidehi Wagh</div>
+        <div class="subtitle">MS in Robotics, CMU</div>
+      </div>
+
+      <h3>Publications</h3>
+      <div class="publications">
+        <!-- Example Publication -->
+        <div class="pub-card">
+          <img class="pub-thumb" src="images/research1.gif" alt="Paper Thumbnail">
+          <div class="pub-content">
+            <div>
+              <div class="pub-title">Transfer learning for biological joint moment estimation in stroke populations</div>
+              <div class="pub-authors">Wagh V., Park D., Young A., Kang I.</div>
+              <div class="pub-venue">American Society of Biomechanics, 2025</div>
+            </div>
+            <div class="pub-links">
+              <a href="pdfs/ASB.pdf">PDF</a>
+              <a href="#">Poster</a>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <img src="images/research2.gif" alt="Personalized Torque Prediction">
-          <div class="card-info">
-            <strong>Personalized Torque Prediction for Stroke Populations</strong>
-            <em>Transfer Learning, Temporal Convolutional Networks</em>
-            <p>Used muskuloskeletal simulation software (OpenSim) with MATLAB APIs to generate simulated IMU data from Motion Capture videos of two unaligned datasets.</p>
-            <p>Trained a temporal convolutional neural network on able-bodied locomotion data, and finetuned it for novel stroke subjects based using transfer learning.</p>
-            <p>Presented a poster at American Society of Biomechanics meeting 2025 in Pittsburgh highlighting the results of our study.</p>
+        <div class="pub-card">
+          <img class="pub-thumb" src="images/nimbl2.gif" alt="Paper Thumbnail">
+          <div class="pub-content">
+            <div>
+              <div class="pub-title">Using MediaPipe to track upper-limb reaching movements after stroke: a proof-of-principle study</div>
+              <div class="pub-authors">Wagh V., Scott M., Andrushko J., Jones C., Larrsen B., Boyd L., Kraeutner S.</div>
+              <div class="pub-venue">Journal of Neuroengineering and Rehabilitation, 2025</div>
+            </div>
+            <div class="pub-links">
+              <a href="pdfs/JNER.pdf">PDF</a>
+              <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <img src="images/nimbl2.gif" alt="MediaPipe Upper-Limb Assessment">
-          <div class="card-info">
-            <strong>Evaluating MediaPipe for Post-Stroke Assessment</strong>
-            <em>MediaPipe, R, Matlab</em>
-            <p>Deployed a motion tracking pipeline using OpenCV and MediaPipe pose estimation to analyse upper-limb kinematics 
-              (~0.14M actions, ~0.3M frames) & identify key markers of maladaptive compensation strategies in post-stroke individuals..</p>
+        <div class="pub-card">
+          <img class="pub-thumb" src="images/nimbl1.png" alt="Paper Thumbnail">
+          <div class="pub-content">
+            <div>
+              <div class="pub-title">Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</div>
+              <div class="pub-authors">Wagh V., Scott M., Kraeutner S.</div>
+              <div class="pub-venue">Journal of Medical Internet Research, Formative Research, 2024</div>
+            </div>
+            <div class="pub-links">
+              <a href="pdfs/JMIR.pdf">PDF</a>
+              <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <img src="images/nimbl2.gif" alt="MediaPipe Fine Motion Capture">
-          <div class="card-info">
-            <strong>Evaluating MediaPipe for Fine Upper Limb Motion Capture</strong>
-            <em>MediaPipe, R, Matlab, Python</em>
-            <p>Led a validation study comparing low-cost hand tracking to traditional motion capture using shape similarity analysis (16K fine upper-limb motion trajectories, ~70% accuracy)
-               demonstrating a scalable solution for monitoring fine motor movements in clinical settings.</p>
-          </div>
-        </div>
+        <!-- Add more publications here -->
       </div>
     </div>
   </div>
@@ -319,4 +350,5 @@
     }, 3000);
   </script>
 </body>
+
 </html>
