@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Vaidehi Wagh</title>
+  <title>Vaidehi Wagh — For Recruiters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
@@ -25,39 +25,21 @@
       background: #ffffff;
     }
 
-    /* GLOBAL LINKS */
     a {
       text-decoration: none;
+      color: #2563eb;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
-    .container {
-      display: flex;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-    }
-
-    .left {
-      width: 220px;
-      flex-shrink: 0;
-      font-size: 0.95rem;
-    }
-
-    .right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* NAVBAR */
     .navbar {
       display: flex;
       gap: 1.25rem;
       font-size: 0.85rem;
       color: #6b7280;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -70,83 +52,41 @@
       text-decoration: underline;
     }
 
-    /* LEFT COLUMN */
-    .carousel {
-      width: 100%;
-      margin-bottom: 0.5rem;
+    .hero {
+      margin-bottom: 3rem;
     }
 
-    .carousel img {
-      width: 100%;
-      border-radius: 6px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    .profile-info {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-
-    .profile-info li {
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
-    }
-
-    /* Roles grey */
-    .profile-info .role {
-      font-style: italic;
-      color: #4b5563;
-    }
-
-    /* Links inside roles blue */
-    .profile-info .role a {
-      color: #2563eb;
-    }
-
-    /* CV / LinkedIn / Email / GitHub / Scholar links blue, icons grey */
-    .profile-info li a:not(.role a) {
-      color: #2563eb;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .profile-info li a:not(.role a) i {
-      color: #4b5563;
-      margin-right: 0.4rem;
-    }
-
-    .profile-info hr {
-      margin: 0.75rem 0;
-      border: none;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    /* RIGHT COLUMN */
-    .profile-header {
-      margin-bottom: 0.5rem;
-    }
-
-    .profile-header .name {
-      font-size: 1.8rem;
+    .hero h1 {
+      font-size: 2.1rem;
       font-weight: 700;
       margin: 0;
     }
 
-    .profile-header .subtitle {
-      font-size: 1rem;
+    .hero p {
+      font-size: 1.05rem;
       color: #4b5563;
-      margin-top: 0.2rem;
+      margin-top: 0.4rem;
+      max-width: 650px;
     }
 
-    /* HEADINGS */
+    .hero-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
     h3 {
       font-size: 1.4rem;
-      margin-top: 2.75rem;
+      margin-top: 3rem;
       margin-bottom: 1rem;
       font-weight: 600;
       letter-spacing: -0.01em;
@@ -161,102 +101,74 @@
       margin-top: 0.4rem;
     }
 
-    /* ABOUT */
-    .about {
-      max-width: 650px;
-      margin-bottom: 2rem;
+    .section {
+      max-width: 700px;
     }
 
-    .about p {
-      margin-bottom: 1.1rem;
+    .section p {
       font-size: 0.95rem;
-      line-height: 1.6;
       color: #374151;
+      margin-bottom: 1rem;
     }
 
-    /* CARDS */
-    .cards {
+    .resume-embed {
+      margin-top: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .resume-embed iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+
+    .roles {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
+      margin-top: 1.5rem;
     }
 
-    .card {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
+    .role-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem 1.6rem 1.5rem;
+      background: #fafafa;
     }
 
-    .card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-    }
-
-    .card-info strong {
-      font-size: 1.05rem;
+    .role-card h4 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.15rem;
       font-weight: 600;
       color: #111827;
     }
 
-    .card-info em {
-      display: block;
-      margin-top: 0.2rem;
-      font-style: normal;
-      font-size: 0.85rem;
-      color: #6b7280;
+    .role-card p {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 0.75rem;
     }
 
-    .card-info p {
-      margin-top: 0.4rem;
-      font-size: 0.9rem;
-      line-height: 1.5;
+    .role-card ul {
+      padding-left: 1.1rem;
+      margin: 0;
+      font-size: 0.92rem;
       color: #374151;
     }
 
-    .cards.research .card {
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid #e5e7eb;
+    .role-card li {
+      margin-bottom: 0.4rem;
     }
 
-    .cards.research .card:last-child {
-      border-bottom: none;
-    }
-
-    /* PUBLICATIONS */
-    .publications {
-      font-size: 0.9rem;
-    }
-
-    .publications li {
-      margin-bottom: 0.5rem;
-      line-height: 1.45;
-    }
-
-    .publications strong {
-      font-weight: 600;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       body {
         padding: 2.5rem 1.5rem;
       }
 
-      .container {
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-
-      .card {
-        flex-direction: column;
-      }
-
-      .card img {
-        width: 100%;
-        height: auto;
+      .resume-embed iframe {
+        height: 500px;
       }
     }
   </style>
@@ -264,7 +176,7 @@
 
 <body>
 
-  <div class="navbar" style="justify-content: flex-end;">
+  <div class="navbar">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
     <a href="publications.html">publications</a>
@@ -273,56 +185,72 @@
     <a href="beyondwork.html">beyond work</a>
   </div>
 
-  <div class="container">
-    <!-- RIGHT COLUMN -->
-    <div class="right">
-      <div class="card">
-        <div class="card-info">
-          <strong>Bio</strong>
-          <p>MS Robotics @ CMU</p>
-          <p>Machine learning–driven robotic systems for human-in-the-loop, physical AI applications, focused on wearable and assistive robots.</p>
-
-          <p><strong>Core technical experience</strong></p>
-          <ul>
-            <li>Temporal deep learning (TCNs) on wearable sensor data</li>
-            <li>Transfer learning and few-shot adaptation for clinical populations with limited data</li>
-            <li>On-device deployment of small language models (Phi-2, Sheared LLaMA) on embedded platforms (NVIDIA Jetson)</li>
-            <li>Fine-tuning, quantization, and inference optimization under strict memory, latency, and safety constraints</li>
-          </ul>
-
-          <p><strong>Computer vision &amp; data</strong></p>
-          <ul>
-            <li>Computer vision–based human pose estimation in clinical settings</li>
-            <li>Evaluation of off-the-shelf vision models for real-world reliability</li>
-            <li>Large-scale data pipelines and time-series analytics from an industry stint in finance</li>
-          </ul>
-
-          <p><strong>Domain knowledge</strong></p>
-          <ul>
-            <li>Biomechanics and rehabilitation: human motion analysis, gait modeling, joint torque estimation, post-stroke movement analysis</li>
-            <li>Mechanical and physical systems: wearable robotics, exoskeletons, sensors, actuation, real-world hardware constraints</li>
-            <li>Clinical and applied settings: safety-critical, human-in-the-loop robotic systems with noisy and limited data</li>
-            <li>Quantitative and financial data: time-series modeling, analytics, and scalable data workflows</li>
-          </ul>
-
-          <p><strong>Systems perspective</strong></p>
-          <ul>
-            <li>End-to-end robotic systems spanning data collection, model training, optimization, embedded inference, and deployment on real-world robotic hardware</li>
-          </ul>
-
-        </div>
-      </div>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Vaidehi Wagh</h1>
+    <p>MS Robotics @ Carnegie Mellon University (’26) — building machine learning–driven robotic systems for human-in-the-loop, physical AI applications, with a focus on wearable and assistive robotics.</p>
+    <div class="hero-links">
+      <a href="assets/Vaidehi_Wagh_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Resume</a>
+      <a href="https://www.linkedin.com/in/vaidehi-wagh/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:vwagh@andrew.cmu.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://scholar.google.com/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
     </div>
   </div>
 
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  </script>
+  <!-- RESUME EMBED -->
+  <div class="section">
+    <h3>Resume</h3>
+    <p>You can view my resume directly below or download it using the link above.</p>
+    <div class="resume-embed">
+      <iframe src="assets/Vaidehi_Wagh_Resume.pdf"></iframe>
+    </div>
+  </div>
+
+  <!-- ROLES -->
+  <div class="section">
+    <h3>How I Can Contribute</h3>
+    <p>I’m actively seeking full-time roles across AI, machine learning, and robotics software, particularly in teams building real-world, human-centered systems.</p>
+
+    <div class="roles">
+
+      <!-- AI Engineer -->
+      <div class="role-card">
+        <h4>🤖 AI Engineer — Human-Centered AI Systems</h4>
+        <p><strong>What I bring:</strong> End-to-end development of AI systems that interact with humans and the physical world, with a strong emphasis on robustness, safety, and real-world constraints.</p>
+        <ul>
+          <li>On-device deployment of small language models (Phi-2, Sheared LLaMA) on embedded platforms (NVIDIA Jetson)</li>
+          <li>Fine-tuning, quantization, and inference optimization under strict memory, latency, and safety constraints</li>
+          <li>Human-in-the-loop ML systems for assistive and wearable robotics</li>
+          <li>Computer vision–based human motion tracking in clinical settings</li>
+        </ul>
+      </div>
+
+      <!-- ML Engineer -->
+      <div class="role-card">
+        <h4>📊 ML Engineer — Temporal & Real-World Data Systems</h4>
+        <p><strong>What I bring:</strong> Strong background in temporal deep learning and real-world ML pipelines, especially under limited, noisy, and safety-critical data conditions.</p>
+        <ul>
+          <li>Temporal convolutional networks (TCNs) for joint torque prediction from wearable sensor data</li>
+          <li>Transfer learning and few-shot adaptation for clinical populations (e.g., stroke biomechanics)</li>
+          <li>Large-scale time-series pipelines and analytics from industry experience in finance</li>
+          <li>Evaluation and benchmarking of off-the-shelf models for real-world reliability</li>
+        </ul>
+      </div>
+
+      <!-- Robotics Software Engineer -->
+      <div class="role-card">
+        <h4>🛠️ Robotics Software Engineer — ML + Systems Integration</h4>
+        <p><strong>What I bring:</strong> Systems-level thinking across perception, modeling, ML, control, and hardware, with hands-on experience integrating ML into robotic platforms.</p>
+        <ul>
+          <li>End-to-end robotic systems spanning data collection, model training, optimization, embedded inference, and deployment</li>
+          <li>Exoskeleton modeling and feasibility studies for assistive robotics</li>
+          <li>Locomotion modeling using GAIL and physics simulators (MuJoCo)</li>
+          <li>Comfort working across simulation, real hardware, and clinical environments</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
