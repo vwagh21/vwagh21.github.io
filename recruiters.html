@@ -17,10 +17,10 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 3.5rem 2rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.65;
+      line-height: 1.6;
       color: #1f2937;
       background: #ffffff;
     }
@@ -52,8 +52,13 @@
       text-decoration: underline;
     }
 
-    .hero {
-      margin-bottom: 3rem;
+    /* HERO + CV ROW */
+    .top-row {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 2.2rem;
     }
 
     .hero h1 {
@@ -66,7 +71,7 @@
       font-size: 1.05rem;
       color: #4b5563;
       margin-top: 0.4rem;
-      max-width: 650px;
+      max-width: 700px;
     }
 
     .hero-links {
@@ -84,91 +89,101 @@
       font-weight: 500;
     }
 
-    h3 {
-      font-size: 1.4rem;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: #e5e7eb;
-      margin-top: 0.4rem;
-    }
-
-    .section {
-      max-width: 700px;
-    }
-
-    .section p {
-      font-size: 0.95rem;
-      color: #374151;
-      margin-bottom: 1rem;
-    }
-
-    .resume-embed {
-      margin-top: 1.5rem;
+    .cv-box {
       border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.2rem 1.3rem 1.3rem 1.3rem;
+      background: #fafafa;
+      text-align: center;
+    }
+
+    .cv-box h4 {
+      margin: 0 0 0.4rem 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .cv-box p {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .cv-box a {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
       border-radius: 8px;
-      overflow: hidden;
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      font-weight: 500;
+      font-size: 0.9rem;
     }
 
-    .resume-embed iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
+    .cv-box a:hover {
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
     }
 
-    .roles {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    /* ROLES GRID */
+    .roles-section {
       margin-top: 1.5rem;
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.2rem;
     }
 
     .role-card {
       border: 1px solid #e5e7eb;
       border-radius: 12px;
-      padding: 1.5rem 1.5rem 1.6rem 1.5rem;
+      padding: 1.2rem 1.3rem 1.4rem 1.3rem;
       background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
     .role-card h4 {
-      margin: 0 0 0.6rem 0;
-      font-size: 1.15rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #111827;
     }
 
     .role-card p {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #374151;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
     .role-card ul {
-      padding-left: 1.1rem;
+      padding-left: 1.05rem;
       margin: 0;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #374151;
     }
 
     .role-card li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 2.5rem 1.5rem;
+    @media (max-width: 900px) {
+      .roles-grid {
+        grid-template-columns: 1fr;
       }
 
-      .resume-embed iframe {
-        height: 500px;
+      .top-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cv-box {
+        max-width: 320px;
       }
     }
   </style>
@@ -185,69 +200,64 @@
     <a href="beyondwork.html">beyond work</a>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Vaidehi Wagh</h1>
-    <p>MS Robotics @ Carnegie Mellon University (’26) — building machine learning–driven robotic systems for human-in-the-loop, physical AI applications, with a focus on wearable and assistive robotics.</p>
-    <div class="hero-links">
-      <a href="assets/Vaidehi_Wagh_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> Resume</a>
-      <a href="https://www.linkedin.com/in/vaidehi-wagh/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-      <a href="mailto:vwagh@andrew.cmu.edu"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://scholar.google.com/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+  <!-- HERO + CV -->
+  <div class="top-row">
+    <div class="hero">
+      <h1>Vaidehi Wagh</h1>
+      <p>MS Robotics @ Carnegie Mellon University (’26) — building machine learning–driven robotic systems for human-in-the-loop, physical AI applications.</p>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/vaidehi-wagh/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:vwagh@andrew.cmu.edu"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://scholar.google.com/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+      </div>
     </div>
-  </div>
 
-  <!-- RESUME EMBED -->
-  <div class="section">
-    <h3>Resume</h3>
-    <p>You can view my resume directly below or download it using the link above.</p>
-    <div class="resume-embed">
-      <iframe src="assets/Vaidehi_Wagh_Resume.pdf"></iframe>
+    <div class="cv-box">
+      <h4>Resume</h4>
+      <p>One-page PDF with experience, projects, and publications.</p>
+      <a href="assets/Vaidehi_Wagh_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View Resume</a>
     </div>
   </div>
 
   <!-- ROLES -->
-  <div class="section">
-    <h3>How I Can Contribute</h3>
-    <p>I’m actively seeking full-time roles across AI, machine learning, and robotics software, particularly in teams building real-world, human-centered systems.</p>
+  <div class="roles-section">
+    <div class="roles-grid">
 
-    <div class="roles">
-
-            <!-- AI Engineer -->
+      <!-- AI Engineer -->
       <div class="role-card">
-        <h4>🤖 AI Engineer — LLMs, Multimodal Systems & Edge AI</h4>
-        <p><strong>What I bring:</strong> End-to-end development of modern AI systems, spanning large language models, vision-language models, and deployment on resource-constrained devices.</p>
+        <h4>🤖 AI Engineer</h4>
+        <p><strong>Focus:</strong> LLMs, multimodal systems, and edge AI.</p>
         <ul>
-          <li>Worked with LLMs and VLMs across supervised fine-tuning, few-shot learning, and prompt engineering</li>
-          <li>Built multimodal pipelines combining vision, language, and sensor data</li>
-          <li>Optimized models for real-world deployment via quantization, latency reduction, and memory optimization</li>
-          <li>Deployed AI systems on edge platforms with tight performance and reliability constraints</li>
+          <li>LLMs & VLMs: supervised fine-tuning, few-shot learning, prompt engineering</li>
+          <li>Multimodal pipelines across vision, language, and sensor data</li>
+          <li>Optimization: quantization, latency, memory constraints</li>
+          <li>Edge deployment with real-world performance guarantees</li>
         </ul>
       </div>
 
       <!-- ML Engineer -->
       <div class="role-card">
-        <h4>📊 ML Engineer — Deep Learning, Temporal Modeling & Data Systems</h4>
-        <p><strong>What I bring:</strong> Strong experience building, training, and deploying deep learning models on real-world data, with an emphasis on temporal modeling and scalable pipelines.</p>
+        <h4>📊 ML Engineer</h4>
+        <p><strong>Focus:</strong> Deep learning, temporal modeling, and production ML systems.</p>
         <ul>
           <li>Deep learning across time-series, sensor, and multimodal datasets</li>
-          <li>Temporal modeling using architectures like TCNs and sequence models</li>
-          <li>Transfer learning, dataset creation, curation, and large-scale training pipelines</li>
-          <li>Computer vision toolkits for human pose estimation and kinematic analysis within large data workflows</li>
-          <li>Deployment of trained models on edge devices and production systems</li>
+          <li>Temporal modeling (TCNs, sequence models)</li>
+          <li>Transfer learning, dataset creation, and training pipelines</li>
+          <li>CV pipelines for pose estimation and kinematic analysis at scale</li>
+          <li>Model deployment on edge and production systems</li>
         </ul>
       </div>
 
       <!-- Robotics Software Engineer -->
       <div class="role-card">
-        <h4>🛠️ Robotics Software Engineer — Systems Integration & Embedded Robotics</h4>
-        <p><strong>What I bring:</strong> Hands-on experience building robotic systems end-to-end, from mechanical design and sensing to embedded software, perception, and ML integration.</p>
+        <h4>🛠️ Robotics Software Engineer</h4>
+        <p><strong>Focus:</strong> Systems integration and embedded robotics.</p>
         <ul>
-          <li>Systems integration across sensors, actuators, perception, control, and ML pipelines</li>
-          <li>Embedded software development, microcontroller programming, and real-time systems</li>
-          <li>CAD, 3D printing, mechanical modeling, and rapid prototyping</li>
-          <li>Sensor integration with real-time camera perception pipelines for robot arm control</li>
-          <li>Deploying ML models on edge hardware within robotic systems</li>
+          <li>End-to-end systems integration across sensing, perception, control, and ML</li>
+          <li>Embedded software, microcontrollers, and real-time systems</li>
+          <li>CAD, 3D printing, mechanical modeling, and prototyping</li>
+          <li>Sensor integration with real-time camera pipelines for robot control</li>
+          <li>Deploying ML models on edge hardware</li>
         </ul>
       </div>
 
