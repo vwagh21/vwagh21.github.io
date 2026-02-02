@@ -58,20 +58,29 @@
       grid-template-columns: 1fr 240px;
       gap: 3rem;
       align-items: start;
-      margin-bottom: 2.2rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 {
       font-size: 2.1rem;
       font-weight: 700;
-      margin: 0;
+      margin: 0 0 0.3rem 0;
     }
 
-    .hero p {
+    .hero p.bio-school {
       font-size: 1.05rem;
       color: #4b5563;
-      margin-top: 0.4rem;
-      max-width: 700px;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    .hero p.bio-school strong {
+      font-weight: 600;
+    }
+
+    .hero p.bio-summary {
+      font-size: 1.05rem;
+      color: #4b5563;
+      margin: 0.5rem 0 0.5rem 0;
     }
 
     .hero-links {
@@ -92,13 +101,18 @@
     .cv-box {
       border: 1px solid #e5e7eb;
       border-radius: 12px;
-      padding: 1.2rem 1.3rem 1.3rem 1.3rem;
+      padding: 1rem 1.2rem;
       background: #fafafa;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      min-height: 130px; /* roughly matches hero bio height */
     }
 
     .cv-box h4 {
-      margin: 0 0 0.4rem 0;
+      margin: 0 0 0.3rem 0;
       font-size: 1.05rem;
       font-weight: 600;
       color: #111827;
@@ -107,7 +121,7 @@
     .cv-box p {
       font-size: 0.85rem;
       color: #6b7280;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .cv-box a {
@@ -126,16 +140,23 @@
       text-decoration: none;
     }
 
+    /* Intro line for roles */
+    .roles-intro {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 1rem;
+    }
+
     /* ROLES GRID */
     .roles-section {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
     .roles-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      margin-top: 1.2rem;
+      margin-top: 0.8rem;
     }
 
     .role-card {
@@ -183,7 +204,7 @@
       }
 
       .cv-box {
-        max-width: 320px;
+        min-height: auto;
       }
     }
   </style>
@@ -204,19 +225,26 @@
   <div class="top-row">
     <div class="hero">
       <h1>Vaidehi Wagh</h1>
-      <p>MS Robotics @ Carnegie Mellon University (’26) — building machine learning–driven robotic systems for human-in-the-loop, physical AI applications.</p>
+      <p class="bio-school">MS Robotics @ Carnegie Mellon University (<strong>Graduating May 2026</strong>)</p>
+      <p class="bio-summary">Building ML-driven robotic systems for physical AI.</p>
       <div class="hero-links">
         <a href="https://www.linkedin.com/in/vaidehi-wagh/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="mailto:vwagh@andrew.cmu.edu"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://scholar.google.com/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+        <a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
       </div>
     </div>
 
     <div class="cv-box">
       <h4>Resume</h4>
       <p>One-page PDF with experience, projects, and publications.</p>
-      <a href="assets/Vaidehi_Wagh_Resume.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View Resume</a>
+      <a href="Wagh_Vaidehi_web_version.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View Resume</a>
     </div>
+  </div>
+
+  <!-- Intro line for roles -->
+  <div class="roles-intro">
+    Actively seeking full-time roles in AI, ML, Robotics Software Eng. or Forward deployed engineering. 
+    Here’s how my skills and experience align with these roles:
   </div>
 
   <!-- ROLES -->
