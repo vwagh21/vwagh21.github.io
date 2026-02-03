@@ -35,14 +35,8 @@
 
     .container {
       display: flex;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-    }
-
-    .left {
-      width: 220px;
-      flex-shrink: 0;
-      font-size: 0.95rem;
+      flex-direction: column;
+      gap: 3rem;
     }
 
     .right {
@@ -69,64 +63,11 @@
       text-decoration: underline;
     }
 
-    /* LEFT COLUMN */
-    .carousel {
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-
-    .carousel img {
-      width: 100%;
-      border-radius: 6px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    .profile-info {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-
-    .profile-info li {
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
-    }
-
-    .profile-info .role {
-      font-style: italic;
-      color: #4b5563;
-    }
-
-    .profile-info .role a {
-      color: #2563eb;
-    }
-
-    .profile-info li a:not(.role a) {
-      color: #2563eb;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .profile-info li a:not(.role a) i {
-      color: #4b5563;
-      margin-right: 0.4rem;
-    }
-
-    .profile-info hr {
-      margin: 0.75rem 0;
-      border: none;
-      border-top: 1px solid #e5e7eb;
-    }
-
     /* HEADINGS */
     h3 {
       font-size: 1.4rem;
-      margin-top: 2.75rem;
-      margin-bottom: 1rem;
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
       font-weight: 600;
       letter-spacing: -0.01em;
     }
@@ -144,16 +85,19 @@
     .cards {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
     .card {
       display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
-      transition: transform 0.2s, box-shadow 0.2s;
+      flex-direction: row;
+      gap: 1rem;
       border-radius: 6px;
       overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #e5e7eb;
+      padding: 1rem;
     }
 
     .card:hover {
@@ -161,69 +105,86 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 6px;
+    .card-left {
       flex-shrink: 0;
     }
 
-    .card-info strong {
-      font-size: 1.05rem;
+    .card-left img {
+      width: 180px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .card-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
       font-weight: 600;
       color: #111827;
     }
 
-    .card-info em {
-      display: block;
-      margin-top: 0.2rem;
-      font-style: normal;
-      font-size: 0.85rem;
+    .card-arrow {
+      font-size: 1.2rem;
       color: #6b7280;
+      transition: transform 0.3s ease;
     }
 
-    .card-info p {
-      margin-top: 0.4rem;
+    .card.expanded .card-arrow {
+      transform: rotate(180deg);
+    }
+
+    .card-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 0.5rem;
+    }
+
+    .card.expanded .card-content {
+      max-height: 1000px; /* enough for content */
+    }
+
+    .card-content p {
+      margin: 0.25rem 0;
       font-size: 0.9rem;
       line-height: 1.5;
       color: #374151;
     }
 
-    .cards.research .card {
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .cards.research .card:last-child {
-      border-bottom: none;
+    .card-content p b {
+      color: #111827;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
-      body {
-        padding: 2.5rem 1.5rem;
-      }
-
-      .container {
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-
+    @media (max-width: 700px) {
       .card {
         flex-direction: column;
+        align-items: flex-start;
       }
 
-      .card img {
+      .card-left img {
         width: 100%;
-        height: auto;
+      }
+
+      .card-header {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="navbar" style="justify-content: flex-end;">
+  <div class="navbar">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
     <a href="publications.html">publications</a>
@@ -233,90 +194,95 @@
   </div>
 
   <div class="container">
-    <!-- LEFT COLUMN -->
-    <!-- <div class="left">
-      <div class="carousel">
-        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
-        <img src="images/profpic2.jpg" alt="Profile photo 2">
-        <img src="images/profpic3.jpg" alt="Profile photo 3">
-      </div>
-      <ul class="profile-info">
-        <li class="role">It's pronounced 'vy-day-he'</li>
-        <li><hr></li>
-        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
-        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
-        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
-        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
-
-        <li><hr></li>
-
-        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
-        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
-        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-
-        <li><hr></li>
-      </ul>
-    </div> -->
-
-    <!-- RIGHT COLUMN -->
     <div class="right">
       <h3>Research</h3>
       <div class="cards research">
+
+        <!-- PROJECT 1 -->
         <div class="card">
-          <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
-          <div class="card-info">
-            <strong>LLM-Guided Adaptive Control for Exoskeletons Using Real-Time User Speech and Scene Context</strong>
-            <em> On-device VLMs and LLMs, AI agents, Continual Learning</em>
-            <p> Closing the loop in wearable robots by using LLMs and VLMs to interpret real-time audio based user feedback
-              and scene context from videos to personalize control for exoskeleton users.
-            </p>
+          <div class="card-left">
+            <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
+          </div>
+          <div class="card-right">
+            <div class="card-header">
+              <div class="card-title">LLM-Guided Adaptive Control for Exoskeletons</div>
+              <div class="card-arrow">V</div>
+            </div>
+            <div class="card-content">
+              <p><b>LLMs on edge:</b> Using small LLMs with supervised finetuning, few shot and prompt engineering to map qualitative user feedback to exoskeleton control parameters.</p>
+              <p><b>Multimodal Pipeline:</b> Using Whisper tiny for audio transcription and depth + segmentation information from stereo cameras for extracting scene context to guide LLM response by scene context enriched prompting.</p>
+              <p><b>Latency:</b> Optimizing models using quantization, scripts through multiprocessing and lightweight models for real-time personalization.</p>
+              <p><b>Features:</b> Including user-specific memory, continual learning pipelines, safety guardrails and ambiguity handling frameworks.</p>
+            </div>
           </div>
         </div>
 
+        <!-- PROJECT 2 -->
         <div class="card">
-          <img src="images/poster4040.png" alt="Personalized Torque Prediction">
-          <div class="card-info">
-            <strong>Personalized Torque Prediction for Stroke Populations</strong>
-            <em>Transfer Learning, Temporal Convolutional Networks</em>
-            <p>Used muskuloskeletal simulation software (OpenSim) with MATLAB APIs to generate simulated IMU data from Motion Capture videos of two unaligned datasets.</p>
-            <p>Trained a temporal convolutional neural network on able-bodied locomotion data, and finetuned it for novel stroke subjects based using transfer learning.</p>
-            <p>Presented a poster at American Society of Biomechanics meeting 2025 in Pittsburgh highlighting the results of our study.</p>
+          <div class="card-left">
+            <img src="images/poster4040.png" alt="Personalized Torque Prediction">
+          </div>
+          <div class="card-right">
+            <div class="card-header">
+              <div class="card-title">Personalized Torque Prediction for Stroke Populations</div>
+              <div class="card-arrow">V</div>
+            </div>
+            <div class="card-content">
+              <p><b>Dataset generation:</b> Used musculoskeletal simulation software (OpenSim) with its MATLAB API to automate and generate simulated IMU readings from Motion Capture datafiles of two heterogenous datasets (35 subjects) with separate IMU configurations, bringing them into the same configuration.</p>
+              <p><b>Model training:</b> Built and trained a Temporal Convolutional Neural Network on large-scale, healthy-subject locomotion data, and finetuned it with data from post-stroke subjects for personalization with 0.2% subject-specific data.</p>
+              <p><b>Publication:</b> Presented a <a href="pdfs/poster.png">poster</a> at American Society of Biomechanics 2025 showing effective adaptation from able-bodied data across multiple tasks using 20 seconds of single-task data per subject.</p>
+            </div>
           </div>
         </div>
 
+        <!-- PROJECT 3 -->
         <div class="card">
-          <img src="images/nimbl2.gif" alt="MediaPipe Upper-Limb Assessment">
-          <div class="card-info">
-            <strong>Evaluating MediaPipe for Post-Stroke Assessment</strong>
-            <em>MediaPipe, R, Matlab</em>
-            <p>Deployed a motion tracking pipeline using OpenCV and MediaPipe pose estimation to analyse upper-limb kinematics 
-              (~0.14M actions, ~0.3M frames) & identify key markers of maladaptive compensation strategies in post-stroke individuals..</p>
+          <div class="card-left">
+            <img src="images/nimbl2.gif" alt="MediaPipe Upper-Limb Assessment">
+          </div>
+          <div class="card-right">
+            <div class="card-header">
+              <div class="card-title">Evaluating MediaPipe for Post-Stroke Assessment</div>
+              <div class="card-arrow">V</div>
+            </div>
+            <div class="card-content">
+              <p><b>Upper limb reaching task:</b> Analyzed upper-limb kinematics during a gamefied reaching task captured for post-stroke subjects.</p>
+              <p><b>Methodology:</b> Used OpenCV and MediaPipe to extract body poses and analyze kinematics from ~0.14M actions & ~0.3M frames, calculated statistical correlations between observed kinematics and maladaptive compensation strategies. </p>
+              <p><b>Publication:</b>Published a <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">paper</a> in Journal of Neuroengineering and Rehabilitation supporting the use of off-the-shelf toolkits like MediaPipe for clinical kinematic assessment of post-stroke recovery. </p>
+            </div>
           </div>
         </div>
 
+        <!-- PROJECT 4 -->
         <div class="card">
-          <img src="images/nimbl1.png" alt="MediaPipe Fine Motion Capture">
-          <div class="card-info">
-            <strong>Evaluating MediaPipe for Fine Upper Limb Motion Capture</strong>
-            <em>MediaPipe, R, Matlab, Python</em>
-            <p>Led a validation study comparing low-cost hand tracking to traditional motion capture using shape similarity analysis (16K fine upper-limb motion trajectories, ~70% accuracy)
-               demonstrating a scalable solution for monitoring fine motor movements in clinical settings.</p>
+          <div class="card-left">
+            <img src="images/nimbl1.png" alt="MediaPipe Fine Motion Capture">
+          </div>
+          <div class="card-right">
+            <div class="card-header">
+              <div class="card-title">Evaluating MediaPipe for Fine Upper-Limb Motion Capture</div>
+              <div class="card-arrow">V</div>
+            </div>
+            <div class="card-content">
+              <p><b>Study:</b> Used a 2D tracing task to validate low-cost hand tracking vs. traditional motion capture.</p>
+              <p><b>Outcome:</b> Analyzed 16K fine motion trajectories of extremely fast, dextrous fine upper limb movement (avg 2 second duration), ~70% accuracy between low cost tool and standard; supporting scalable clinical monitoring use.</p>
+              <p><b>Publication:</b> Published a <a href="https://formative.jmir.org/2024/1/e56682/">paper</a> in Journal of Medical Internet Research: Formative research.</p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
+    document.querySelectorAll('.card-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const card = header.closest('.card');
+        card.classList.toggle('expanded');
+      });
+    });
   </script>
 </body>
+
 </html>
