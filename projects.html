@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Research @ CMU</title>
+  <title>Projects @ Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
@@ -151,7 +151,7 @@
     }
 
     .card.expanded .card-content {
-      max-height: 1000px; /* enough for content */
+      max-height: 1000px;
     }
 
     .card-content p {
@@ -187,33 +187,31 @@
   <div class="navbar">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
-    <a href="projects.html">projects</a>
     <a href="publications.html">publications</a>
     <a href="teaching.html">teaching</a>
     <a href="recruiters.html">for recruiters</a>
+    <a href="projects.html">projects</a>
     <a href="beyondwork.html">beyond work</a>
   </div>
 
   <div class="container">
     <div class="right">
-      <h3>Research</h3>
-      <div class="cards research">
+      <h3>Projects</h3>
+      <div class="cards projects">
 
         <!-- PROJECT 1 -->
         <div class="card">
           <div class="card-left">
-            <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
+            <img src="images/ttr.png" alt="VLM Human-Robot Interface">
           </div>
           <div class="card-right">
             <div class="card-header">
-              <div class="card-title">LLM-Guided Adaptive Control for Exoskeletons based on real-time user feedback and scene context</div>
-              <div class="card-arrow">&#x276F;</div>
+              <div class="card-title">VLM-based Human-Robot Voice Interface</div>
+              <div class="card-arrow">V</div>
             </div>
             <div class="card-content">
-              <p><b>LLMs on edge:</b> Using small LLMs with supervised finetuning, few shot and prompt engineering to map qualitative user feedback to exoskeleton control parameters.</p>
-              <p><b>Multimodal Pipeline:</b> Using Whisper tiny for audio transcription and depth + segmentation information from stereo cameras for extracting scene context to guide LLM response by scene context enriched prompting.</p>
-              <p><b>Latency:</b> Optimizing models using quantization, scripts through multiprocessing and lightweight models for real-time personalization.</p>
-              <p><b>Features:</b> Including user-specific memory, continual learning pipelines, safety guardrails and ambiguity handling frameworks.</p>
+              <p><b>Course:</b> Talking to Robots, Fall 2025</p>
+              <p><b>Description:</b> Used supervised finetuning on Qwen2.5-VL with a custom generated dataset of 3000 feedbacks across 3 ambiguity levels and varying scene images for customized parameter control of an exoskeleton based on multimodal inputs. </p>
             </div>
           </div>
         </div>
@@ -221,17 +219,16 @@
         <!-- PROJECT 2 -->
         <div class="card">
           <div class="card-left">
-            <img src="images/poster4040.png" alt="Personalized Torque Prediction">
+            <img src="images/iv-bot.jpeg" alt="Automated IV Bot">
           </div>
           <div class="card-right">
             <div class="card-header">
-              <div class="card-title">Personalized Torque Prediction for Stroke Populations using minimal user data</div>
-              <div class="card-arrow">&#x276F;</div>
+              <div class="card-title">Automated IV Insertion Bot</div>
+              <div class="card-arrow">V</div>
             </div>
             <div class="card-content">
-              <p><b>Dataset generation:</b> Used musculoskeletal simulation software (OpenSim) with its MATLAB API to automate and generate simulated IMU readings from Motion Capture datafiles of two heterogenous datasets (35 subjects) with separate IMU configurations, bringing them into the same configuration.</p>
-              <p><b>Model training:</b> Built and trained a Temporal Convolutional Neural Network on large-scale, healthy-subject locomotion data, and finetuned it with data from post-stroke subjects for personalization with 0.2% subject-specific data.</p>
-              <p><b>Publication:</b> Presented a <a href="pdfs/poster.png">poster</a> at American Society of Biomechanics 2025 showing effective adaptation from able-bodied data across multiple tasks using 20 seconds of single-task data per subject.</p>
+              <p><b>Course:</b> Medical Robotics, Fall 2025</p>
+              <p><b>Description:</b> Designed and 3D printed linear actuation mechanisms, integrating them with with tiny-YOLO for vision-based vein localization and Arduino based servo motor control for autonomous IV insertion, reducing insertion time by 30% compared to standard human interventions.</p>
             </div>
           </div>
         </div>
@@ -239,17 +236,16 @@
         <!-- PROJECT 3 -->
         <div class="card">
           <div class="card-left">
-            <img src="images/nimbl2.gif" alt="MediaPipe Upper-Limb Assessment">
+            <img src="images/gail.gif" alt="GAIL Locomotion">
           </div>
           <div class="card-right">
             <div class="card-header">
-              <div class="card-title">Evaluating MediaPipe for Post-Stroke Kinematic Assessment</div>
-              <div class="card-arrow">&#x276F;</div>
+              <div class="card-title">Generative Adversarial Imitation Learning (GAIL)</div>
+              <div class="card-arrow">V</div>
             </div>
             <div class="card-content">
-              <p><b>Upper limb reaching task:</b> Analyzed upper-limb kinematics during a gamefied reaching task captured for post-stroke subjects.</p>
-              <p><b>Methodology:</b> Used OpenCV and MediaPipe to extract body poses and analyze kinematics from ~0.14M actions & ~0.3M frames, calculated statistical correlations between observed kinematics and maladaptive compensation strategies. </p>
-              <p><b>Publication:</b> Published a <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">paper</a> in Journal of Neuroengineering and Rehabilitation supporting the use of off-the-shelf toolkits like MediaPipe for clinical kinematic assessment of post-stroke recovery. </p>
+              <p><b>Course:</b> Intro to Robot Learning, Spring 2025</p>
+              <p><b>Description:</b> Used GAN based reward models with state and trajectory level approaches for imitating human locomotion from Mocap data.</p>
             </div>
           </div>
         </div>
@@ -257,17 +253,16 @@
         <!-- PROJECT 4 -->
         <div class="card">
           <div class="card-left">
-            <img src="images/nimbl1.png" alt="MediaPipe Fine Motion Capture">
+            <img src="images/ocrl.gif" alt="LQR Humanoid">
           </div>
           <div class="card-right">
             <div class="card-header">
-              <div class="card-title">Evaluating MediaPipe for Fine Upper-Limb Motion Capture</div>
-              <div class="card-arrow">&#x276F;</div>
+              <div class="card-title">LQR for Humanoid Balancing</div>
+              <div class="card-arrow">V</div>
             </div>
             <div class="card-content">
-              <p><b>Study:</b> Used a 2D tracing task to validate low-cost hand tracking vs. traditional motion capture.</p>
-              <p><b>Outcome:</b> Analyzed 16K fine motion trajectories of extremely fast, dextrous fine upper limb movement (avg 2 second duration), ~70% accuracy between low cost tool and standard; supporting scalable clinical monitoring use.</p>
-              <p><b>Publication:</b> Published a <a href="https://formative.jmir.org/2024/1/e56682/">paper</a> in Journal of Medical Internet Research: Formative research.</p>
+              <p><b>Course:</b> Optimal Control and Reinforcement Learning, Spring 2025</p>
+              <p><b>Description:</b> Simulated a humanoid model on a dynamically moving platform in MuJoCo, using an LQR based controller to learn balancing with varying constraint ands conditions.</p>
             </div>
           </div>
         </div>
