@@ -17,7 +17,7 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 4rem 2.5rem;
-      max-width: 1200px; /* expanded width */
+      max-width: 1200px; /* wider layout */
       margin-left: auto;
       margin-right: auto;
       line-height: 1.65;
@@ -25,7 +25,6 @@
       background: #ffffff;
     }
 
-    /* GLOBAL LINKS */
     a {
       text-decoration: none;
     }
@@ -36,20 +35,19 @@
 
     .container {
       display: flex;
-      gap: 3.5rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
       flex-direction: row-reverse; /* swap columns */
     }
 
     .left {
-      width: 240px; /* slightly wider sidebar */
-      flex-shrink: 0;
+      flex: 0 0 auto; /* content-sized sidebar */
       font-size: 0.95rem;
     }
 
     .right {
       flex: 1;
-      min-width: 500px;
+      min-width: 0; /* prevents flexbox phantom gaps */
     }
 
     /* NAVBAR */
@@ -67,13 +65,9 @@
       color: #6b7280;
     }
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* LEFT COLUMN (now on the right visually) */
+    /* LEFT COLUMN */
     .carousel {
-      width: 100%;
+      width: 220px; /* constrain image size without layout gap */
       margin-bottom: 0.5rem;
     }
 
@@ -124,7 +118,7 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    /* RIGHT COLUMN CONTENT */
+    /* RIGHT COLUMN */
     .profile-header {
       margin-bottom: 0.5rem;
     }
@@ -159,7 +153,7 @@
     }
 
     .about {
-      max-width: 750px;
+      max-width: 650px;
       margin-bottom: 2rem;
     }
 
@@ -170,7 +164,6 @@
       color: #374151;
     }
 
-    /* CARDS */
     .cards {
       display: flex;
       flex-direction: column;
@@ -184,8 +177,8 @@
     }
 
     .card img {
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       border-radius: 6px;
       flex-shrink: 0;
@@ -221,7 +214,6 @@
       border-bottom: none;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       body {
         padding: 2.5rem 1.5rem;
@@ -246,7 +238,6 @@
 
 <body>
 
-  <!-- NAVBAR -->
   <div class="navbar">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
@@ -258,17 +249,16 @@
 
   <div class="container">
 
-    <!-- SIDEBAR (now on right) -->
+    <!-- LEFT COLUMN (now visually right) -->
     <div class="left">
       <div class="carousel">
         <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
         <img src="images/profpic2.jpg" alt="Profile photo 2">
         <img src="images/profpic3.jpg" alt="Profile photo 3">
       </div>
-
       <ul class="profile-info">
-        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
-        <li class="role">Advisor: <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a></li>
+        <li class="role">GRA at <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
+        <li class="role">Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a></li>
         <li><hr></li>
         <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
         <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
@@ -276,42 +266,39 @@
         <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
         <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
         <li><hr></li>
-        <li class="role"><i>xpronunciation: VY-day-hee WAHG</i></li>
+        <li class="role"><i>pronunciation: VY-day-hee</i></li>
         <li><hr></li>
       </ul>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- RIGHT COLUMN -->
     <div class="right">
 
       <div class="profile-header">
         <div class="name">Vaidehi Wagh</div>
-        <div class="subtitle"><strong>Master of Science in Robotics, Carnegie Mellon University</strong></div>
+        <div class="subtitle"><strong>Master of Science in Robotics,</strong> Carnegie Mellon University</div>
       </div>
 
       <div class="about">
         <p>
-          I build human-in-the-loop wearable robots that adapt to user needs in real time using edge LLMs,
-          vision-language models, temporal ML, and transfer learning.
+          I build human-in-the-loop wearable robots that adapt to user needs in real time using edge LLMs, vision-language models, temporal ML, and transfer learning. My work bridges AI, biomechanics, and robotics to create systems that learn from humans continuously.
         </p>
         <p>
-          Previously, I was a research intern at UBC, an analyst at Deloitte, and completed my Bachelor’s in
-          Mechanical Engineering at College of Engineering, Pune, India.
+          Previously, I was a research intern at UBC and completed my Bachelor’s in Mechanical Engineering at College of Engineering, Pune, India.
         </p>
         <p>
           <strong>I am actively seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
         </p>
       </div>
 
-      <!-- RESEARCH -->
       <h3>Research</h3>
       <div class="cards research">
         <div class="card">
           <img src="images/research1.gif" alt="">
           <div class="card-info">
             <strong>Exoskeleton Control Personalization</strong>
-            <em>MetaMobility Lab, CMU</em>
-            <p>On-the-fly personalization without large-scale datasets.</p>
+            <em>Metamobility Lab, CMU</em>
+            <p>How can we build a robust system that enables on-the-fly personalization without large-scale training datasets and ambiguous individual preferences?</p>
           </div>
         </div>
 
@@ -319,21 +306,20 @@
           <img src="images/nimbl2.gif" alt="">
           <div class="card-info">
             <strong>Pose estimation for clinical kinematic analysis</strong>
-            <em>UBC</em>
-            <p>Replacing subjective stroke recovery metrics with vision-based analysis.</p>
+            <em>Neuroplasticity, Imagery and Motor Behaviour Laboratory, UBC</em>
+            <p>Can off-the-shelf vision tools can replace subjective stroke recovery metrics?</p>
           </div>
         </div>
       </div>
 
-      <!-- PROJECTS -->
       <h3>Projects</h3>
       <div class="cards projects">
         <div class="card">
           <img src="images/ttr.png" alt="">
           <div class="card-info">
             <strong>VLM-based Human-Robot Voice Interface</strong>
-            <em>Talking to Robots · Fall 2025</em>
-            <p>Speech + vision interface for personalized exoskeleton control.</p>
+            <em>Course Project: Talking to Robots: Fall 2025</em>
+            <p>Speech + vision interface for long-horizon planning in personalized exoskeleton control.</p>
           </div>
         </div>
 
@@ -341,8 +327,8 @@
           <img src="images/iv-bot.jpeg" alt="">
           <div class="card-info">
             <strong>Automated IV Insertion Bot</strong>
-            <em>Medical Robotics · Fall 2025</em>
-            <p>Vision-based vein localization with precision actuation.</p>
+            <em>Course Project: Medical Robotics: Fall 2025</em>
+            <p>Designed linear actuation mechanisms with vision-based vein localization.</p>
           </div>
         </div>
 
@@ -350,8 +336,8 @@
           <img src="images/gail.gif" alt="">
           <div class="card-info">
             <strong>Generative Adversarial Imitation Learning</strong>
-            <em>Intro to Robot Learning · Spring 2025</em>
-            <p>Human locomotion imitation using adversarial reward learning.</p>
+            <em>Course Project: Introduction to Robot Learning: Spring 2025</em>
+            <p>Human locomotion imitation using GAN-based reward models.</p>
           </div>
         </div>
 
@@ -359,8 +345,8 @@
           <img src="images/ocrl.gif" alt="">
           <div class="card-info">
             <strong>LQR for humanoid balancing</strong>
-            <em>OCRL · Spring 2025</em>
-            <p>Stabilizing a human model on a moving platform.</p>
+            <em>Course Project: Optimal Control and Reinforcement Learning: Spring 2025</em>
+            <p>Stabilizing a human model on a dynamically moving platform.</p>
           </div>
         </div>
       </div>
