@@ -16,11 +16,11 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      padding: 4rem 2.5rem;
-      max-width: 1200px; /* wider layout */
+      padding: 3rem 2.25rem;            /* tightened */
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.65;
+      line-height: 1.6;                  /* tightened */
       color: #1f2937;
       background: #ffffff;
     }
@@ -37,17 +37,17 @@
       display: flex;
       gap: 2.5rem;
       flex-wrap: wrap;
-      flex-direction: row-reverse; /* swap columns */
+      flex-direction: row-reverse;
     }
 
     .left {
-      flex: 0 0 auto; /* content-sized sidebar */
+      flex: 0 0 auto;                    /* content-sized sidebar */
       font-size: 0.95rem;
     }
 
     .right {
       flex: 1;
-      min-width: 0; /* prevents flexbox phantom gaps */
+      min-width: 0;                      /* prevents flexbox phantom gaps */
     }
 
     /* NAVBAR */
@@ -56,7 +56,7 @@
       gap: 1.25rem;
       font-size: 0.85rem;
       color: #6b7280;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;             /* tightened */
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -67,7 +67,7 @@
 
     /* LEFT COLUMN */
     .carousel {
-      width: 220px; /* constrain image size without layout gap */
+      width: 220px;
       margin-bottom: 0.5rem;
     }
 
@@ -113,14 +113,14 @@
     }
 
     .profile-info hr {
-      margin: 0.75rem 0;
+      margin: 0.65rem 0;                 /* tightened */
       border: none;
       border-top: 1px solid #e5e7eb;
     }
 
     /* RIGHT COLUMN */
     .profile-header {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;            /* adjusted for balance */
     }
 
     .profile-header .name {
@@ -137,8 +137,8 @@
 
     h3 {
       font-size: 1.4rem;
-      margin-top: 2.75rem;
-      margin-bottom: 1rem;
+      margin-top: 2.25rem;               /* tightened */
+      margin-bottom: 0.75rem;            /* tightened */
       font-weight: 600;
       letter-spacing: -0.01em;
     }
@@ -153,31 +153,30 @@
     }
 
     .about {
-      max-width: 650px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;            /* adjusted */
     }
 
     .about p {
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.85rem;            /* tightened */
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.55;                 /* tightened */
       color: #374151;
     }
 
     .cards {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;                         /* tightened */
     }
 
     .card {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;                         /* tightened */
       align-items: flex-start;
     }
 
     .card img {
-      width: 80px;
+      width: 120px;
       height: 80px;
       object-fit: cover;
       border-radius: 6px;
@@ -199,14 +198,14 @@
     }
 
     .card-info p {
-      margin-top: 0.4rem;
+      margin-top: 0.3rem;                /* tightened */
       font-size: 0.9rem;
-      line-height: 1.5;
+      line-height: 1.45;                 /* tightened */
       color: #374151;
     }
 
     .cards.research .card {
-      padding-bottom: 1.25rem;
+      padding-bottom: 1rem;              /* tightened */
       border-bottom: 1px solid #e5e7eb;
     }
 
@@ -214,14 +213,15 @@
       border-bottom: none;
     }
 
+    /* MOBILE */
     @media (max-width: 600px) {
       body {
-        padding: 2.5rem 1.5rem;
+        padding: 2.25rem 1.25rem;        /* slightly tighter */
       }
 
       .container {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 2.25rem;
       }
 
       .card {
