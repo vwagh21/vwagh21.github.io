@@ -16,8 +16,8 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      padding: 3.5rem 2rem;
-      max-width: 900px;
+      padding: 4rem 2.5rem;
+      max-width: 1200px; /* expanded width */
       margin-left: auto;
       margin-right: auto;
       line-height: 1.65;
@@ -38,17 +38,18 @@
       display: flex;
       gap: 3.5rem;
       flex-wrap: wrap;
+      flex-direction: row-reverse; /* swap columns */
     }
 
     .left {
-      width: 220px;
+      width: 240px; /* slightly wider sidebar */
       flex-shrink: 0;
       font-size: 0.95rem;
     }
 
     .right {
       flex: 1;
-      min-width: 300px;
+      min-width: 500px;
     }
 
     /* NAVBAR */
@@ -70,7 +71,7 @@
       text-decoration: underline;
     }
 
-    /* LEFT COLUMN */
+    /* LEFT COLUMN (now on the right visually) */
     .carousel {
       width: 100%;
       margin-bottom: 0.5rem;
@@ -97,18 +98,15 @@
       font-size: 0.95rem;
     }
 
-    /* Roles grey */
     .profile-info .role {
       font-style: italic;
       color: #4b5563;
     }
 
-    /* Links inside roles blue */
     .profile-info .role a {
       color: #2563eb;
     }
 
-    /* CV / LinkedIn / Email / GitHub / Scholar links blue, icons grey */
     .profile-info li a:not(.role a) {
       color: #2563eb;
       display: inline-flex;
@@ -126,7 +124,7 @@
       border-top: 1px solid #e5e7eb;
     }
 
-    /* RIGHT COLUMN */
+    /* RIGHT COLUMN CONTENT */
     .profile-header {
       margin-bottom: 0.5rem;
     }
@@ -143,7 +141,6 @@
       margin-top: 0.2rem;
     }
 
-    /* HEADINGS */
     h3 {
       font-size: 1.4rem;
       margin-top: 2.75rem;
@@ -161,9 +158,8 @@
       margin-top: 0.4rem;
     }
 
-    /* ABOUT */
     .about {
-      max-width: 650px;
+      max-width: 750px;
       margin-bottom: 2rem;
     }
 
@@ -225,20 +221,6 @@
       border-bottom: none;
     }
 
-    /* PUBLICATIONS */
-    .publications {
-      font-size: 0.9rem;
-    }
-
-    .publications li {
-      margin-bottom: 0.5rem;
-      line-height: 1.45;
-    }
-
-    .publications strong {
-      font-weight: 600;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 600px) {
       body {
@@ -263,8 +245,9 @@
 </head>
 
 <body>
-  <!-- NAVBAR ON TOP RIGHT -->
-  <div class="navbar" style="justify-content: flex-end;">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
     <a href="publications.html">publications</a>
@@ -275,13 +258,14 @@
 
   <div class="container">
 
-    <!-- LEFT COLUMN -->
+    <!-- SIDEBAR (now on right) -->
     <div class="left">
       <div class="carousel">
         <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
         <img src="images/profpic2.jpg" alt="Profile photo 2">
         <img src="images/profpic3.jpg" alt="Profile photo 3">
       </div>
+
       <ul class="profile-info">
         <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
         <li class="role">Advisor: <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a></li>
@@ -297,22 +281,22 @@
       </ul>
     </div>
 
-    <!-- RIGHT COLUMN -->
+    <!-- MAIN CONTENT -->
     <div class="right">
 
-      <!-- PROFILE HEADER -->
       <div class="profile-header">
         <div class="name">Vaidehi Wagh</div>
         <div class="subtitle"><strong>Master of Science in Robotics, Carnegie Mellon University</strong></div>
       </div>
 
-      <!-- ABOUT TEXT -->
       <div class="about">
         <p>
-          I build human-in-the-loop wearable robots that adapt to user needs in real time using edge LLMs, vision-language models, temporal ML, and transfer learning. My work bridges AI, biomechanics, and robotics to create systems that learn from humans continuously.
+          I build human-in-the-loop wearable robots that adapt to user needs in real time using edge LLMs,
+          vision-language models, temporal ML, and transfer learning.
         </p>
         <p>
-          Previously, I was a research intern at UBC, an analyst at Deloitte, and completed my Bachelor’s in Mechanical Engineering at College of Engineering, Pune, India.
+          Previously, I was a research intern at UBC, an analyst at Deloitte, and completed my Bachelor’s in
+          Mechanical Engineering at College of Engineering, Pune, India.
         </p>
         <p>
           <strong>I am actively seeking full-time opportunities in ML, AI, robotics, or research engineering starting May 2026.</strong>
@@ -326,8 +310,8 @@
           <img src="images/research1.gif" alt="">
           <div class="card-info">
             <strong>Exoskeleton Control Personalization</strong>
-            <em>Metamobility Lab, CMU</em>
-            <p>How can we build a robust system that enables on-the-fly personalization without large-scale training datasets and ambiguous individual preferences?</p>
+            <em>MetaMobility Lab, CMU</em>
+            <p>On-the-fly personalization without large-scale datasets.</p>
           </div>
         </div>
 
@@ -335,11 +319,11 @@
           <img src="images/nimbl2.gif" alt="">
           <div class="card-info">
             <strong>Pose estimation for clinical kinematic analysis</strong>
-            <em>Neuroplasticity, Imagery and Motor Behaviour Laboratory, UBC</em>
-            <p>Can off-the-shelf vision tools can replace subjective stroke recovery metrics?</p>
+            <em>UBC</em>
+            <p>Replacing subjective stroke recovery metrics with vision-based analysis.</p>
           </div>
         </div>
-      </div> <!-- end of .cards.research -->
+      </div>
 
       <!-- PROJECTS -->
       <h3>Projects</h3>
@@ -348,8 +332,8 @@
           <img src="images/ttr.png" alt="">
           <div class="card-info">
             <strong>VLM-based Human-Robot Voice Interface</strong>
-            <em>Course Project: Talking to Robots: Fall 2025</em>
-            <p>Speech + vision interface for long-horizon planning in personalized exoskeleton control.</p>
+            <em>Talking to Robots · Fall 2025</em>
+            <p>Speech + vision interface for personalized exoskeleton control.</p>
           </div>
         </div>
 
@@ -357,8 +341,8 @@
           <img src="images/iv-bot.jpeg" alt="">
           <div class="card-info">
             <strong>Automated IV Insertion Bot</strong>
-            <em>Course Project: Medical Robotics: Fall 2025</em>
-            <p>Designed linear actuation mechanisms with vision-based vein localization.</p>
+            <em>Medical Robotics · Fall 2025</em>
+            <p>Vision-based vein localization with precision actuation.</p>
           </div>
         </div>
 
@@ -366,8 +350,8 @@
           <img src="images/gail.gif" alt="">
           <div class="card-info">
             <strong>Generative Adversarial Imitation Learning</strong>
-            <em>Course Project: Introduction to Robot Learning: Spring 2025</em>
-            <p>Human locomotion imitation using GAN-based reward models.</p>
+            <em>Intro to Robot Learning · Spring 2025</em>
+            <p>Human locomotion imitation using adversarial reward learning.</p>
           </div>
         </div>
 
@@ -375,14 +359,14 @@
           <img src="images/ocrl.gif" alt="">
           <div class="card-info">
             <strong>LQR for humanoid balancing</strong>
-            <em>Course Project: Optimal Control and Reinforcement Learning: Spring 2025</em>
-            <p>Stabilizing a human model on a dynamically moving platform.</p>
+            <em>OCRL · Spring 2025</em>
+            <p>Stabilizing a human model on a moving platform.</p>
           </div>
         </div>
-      </div> <!-- end of .cards.projects -->
+      </div>
 
-    </div> <!-- end of .right -->
-  </div> <!-- end of .container -->
+    </div>
+  </div>
 
   <script>
     const images = document.querySelectorAll('.carousel img');
@@ -393,5 +377,6 @@
       images[current].classList.add('active');
     }, 3000);
   </script>
+
 </body>
 </html>
