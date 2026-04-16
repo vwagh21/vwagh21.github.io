@@ -11,203 +11,36 @@
     gtag('config', 'G-7X8P024B2G');
   </script>
   <meta charset="UTF-8">
-  <title>Research @ CMU</title>
+  <title>Research @ CMU — Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research at CMU MetaMobility Lab: LLM-guided exoskeleton control, torque prediction for stroke, and MediaPipe clinical kinematics.">
+  <meta property="og:title" content="Research @ CMU — Vaidehi Wagh">
+  <meta property="og:description" content="Exoskeleton personalization, stroke biomechanics, and vision-based clinical assessment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vwagh21.github.io/research-cmu.html">
+  <link rel="canonical" href="https://vwagh21.github.io/research-cmu.html">
 
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/5e0736a124.js" crossorigin="anonymous"></script>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 3.5rem 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.65;
-      color: #1f2937;
-      background: #ffffff;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-      color: #6b7280;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .navbar a {
-      color: #6b7280;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* HEADINGS */
-    h3 {
-      font-size: 1.4rem;
-      margin-top: 2.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: #e5e7eb;
-      margin-top: 0.4rem;
-    }
-
-    /* CARDS */
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid #e5e7eb;
-      padding: 1rem;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-left {
-      flex-shrink: 0;
-    }
-
-    .card-left img {
-      width: 180px;
-      height: auto;
-      border-radius: 6px;
-    }
-
-    .card-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #111827;
-    }
-
-    .card-arrow {
-      font-size: 1.2rem;
-      color: #6b7280;
-      transition: transform 0.3s ease;
-    }
-
-    .card.expanded .card-arrow {
-      transform: rotate(180deg);
-    }
-
-    .card-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      margin-top: 0.5rem;
-    }
-
-    .card.expanded .card-content {
-      max-height: 1000px; /* enough for content */
-    }
-
-    .card-content p {
-      margin: 0.25rem 0;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: #374151;
-    }
-
-    .card-content p b {
-      color: #111827;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 700px) {
-      .card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .card-left img {
-        width: 100%;
-      }
-
-      .card-header {
-        width: 100%;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
-  <div class="navbar">
+  <nav class="navbar" aria-label="Primary">
     <a href="index.html">about</a>
-    <a href="research-cmu.html">research</a>
+    <a href="research-cmu.html" aria-current="page">research</a>
     <a href="projects.html">projects</a>
     <a href="publications.html">publications</a>
     <a href="teaching.html">teaching</a>
     <a href="recruiters.html">for recruiters</a>
     <a href="beyondwork.html">beyond work</a>
-  </div>
+  </nav>
 
-  <div class="container">
-    <div class="right">
+  <div class="container page-single">
+    <div class="page-main">
       <h3>Research</h3>
-      <div class="cards research">
+      <div class="cards accordion">
 
-        <!-- PROJECT 1 -->
         <div class="card">
           <div class="card-left">
             <img src="images/research1.gif" alt="LLM-Guided Adaptive Control">
@@ -215,7 +48,7 @@
           <div class="card-right">
             <div class="card-header">
               <div class="card-title">LLM-Guided Adaptive Control for Exoskeletons based on real-time user feedback and scene context</div>
-              <div class="card-arrow"><i class="fa-solid fa-angle-down"></i></div>
+              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
             </div>
             <div class="card-content">
               <p><b>LLMs on edge:</b> Using small LLMs with supervised finetuning, few shot and prompt engineering to map qualitative user feedback to exoskeleton control parameters.</p>
@@ -226,7 +59,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 2 -->
         <div class="card">
           <div class="card-left">
             <img src="images/poster4040.png" alt="Personalized Torque Prediction">
@@ -234,7 +66,7 @@
           <div class="card-right">
             <div class="card-header">
               <div class="card-title">Personalized Torque Prediction for Stroke Populations using minimal user data</div>
-              <div class="card-arrow"><i class="fa-solid fa-angle-down"></i></div>
+              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
             </div>
             <div class="card-content">
               <p><b>Dataset generation:</b> Used musculoskeletal simulation software (OpenSim) with its MATLAB API to automate and generate simulated IMU readings from Motion Capture datafiles of two heterogenous datasets (35 subjects) with separate IMU configurations, bringing them into the same configuration.</p>
@@ -244,7 +76,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 3 -->
         <div class="card">
           <div class="card-left">
             <img src="images/nimbl2.gif" alt="MediaPipe Upper-Limb Assessment">
@@ -252,7 +83,7 @@
           <div class="card-right">
             <div class="card-header">
               <div class="card-title">Evaluating MediaPipe for Post-Stroke Kinematic Assessment</div>
-              <div class="card-arrow"><i class="fa-solid fa-angle-down"></i></div>
+              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
             </div>
             <div class="card-content">
               <p><b>Upper limb reaching task:</b> Analyzed upper-limb kinematics during a gamefied reaching task captured for post-stroke subjects.</p>
@@ -262,7 +93,6 @@
           </div>
         </div>
 
-        <!-- PROJECT 4 -->
         <div class="card">
           <div class="card-left">
             <img src="images/nimbl1.png" alt="MediaPipe Fine Motion Capture">
@@ -270,7 +100,7 @@
           <div class="card-right">
             <div class="card-header">
               <div class="card-title">Evaluating MediaPipe for Fine Upper-Limb Motion Capture</div>
-              <div class="card-arrow"><i class="fa-solid fa-angle-down"></i></div>
+              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
             </div>
             <div class="card-content">
               <p><b>Study:</b> Used a 2D tracing task to validate low-cost hand tracking vs. traditional motion capture.</p>
@@ -285,7 +115,7 @@
   </div>
 
   <script>
-    document.querySelectorAll('.card-header').forEach(header => {
+    document.querySelectorAll('.cards.accordion .card-header').forEach(header => {
       header.addEventListener('click', () => {
         const card = header.closest('.card');
         card.classList.toggle('expanded');

@@ -11,347 +11,75 @@
     gtag('config', 'G-7X8P024B2G');
   </script>
   <meta charset="UTF-8">
-  <title>Vaidehi Wagh - Publications</title>
+  <title>Publications — Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publications and preprints: biomechanics, neurorehabilitation, and vision-based clinical assessment.">
+  <meta property="og:title" content="Publications — Vaidehi Wagh">
+  <meta property="og:description" content="Papers on stroke biomechanics, MediaPipe clinical use, and joint moment estimation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vwagh21.github.io/publications.html">
+  <link rel="canonical" href="https://vwagh21.github.io/publications.html">
 
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/5e0736a124.js" crossorigin="anonymous"></script>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 3.5rem 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.65;
-      color: #1f2937;
-      background: #ffffff;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      display: flex;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-    }
-
-    .left {
-      width: 220px;
-      flex-shrink: 0;
-      font-size: 0.95rem;
-    }
-
-    .right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.85rem;
-      color: #6b7280;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .navbar a {
-      color: #6b7280;
-    }
-
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* Profile Info */
-    .carousel {
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-
-    .carousel img {
-      width: 100%;
-      border-radius: 6px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    .profile-info {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-
-    .profile-info li {
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
-    }
-
-    .profile-info .role {
-      font-style: italic;
-      color: #4b5563;
-    }
-
-    .profile-info .role a {
-      color: #2563eb;
-    }
-
-    .profile-info li a:not(.role a) {
-      color: #2563eb;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .profile-info li a:not(.role a) i {
-      color: #4b5563;
-      margin-right: 0.4rem;
-    }
-
-    .profile-info hr {
-      margin: 0.75rem 0;
-      border: none;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    /* Right Column Header */
-    .profile-header {
-      margin-bottom: 1rem;
-    }
-
-    .profile-header .name {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .profile-header .subtitle {
-      font-size: 1rem;
-      color: #4b5563;
-      margin-top: 0.2rem;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      margin-top: 2.75rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    h3::after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 2px;
-      background: #e5e7eb;
-      margin-top: 0.4rem;
-    }
-
-    /* Publications Grid / Cards */
-    /* PUBLICATIONS LIST STYLE */
-    .publications {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    }
-
-    .pub-card.list {
-    display: flex;
-    gap: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 0.5rem;
-    align-items: flex-start;
-    transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .pub-card.list:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .pub-thumb {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 4px;
-    flex-shrink: 0;
-    }
-
-    .pub-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.2rem;
-    }
-
-    .pub-title {
-    font-weight: 600;
-    font-size: 0.95rem;
-    }
-
-    .pub-authors {
-    font-size: 0.85rem;
-    color: #374151;
-    font-style: italic;
-    }
-
-    .pub-venue {
-    font-size: 0.8rem;
-    color: #4b5563;
-    }
-
-    .pub-links {
-    display: flex;
-    gap: 0.3rem;
-    flex-wrap: wrap;
-    margin-top: 0.3rem;
-    }
-
-    .pub-links a {
-    padding: 0.2rem 0.5rem;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    background: #4b5563;
-    color: white;
-    text-decoration: none;
-    }
-
-    .pub-links a:hover {
-    background: #4b5563;
-    }
-
-
-    @media (max-width: 600px) {
-      body {
-        padding: 2.5rem 1.5rem;
-      }
-
-      .container {
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
-  <div class="navbar" style="justify-content: flex-end;">
+  <nav class="navbar" aria-label="Primary">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
     <a href="projects.html">projects</a>
-    <a href="publications.html">publications</a>
+    <a href="publications.html" aria-current="page">publications</a>
     <a href="teaching.html">teaching</a>
     <a href="recruiters.html">for recruiters</a>
     <a href="beyondwork.html">beyond work</a>
-  </div>
+  </nav>
 
-  <div class="container">
-    <!-- LEFT COLUMN
-    <div class="left">
-      <div class="carousel">
-        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
-        <img src="images/profpic2.jpg" alt="Profile photo 2">
-        <img src="images/profpic3.jpg" alt="Profile photo 3">
-      </div>
-      <ul class="profile-info">
-        <li class="role">It's pronounced 'vy-day-he'</li>
-        <li><hr></li>
-        <li class="role">GRA @ <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
-        <li class="role">TA: <a href="https://cmu-mmml.github.io/spring2024/">Multimodal ML</a> · S26</li>
-        <li class="role">TA: <a href="https://sites.google.com/andrew.cmu.edu/16385fall2025/home">Computer Vision</a> · F25</li>
-        <li class="role">Tutor @ <a href="https://www.tutors.plus/">PLUS</a>, S25–F26</li>
-        <li><hr></li>
-        <li><a href="Wagh_Vaidehi_web_version.pdf"><i class="fas fa-file"></i> CV</a></li>
-        <li><a href="https://www.linkedin.com/in/vaidehi-wagh-b08286197"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-        <li><a href="mailto:vwagh@cs.cmu.edu"><i class="fas fa-envelope"></i> Email</a></li>
-        <li><a href="https://github.com/vwagh21"><i class="fab fa-github"></i> GitHub</a></li>
-        <li><a href="https://scholar.google.com/citations?user=A9XFkDcAAAAJ"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-        <li><hr></li>
-      </ul>
-    </div> -->
-
-    <!-- RIGHT COLUMN -->
-    <div class="right">
-
+  <div class="container page-single">
+    <div class="page-main">
       <h3>Publications</h3>
-      <div class="publications">
-        <!-- Example Publication -->
-                <!-- PUBLICATIONS LIST VERSION -->
-        <div class="publications">
-        <!-- Example Publication -->
-        <div class="pub-card list">
-            <img class="pub-thumb" src="images/research1.gif" alt="Paper Thumbnail">
-            <div class="pub-content">
+      <div class="pub-list">
+
+        <article class="pub-item">
+          <img class="pub-thumb" src="images/research1.gif" alt="">
+          <div class="pub-content">
             <div class="pub-title">Transfer learning for biological joint moment estimation in stroke populations</div>
             <div class="pub-authors"><strong>Wagh V.</strong>, Park D., Young A., Kang I.</div>
             <div class="pub-venue">American Society of Biomechanics, 2025</div>
             <div class="pub-links">
-                <a href="pdfs/ASB.pdf">PDF</a>
-                <a href="pdfs/poster.png">Poster</a>
+              <a href="pdfs/ASB.pdf">PDF</a><span class="sep">·</span><a href="pdfs/poster.png">Poster</a>
             </div>
-            </div>
-        </div>
+          </div>
+        </article>
 
-        <div class="pub-card list">
-            <img class="pub-thumb" src="images/nimbl2.gif" alt="Paper Thumbnail">
-            <div class="pub-content">
+        <article class="pub-item">
+          <img class="pub-thumb" src="images/nimbl2.gif" alt="">
+          <div class="pub-content">
             <div class="pub-title">Using MediaPipe to track upper-limb reaching movements after stroke: a proof-of-principle study</div>
             <div class="pub-authors"><strong>Wagh V.</strong>, Scott M., Andrushko J., Jones C., Larrsen B., Boyd L., Kraeutner S.</div>
             <div class="pub-venue">Journal of Neuroengineering and Rehabilitation, 2025</div>
             <div class="pub-links">
-                <a href="pdfs/JNER.pdf">PDF</a>
-                <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
+              <a href="pdfs/JNER.pdf">PDF</a><span class="sep">·</span><a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
             </div>
-            </div>
-        </div>
+          </div>
+        </article>
 
-        <div class="pub-card list">
-            <img class="pub-thumb" src="images/nimbl1.png" alt="Paper Thumbnail">
-            <div class="pub-content">
+        <article class="pub-item">
+          <img class="pub-thumb" src="images/nimbl1.png" alt="">
+          <div class="pub-content">
             <div class="pub-title">Quantifying Similarities Between MediaPipe and a Known Standard to Address Issues in Tracking 2D Upper Limb Trajectories: Proof of Concept Study</div>
             <div class="pub-authors"><strong>Wagh V.</strong>, Scott M., Kraeutner S.</div>
             <div class="pub-venue">Journal of Medical Internet Research, Formative Research, 2024</div>
             <div class="pub-links">
-                <a href="pdfs/JMIR.pdf">PDF</a>
-                <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
+              <a href="pdfs/JMIR.pdf">PDF</a><span class="sep">·</span><a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
             </div>
-            </div>
-        </div>
-        </div>
+          </div>
+        </article>
 
-
-        <!-- Add more publications here -->
       </div>
     </div>
   </div>
-
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  </script>
 </body>
 
 </html>

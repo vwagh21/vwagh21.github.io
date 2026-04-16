@@ -1,0 +1,751 @@
+/* Vaidehi Wagh — shared site styles (aligned with homepage) */
+:root {
+  --color-text: #1f2937;
+  --color-body: #374151;
+  --color-muted: #6b7280;
+  --color-secondary: #4b5563;
+  --color-border: #e5e7eb;
+  --color-accent: #2563eb;
+  --color-heading: #111827;
+  --max-width: 980px;
+  --radius: 6px;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 3rem 2.25rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Accent links in running text; navbar overrides below */
+p a,
+.card-content a,
+.pub-content a,
+.card-info a,
+.about a,
+.roles-intro a,
+.role-card a {
+  color: var(--color-accent);
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: 0.4rem;
+}
+
+/* ----- Nav ----- */
+.navbar {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  color: var(--color-muted);
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar a[aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ----- Homepage layout ----- */
+.container.layout-home {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.layout-home .left {
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+}
+
+.layout-home .right {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ----- Inner pages: single full-width column ----- */
+.container.page-single {
+  display: block;
+  width: 100%;
+}
+
+.page-single .page-main {
+  width: 100%;
+  min-width: 0;
+}
+
+.page-single .page-main > h3:first-child {
+  margin-top: 0;
+}
+
+/* ----- Sidebar / profile (shared) ----- */
+.carousel {
+  width: 220px;
+  margin-bottom: 0.5rem;
+}
+
+.carousel--fluid {
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.profile-info {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.profile-info li {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.profile-info .role {
+  font-style: italic;
+  color: var(--color-secondary);
+}
+
+.profile-info .role a {
+  color: var(--color-accent);
+}
+
+.profile-info li a:not(.role a) {
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-info li a:not(.role a) i {
+  color: var(--color-secondary);
+  margin-right: 0.4rem;
+}
+
+.profile-info hr {
+  margin: 0.65rem 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.profile-header {
+  margin-bottom: 0.75rem;
+}
+
+.profile-header .name {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.profile-header .subtitle {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-top: 0.2rem;
+}
+
+.about {
+  margin-bottom: 1.25rem;
+}
+
+.about p {
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-body);
+}
+
+/* ----- Homepage preview cards ----- */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.layout-home .cards.research .card,
+.layout-home .cards.projects .card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.layout-home .cards.research .card img,
+.layout-home .cards.projects .card img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.layout-home .cards.research .card-info strong,
+.layout-home .cards.projects .card-info strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.layout-home .cards.research .card-info strong a,
+.layout-home .cards.projects .card-info strong a {
+  color: var(--color-heading);
+}
+
+.layout-home .cards.research .card-info em,
+.layout-home .cards.projects .card-info em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.layout-home .cards.research .card-info p,
+.layout-home .cards.projects .card-info p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-body);
+}
+
+.layout-home .cards.research .card {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.layout-home .cards.research .card:last-child {
+  border-bottom: none;
+}
+
+/* ----- Teaching list (flat rows) ----- */
+.cards.teaching {
+  gap: 0;
+}
+
+.cards.teaching .card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cards.teaching .card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cards.teaching .card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.cards.teaching .card-info strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.cards.teaching .card-info em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.cards.teaching .card-info p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+/* ----- Accordion detail pages (research / projects): flat rows ----- */
+.cards.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cards.accordion .card {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 0 0 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  overflow: visible;
+  cursor: default;
+  transition: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  box-shadow: none;
+}
+
+.cards.accordion .card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cards.accordion .card-left {
+  flex-shrink: 0;
+}
+
+.cards.accordion .card-left img {
+  width: 180px;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.cards.accordion .card-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards.accordion .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.cards.accordion .card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.35;
+}
+
+.cards.accordion .card-arrow {
+  font-size: 1rem;
+  color: var(--color-muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.cards.accordion .card.expanded .card-arrow {
+  transform: rotate(180deg);
+}
+
+.cards.accordion .card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 0.5rem;
+}
+
+.cards.accordion .card.expanded .card-content {
+  max-height: 1200px;
+}
+
+.cards.accordion .card-content p {
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.cards.accordion .card-content p b {
+  color: var(--color-heading);
+}
+
+/* ----- Publications (academic list) ----- */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pub-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.pub-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.pub-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.pub-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-heading);
+  line-height: 1.35;
+}
+
+.pub-authors {
+  font-size: 0.85rem;
+  color: var(--color-body);
+  font-style: italic;
+}
+
+.pub-venue {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.pub-links a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.pub-links span.sep {
+  color: var(--color-muted);
+  user-select: none;
+  padding: 0 0.15rem;
+}
+
+/* ----- Beyond work ----- */
+.fun-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.fun-item {
+  margin: 0;
+}
+
+.fun-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.fun-item figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  line-height: 1.35;
+}
+
+/* ----- Recruiters page ----- */
+.page-recruiters a {
+  color: var(--color-accent);
+}
+
+.page-recruiters .navbar a {
+  color: var(--color-muted);
+}
+
+.page-recruiters .navbar a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.page-recruiters .top-row {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+.page-recruiters .hero h1 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+}
+
+.page-recruiters .hero p.bio-school {
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+.page-recruiters .hero p.bio-school strong {
+  font-weight: 600;
+}
+
+.page-recruiters .hero p.bio-summary {
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  margin: 0.5rem 0;
+}
+
+.page-recruiters .hero-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.page-recruiters .hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.page-recruiters .cv-box {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.page-recruiters .cv-box h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.page-recruiters .cv-box a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.page-recruiters .cv-box a:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.page-recruiters .roles-intro {
+  font-size: 0.95rem;
+  color: var(--color-body);
+  margin-bottom: 1rem;
+}
+
+.page-recruiters .roles-intro p {
+  margin: 0 0 0.5rem 0;
+}
+
+.page-recruiters .roles-section {
+  margin-top: 1rem;
+}
+
+.page-recruiters .roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.page-recruiters .role-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.2rem 1.3rem 1.4rem;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-recruiters .role-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.page-recruiters .role-card p {
+  font-size: 0.92rem;
+  color: var(--color-body);
+  margin-bottom: 0.7rem;
+}
+
+.page-recruiters .role-card ul {
+  padding-left: 1.05rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-body);
+}
+
+.page-recruiters .role-card li {
+  margin-bottom: 0.35rem;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .page-recruiters .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-recruiters .top-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .page-recruiters .cv-box {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards.accordion .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cards.accordion .card-left img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cards.accordion .card-header {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .container.layout-home {
+    flex-direction: column;
+    gap: 2.25rem;
+  }
+
+  .layout-home .cards.research .card,
+  .layout-home .cards.projects .card {
+    flex-direction: column;
+  }
+
+  .layout-home .cards.research .card img,
+  .layout-home .cards.projects .card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  .cards.teaching .card {
+    flex-direction: column;
+  }
+
+  .cards.teaching .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .pub-item {
+    flex-direction: column;
+  }
+
+  .pub-thumb {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+}
