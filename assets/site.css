@@ -127,14 +127,23 @@ h3::after {
 }
 
 /* ----- Sidebar / profile (shared) ----- */
-.profile-photo {
+.carousel {
   width: 220px;
+  max-width: 100%;
   margin-bottom: 0.5rem;
+  flex-shrink: 0;
 }
 
-.profile-photo img {
+.carousel img {
   width: 100%;
+  height: auto;
   border-radius: var(--radius);
+  display: none;
+}
+
+/* Show the rotating slide, or a single photo without JS */
+.carousel img.active,
+.carousel img:only-of-type {
   display: block;
 }
 
@@ -704,6 +713,12 @@ h3::after {
   .container.layout-home {
     flex-direction: column;
     gap: 2.25rem;
+  }
+
+  .layout-home .left .carousel {
+    width: min(220px, 100%);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .layout-home .cards.research .card,
