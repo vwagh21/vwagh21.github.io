@@ -38,10 +38,8 @@
   <div class="container layout-home">
 
     <div class="left">
-      <div class="carousel">
-        <img src="images/profpic1.jpg" class="active" alt="Profile photo 1">
-        <img src="images/profpic2.jpg" alt="Profile photo 2">
-        <img src="images/profpic3.jpg" alt="Profile photo 3">
+      <div class="profile-photo">
+        <img src="images/profpic1.jpg" alt="Vaidehi Wagh">
       </div>
       <ul class="profile-info">
         <li class="role">GRA at <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a></li>
@@ -71,7 +69,7 @@
           Previously, I was a research intern at UBC and completed my Bachelor’s in Mechanical Engineering at College of Engineering, Pune, India.
         </p>
         <p>
-          <strong> I am actively seeking full-time opportunities in ML, AI, & Robotics software starting May 2026.</strong>
+          <strong> I am actively seeking full-time opportunities in ML, AI, & Robotics research starting June 2026.</strong>
         </p>
       </div>
 
@@ -180,7 +178,6 @@
           <div class="card-info">
             <strong>11977A: Multimodal Machine Learning - Online Certification Course: Spring 2026</strong>
             <em><a href="https://talkingtorobots.com/yonatanbisk.html">Prof. Yonatan Bisk</a>, <a href="https://www.cs.cmu.edu/~dmortens/">Prof. David Mortensen</a>, <a href="https://lti.cmu.edu/people/faculty/brown-ralf.html">Prof. Ralf Brown</a></em>
-            <p>Grading assignments, guiding students on assignments, questions and project ideas.</p>
           </div>
         </div>
 
@@ -188,7 +185,6 @@
           <div class="card-info">
             <strong>16385: Computer Vision: Fall 2025</strong>
             <em><a href="https://davheld.github.io/">Prof. David Held</a></em>
-            <p>Grading assignments, guiding students on assignments, conceptual questions during office hours.</p>
           </div>
         </div>
 
@@ -196,23 +192,12 @@
           <div class="card-info">
             <strong>PLUS Tutoring: Spring 2025 - Spring 2026</strong>
             <em>Lead Tutor</em>
-            <p>Organizing, managing sessions and teaching middle-schoolers math through one-on-one interactions during regular class hours as a part of the PLUS program.</p>
           </div>
         </div>
       </div>
 
     </div>
   </div>
-
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  </script>
 
 </body>
 </html>

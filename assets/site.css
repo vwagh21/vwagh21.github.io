@@ -127,22 +127,14 @@ h3::after {
 }
 
 /* ----- Sidebar / profile (shared) ----- */
-.carousel {
+.profile-photo {
   width: 220px;
   margin-bottom: 0.5rem;
 }
 
-.carousel--fluid {
-  width: 100%;
-}
-
-.carousel img {
+.profile-photo img {
   width: 100%;
   border-radius: var(--radius);
-  display: none;
-}
-
-.carousel img.active {
   display: block;
 }
 
