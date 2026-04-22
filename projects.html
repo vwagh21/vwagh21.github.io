@@ -13,9 +13,9 @@
   <meta charset="UTF-8">
   <title>Projects — Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Course and research projects: VLMs for human–robot interfaces, medical robotics, imitation learning, and optimal control.">
+  <meta name="description" content="Selected CMU coursework projects: multimodal VLMs for robot control, medical robotics IV prototype, GAIL locomotion, and LQR humanoid balancing.">
   <meta property="og:title" content="Projects — Vaidehi Wagh">
-  <meta property="og:description" content="Robotics and ML projects from CMU coursework and research.">
+  <meta property="og:description" content="Talking to Robots, Medical Robotics, Robot Learning, and Optimal Control projects.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vwagh21.github.io/projects.html">
   <link rel="canonical" href="https://vwagh21.github.io/projects.html">
@@ -25,7 +25,8 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 
-<body>
+<body class="page-projects">
+
   <nav class="navbar" aria-label="Primary">
     <a href="index.html">about</a>
     <a href="research-cmu.html">research</a>
@@ -36,85 +37,71 @@
 
   <div class="container page-single">
     <div class="page-main">
+
       <h3>Projects</h3>
-      <div class="cards accordion">
+      <p class="page-lede">
+        Standalone coursework threads from CMU—distinct from my thesis, but where I prototyped ideas that later informed how I think about multimodal control, sim-to-real gaps, and system integration.
+      </p>
 
-        <div class="card">
-          <div class="card-left">
-            <img src="images/ttr.png" alt="VLM Human-Robot Interface">
-          </div>
-          <div class="card-right">
-            <div class="card-header">
-              <div class="card-title">VLM-based Human-Robot Voice Interface</div>
-              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
-            </div>
-            <div class="card-content">
-              <p><b>Course:</b> Talking to Robots, Fall 2025</p>
-              <p><b>Description:</b> Used supervised finetuning on Qwen2.5-VL with a custom generated dataset of 3000 feedbacks across 3 ambiguity levels and varying scene images for customized parameter control of an exoskeleton based on multimodal inputs. </p>
-            </div>
-          </div>
+      <article class="project-row">
+        <img src="images/ttr.png" alt="Illustration for Talking to Robots multimodal interface project">
+        <div class="project-body">
+          <h4>VLM-based human–robot voice interface</h4>
+          <p class="project-meta">Talking to Robots · Fall 2025</p>
+          <p>
+            Built a multimodal pipeline for long-horizon, language-driven control: finetuned a compact vision-language model (Qwen3-VL-2B with SFT and LoRA) on a custom dataset pairing egocentric-style scenes, spoken-style instructions, and exoskeleton-relevant control targets, including deliberate ambiguity so the policy cannot rely on template phrases.
+          </p>
+          <p>
+            The emphasis was on whether vision plus audio grounding could support stable parameter proposals across sessions—not just single-turn demos—mirroring how wearable assist devices are actually used.
+          </p>
         </div>
+      </article>
 
-        <div class="card">
-          <div class="card-left">
-            <img src="images/iv-bot.jpeg" alt="Automated IV Bot">
-          </div>
-          <div class="card-right">
-            <div class="card-header">
-              <div class="card-title">Automated IV Insertion Bot</div>
-              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
-            </div>
-            <div class="card-content">
-              <p><b>Course:</b> Medical Robotics, Fall 2025</p>
-              <p><b>Description:</b> Designed and 3D printed linear actuation mechanisms, integrating them with with tiny-YOLO for vision-based vein localization and Arduino based servo motor control for autonomous IV insertion, reducing insertion time by 30% compared to standard human interventions.</p>
-            </div>
-          </div>
+      <article class="project-row">
+        <img src="images/iv-bot.jpeg" alt="Automated IV insertion prototype hardware">
+        <div class="project-body">
+          <h4>Automated IV insertion bot</h4>
+          <p class="project-meta">Medical Robotics · Fall 2025</p>
+          <p>
+            End-to-end bench prototype: custom 3D-printed linear actuators, vein localization with a lightweight detector (Tiny-YOLO family), and Arduino-driven servo sequencing for insertion. Integration work focused on closing the loop between camera, planner, and actuation under timing and safety constraints realistic for a class setting.
+          </p>
+          <p>
+            Measured end-to-end procedure time improved by roughly a quarter versus our manual baseline in the same setup—mostly from automating alignment and approach rather than from faster hand motion alone.
+          </p>
         </div>
+      </article>
 
-        <div class="card">
-          <div class="card-left">
-            <img src="images/gail.gif" alt="GAIL Locomotion">
-          </div>
-          <div class="card-right">
-            <div class="card-header">
-              <div class="card-title">Generative Adversarial Imitation Learning (GAIL)</div>
-              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
-            </div>
-            <div class="card-content">
-              <p><b>Course:</b> Intro to Robot Learning, Spring 2025</p>
-              <p><b>Description:</b> Used GAN based reward models with state and trajectory level approaches for imitating human locomotion from Mocap data.</p>
-            </div>
-          </div>
+      <article class="project-row">
+        <img src="images/gail.gif" alt="Simulated humanoid locomotion imitation">
+        <div class="project-body">
+          <h4>Generative adversarial imitation learning for locomotion</h4>
+          <p class="project-meta">Introduction to Robot Learning · Spring 2025</p>
+          <p>
+            Explored inverse reinforcement learning for humanoid walking: combined state-level bidirectional GAN discriminators with trajectory-level GAIL-style objectives so reward structure could be inferred from PPO-generated expert mocap trajectories instead of hand-coded shaping alone.
+          </p>
+          <p>
+            Goal was to understand when generative reward models help imitation under partial observability versus when they collapse to brittle mode-matching—a useful contrast to the explicit parameter targets I use in exoskeleton work today.
+          </p>
         </div>
+      </article>
 
-        <div class="card">
-          <div class="card-left">
-            <img src="images/ocrl.gif" alt="LQR Humanoid">
-          </div>
-          <div class="card-right">
-            <div class="card-header">
-              <div class="card-title">LQR for Humanoid Balancing</div>
-              <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-angle-down"></i></div>
-            </div>
-            <div class="card-content">
-              <p><b>Course:</b> Optimal Control and Reinforcement Learning, Spring 2025</p>
-              <p><b>Description:</b> Simulated a humanoid model on a dynamically moving platform in MuJoCo, using an LQR based controller to learn balancing with varying constraint ands conditions.</p>
-            </div>
-          </div>
+      <article class="project-row">
+        <img src="images/ocrl.gif" alt="Humanoid balancing on moving platform simulation">
+        <div class="project-body">
+          <h4>LQR for humanoid balancing on a moving base</h4>
+          <p class="project-meta">Optimal Control and Reinforcement Learning · Spring 2025</p>
+          <p>
+            MuJoCo humanoid on a dynamically moving platform with an LQR-derived balancing policy, sweeping contact and disturbance conditions to see where linearized controllers remain trustworthy and where nonlinear effects dominate.
+          </p>
+          <p>
+            Good sanity check for how classical tools behave before layering learned components on top of unstable plants—directly relevant to exoskeletons, where the human in the loop is the dominant unmodeled dynamics.
+          </p>
         </div>
+      </article>
 
-      </div>
     </div>
   </div>
 
-  <script>
-    document.querySelectorAll('.cards.accordion .card-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const card = header.closest('.card');
-        card.classList.toggle('expanded');
-      });
-    });
-  </script>
 </body>
 
 </html>
