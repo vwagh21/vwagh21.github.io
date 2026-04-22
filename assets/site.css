@@ -135,6 +135,54 @@ h3::after {
   max-width: 72ch;
 }
 
+/* Page label (same look as site h3; not a heading so h1 thesis stays top-level) */
+.page-research .research-kicker {
+  font-size: 1.4rem;
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.page-research .research-kicker::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: 0.4rem;
+}
+
+.page-research .research-section {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.page-research h2.research-section-title {
+  font-size: 1.4rem;
+  margin: 2.25rem 0 0.75rem 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.page-research h2.research-section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-border);
+  margin-top: 0.4rem;
+}
+
+/* Spacing after divider into UBC block (hr already has bottom margin) */
+.page-research .research-section--prior > h2.research-section-title {
+  margin-top: 0;
+}
+
 .page-research .research-hero {
   display: grid;
   grid-template-columns: minmax(0, 168px) minmax(0, 1fr);
@@ -330,11 +378,19 @@ h3::after {
   padding-bottom: 0;
 }
 
-.page-research .research-prior-item h4 {
+.page-research .research-prior-title {
   margin: 0 0 0.35rem 0;
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-heading);
+}
+
+.page-research .research-prior-title::after {
+  display: none;
+}
+
+.page-research .research-prior-text {
+  min-width: 0;
 }
 
 .page-research .research-prior-item p {

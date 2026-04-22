@@ -36,11 +36,11 @@
   </nav>
 
   <div class="container page-single">
-    <div class="page-main">
+    <main class="page-main" id="main-content">
 
-      <h3>Research</h3>
+      <p class="research-kicker">Research</p>
       <p class="page-lede">
-        At CMU I mostly work on one thing: hip exoskeleton assistance that responds to what the wearer sees and says, on real hardware, with real latency budgets. Before that, at UBC, I used off-the-shelf pose estimation to study upper-limb movement after stroke at a scale that would be painful with traditional mocap alone.
+        At CMU, the focus is one thing: hip exoskeleton assistance that responds to what the wearer sees and says, on real hardware, within real latency budgets. Before that, at UBC, off-the-shelf pose estimation was used to study upper-limb movement after stroke — at a scale that would be painful with traditional mocap alone.
       </p>
 
       <section class="research-hero" aria-labelledby="thesis-title">
@@ -57,7 +57,7 @@
             Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a>
           </p>
           <p class="research-hero-lede">
-            People tweak how much assist they want all the time. I'd like that to be normal, not a lab visit. So I build ways to go from rough speech plus egocentric video to actual controller changes, without pretending we have tons of clean labels per person, and without the robot taking forever to answer.
+            People adjust how much assist they want all the time. That should be normal, not a lab visit. The work connects rough speech and egocentric video to actual controller changes — without requiring clean labels per person, and without making the wearer wait.
           </p>
           <ul class="research-chip-row" aria-label="Focus areas">
             <li>Egocentric vision + speech</li>
@@ -68,81 +68,89 @@
         </div>
       </section>
 
-      <h3>Problem framing</h3>
-      <div class="research-body">
-        <p>
-          Our hip controller exposes a handful of timing and gain knobs. They matter a lot for how the device feels. Hand tuning does not scale. Pure imitation from demos also misses the messy part: what you want can change mid-walk. I care about the full loop: read multimodal signals, propose updates that respect how the controller actually works, and stay honest about model error and vague user feedback.
-        </p>
-      </div>
-
-      <h3>Multimodal interface and edge stack</h3>
-      <div class="research-body">
-        <p>
-          The pipelines I run start on the body: smart-glasses video plus whatever the person said into the mic. That's a different starting point than a mocap suite. I transcribe audio with a small speech stack, then feed the frame, transcript, and a short snapshot of recent parameters into a vision-language model so it's not guessing in a vacuum. Outputs get squeezed into structured assist settings that match our biotorque-style hip controller. A lot of the grunt work is wiring record, inference, and push-to-device so it behaves on something Jetson-sized, with quantization and latency that don't leave the wearer hanging.
-        </p>
-        <p>
-          I also use contextual bandits when one sentence is not enough to pick a good assist regime. The goal is slow improvement across sessions without treating every label as perfect.
-        </p>
-      </div>
-
-      <h3>Personalized torque estimation (locomotion)</h3>
-      <div class="research-cmu-secondary">
-        <div class="research-media-ph research-media-ph--inline" role="img" aria-label="Torque / ASB figure placeholder">
-          <span class="research-media-ph-label">Figure</span>
-          <span>torque / ASB</span>
-        </div>
+      <section class="research-section" aria-labelledby="problem-framing">
+        <h2 id="problem-framing" class="research-section-title">Problem framing</h2>
         <div class="research-body">
           <p>
-            Separate CMU thread, same big picture: how little post-stroke data do you need to predict joint moments during gait? I line up messy IMU setups using OpenSim plus MATLAB scripts, simulate consistent sensor streams from mocap-driven models, then train temporal convnets in PyTorch. Pretraining on large able-bodied runs and finetuning with a tiny per-subject slice gave us about a 27% accuracy bump in our setting, with well under one percent of subject-specific training data.
-          </p>
-          <p>
-            <a href="pdfs/ASB.pdf">ASB 2025 paper (PDF)</a> ·
-            <a href="pdfs/poster.png">Poster</a>
+            The hip controller exposes a handful of timing and gain knobs. They matter a lot for how the device feels. Hand tuning doesn't scale. Pure imitation from demos misses the harder part: preferences shift mid-walk. The full loop matters — reading multimodal signals, proposing updates that respect how the controller actually works, and staying honest about model uncertainty and vague feedback.
           </p>
         </div>
-      </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="multimodal-stack">
+        <h2 id="multimodal-stack" class="research-section-title">Multimodal interface and edge stack</h2>
+        <div class="research-body">
+          <p>
+            Pipelines start on the body: smart-glasses video and whatever the person said into the mic. Audio gets transcribed, then the frame, transcript, and a short snapshot of recent parameters go into a vision-language model — so it's not guessing in a vacuum. Outputs are mapped to structured assist settings for the biotorque-style hip controller. A lot of the work is wiring record, inference, and push-to-device to behave on something Jetson-sized, with quantization and latency that don't leave the wearer hanging.
+          </p>
+          <p>
+            Contextual bandits handle the cases where one sentence isn't enough to pick a good assist regime. The goal is slow improvement across sessions, without treating every label as ground truth.
+          </p>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="torque-estimation">
+        <h2 id="torque-estimation" class="research-section-title">Personalized torque estimation (locomotion)</h2>
+        <div class="research-cmu-secondary">
+          <div class="research-media-ph research-media-ph--inline" role="img" aria-label="Torque / ASB figure placeholder">
+            <span class="research-media-ph-label">Figure</span>
+            <span>torque / ASB</span>
+          </div>
+          <div class="research-body">
+            <p>
+              A separate CMU thread, same big picture: how little post-stroke data do you need to predict joint moments during gait? Messy IMU setups are aligned using OpenSim and MATLAB, consistent sensor streams are simulated from mocap-driven models, and temporal convnets are trained in PyTorch. Pretraining on large able-bodied runs and finetuning with a small per-subject slice yielded about a 27% accuracy improvement — with well under one percent of subject-specific training data.
+            </p>
+            <p>
+              <a href="pdfs/ASB.pdf">ASB 2025 paper (PDF)</a> ·
+              <a href="pdfs/poster.png">Poster</a>
+            </p>
+          </div>
+        </div>
+      </section>
 
       <hr class="research-divider">
 
-      <h3 id="prior-research">Earlier research at UBC</h3>
-      <div class="research-body">
-        <p>
-          I spent several years in the Neuroplasticity, Imagery and Motor Behaviour Lab asking a blunt question: can cheap cameras plus MediaPipe do real kinematics work for stroke, not just demos?
-        </p>
-      </div>
+      <section class="research-section research-section--prior" aria-labelledby="prior-research">
+        <h2 id="prior-research" class="research-section-title">Earlier research at UBC</h2>
+        <div class="research-body">
+          <p>
+            Several years in the Neuroplasticity, Imagery and Motor Behaviour Lab, asking a straightforward question: can cheap cameras and MediaPipe do real kinematics work for stroke, beyond just demos?
+          </p>
+        </div>
 
-      <div class="research-prior">
-        <div class="research-prior-item">
-          <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Reaching study figure placeholder">
-            <span class="research-media-ph-label">Fig.</span>
-            <span>reaching</span>
-          </div>
-          <div>
-            <h4>Post-stroke reaching (MediaPipe)</h4>
-            <p>
-              OpenCV and MediaPipe on a gamified reaching task. Lots of trials and frames, then statistics tying kinematics to compensation patterns you care about in rehab. Paper is in <em>Journal of Neuroengineering and Rehabilitation</em> (2025).
-              <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
-            </p>
-          </div>
+        <div class="research-prior">
+          <article class="research-prior-item">
+            <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Reaching study figure placeholder">
+              <span class="research-media-ph-label">Fig.</span>
+              <span>reaching</span>
+            </div>
+            <div class="research-prior-text">
+              <h3 class="research-prior-title">Post-stroke reaching (MediaPipe)</h3>
+              <p>
+                OpenCV and MediaPipe on a gamified reaching task — many trials and frames, then statistics tying kinematics to compensation patterns that matter in rehab. Published in <em>Journal of Neuroengineering and Rehabilitation</em> (2025).
+                <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
+              </p>
+            </div>
+          </article>
+          <article class="research-prior-item">
+            <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Fine motion study figure placeholder">
+              <span class="research-media-ph-label">Fig.</span>
+              <span>fine motion</span>
+            </div>
+            <div class="research-prior-text">
+              <h3 class="research-prior-title">Fine 2D upper-limb motion vs. mocap</h3>
+              <p>
+                Cheap hand tracking versus lab gold standard on short, fast tracing trials. Agreement was good enough to suggest real scaling potential for monitoring. <em>JMIR Formative Research</em> (2024).
+                <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
+              </p>
+            </div>
+          </article>
         </div>
-        <div class="research-prior-item">
-          <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Fine motion study figure placeholder">
-            <span class="research-media-ph-label">Fig.</span>
-            <span>fine motion</span>
-          </div>
-          <div>
-            <h4>Fine 2D upper-limb motion vs. mocap</h4>
-            <p>
-              Cheap hand tracking vs. lab gold standard on a pile of short, fast tracing trials. Good enough agreement that it might actually scale for monitoring. <em>JMIR Formative Research</em> (2024).
-              <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <p class="research-note">The publication list with real thumbnails is still on the <a href="index.html#publications">home page</a>.</p>
 
-    </div>
+    </main>
   </div>
 
 </body>
