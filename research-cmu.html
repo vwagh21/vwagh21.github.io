@@ -13,9 +13,9 @@
   <meta charset="UTF-8">
   <title>Research | Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CMU MetaMobility: multimodal VLMs for hip exoskeleton personalization from speech and egocentric video. Earlier UBC work on MediaPipe and stroke kinematics.">
+  <meta name="description" content="Research on multimodal vision-language control of hip exoskeletons (CMU), biological joint torque estimation with TCNs and transfer learning (ASB), and vision-based stroke kinematics (UBC).">
   <meta property="og:title" content="Research | Vaidehi Wagh">
-  <meta property="og:description" content="Shared autonomy for assistive hip control and clinical-scale vision kinematics.">
+  <meta property="og:description" content="Explicit user-guided wearable control, implicit personalization for joint-moment inference, and clinical-scale upper-limb assessment.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vwagh21.github.io/research-cmu.html">
   <link rel="canonical" href="https://vwagh21.github.io/research-cmu.html">
@@ -39,139 +39,105 @@
     <main class="page-main" id="main-content">
 
       <p class="research-kicker">Research</p>
-      <p class="page-lede">
-        At CMU: hip exoskeleton control that reacts to speech and what you see through glasses. Before that, at UBC: MediaPipe and stroke kinematics at a scale mocap struggles to match.
-      </p>
 
-      <section class="research-hero-card" aria-labelledby="thesis-title">
+      <section class="research-hero-card research-tile" aria-labelledby="thesis-title">
         <div class="research-hero-card-inner">
           <figure class="research-hero-media">
             <div class="research-media-ph research-media-ph--hero" role="img" aria-label="Thesis figure or diagram placeholder">
-              <span class="research-media-ph-label">Thesis</span>
-              <span>figure / video</span>
+              <span class="research-media-ph-label">Figure</span>
+              <span>thesis</span>
             </div>
           </figure>
           <div class="research-hero-text">
-            <p class="research-hero-tag">Thesis · MetaMobility Lab</p>
+            <p class="research-hero-tag">Thesis · MetaMobility Lab, Carnegie Mellon University</p>
+            <p class="research-tile-subtitle">Explicit user-guided personalization</p>
             <h1 id="thesis-title" class="research-page-title">Vision-language models for real-time personalized hip exoskeleton control</h1>
             <p class="research-hero-meta">
-              <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>, Carnegie Mellon University ·
-              Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a>
+              Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a> ·
+              <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>
             </p>
-            <p class="research-hero-lede">
-              The idea is simple: what you say and what you see should be able to nudge assist on the fly, without a lab visit every time it feels wrong. I use a VLM on transcribed speech plus egocentric frames, and map that to structured updates the hip controller can actually use.
-            </p>
+            <div class="research-tile-prose">
+              <p>
+                This thesis investigates a multimodal human–machine interface in which verbal feedback and egocentric visual observations, acquired through head-mounted smart glasses, are translated into updates to a hip exoskeleton assist controller. The objective is to support explicit, user-guided modulation of assistance in the loop of ambulation, rather than reliance on offline parameter sweeps or optimization objectives that omit linguistic intent and environmental context.
+              </p>
+              <p>
+                The technical approach couples automatic speech recognition and vision-language reasoning with structured generation of controller-consistent commands, subject to real-time execution constraints on wearable and edge computing hardware. Session-level learning methods are additionally considered when single-utterance supervision is insufficient to disambiguate assistive regimes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="research-section" aria-labelledby="example-interaction">
-        <h2 id="example-interaction" class="research-section-title">Example</h2>
+      <section class="research-hero-card research-tile" aria-labelledby="torque-title">
+        <div class="research-hero-card-inner">
+          <figure class="research-hero-media">
+            <div class="research-media-ph research-media-ph--hero" role="img" aria-label="Torque estimation figure placeholder">
+              <span class="research-media-ph-label">Figure</span>
+              <span>ASB / torque</span>
+            </div>
+          </figure>
+          <div class="research-hero-text">
+            <p class="research-hero-tag">American Society of Biomechanics · Conference contribution, 2025</p>
+            <p class="research-tile-subtitle">Implicit user-level personalization</p>
+            <h2 id="torque-title" class="research-page-title">Biological joint torque estimation with temporal convolutional networks and transfer learning</h2>
+            <div class="research-tile-prose">
+              <p>
+                This project addresses estimation of biological joint moments during gait in post-stroke populations using temporal convolutional networks applied to musculoskeletal simulation–aligned inertial measurement data. Heterogeneous sensor configurations are harmonized via OpenSim-based workflows and scripted preprocessing; large-scale able-bodied corpora provide pretraining, with transfer and light subject-specific adaptation under stringent data budgets.
+              </p>
+              <p>
+                The formulation emphasizes implicit personalization at the user level: predictive accuracy is improved with minimal per-participant supervision relative to the pretraining regime, as reported in the American Society of Biomechanics abstract and poster materials.
+                <a href="pdfs/ASB.pdf">ASB 2025 paper (PDF)</a> ·
+                <a href="pdfs/poster.png">Poster</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-hero-card research-tile" aria-labelledby="ubc-title">
+        <div class="research-hero-card-inner">
+          <figure class="research-hero-media">
+            <div class="research-media-ph research-media-ph--hero" role="img" aria-label="UBC stroke kinematics figure placeholder">
+              <span class="research-media-ph-label">Figure</span>
+              <span>UBC / stroke</span>
+            </div>
+          </figure>
+          <div class="research-hero-text">
+            <p class="research-hero-tag">UBC Stroke Research · Neuroplasticity, Imagery and Motor Behaviour Laboratory</p>
+            <p class="research-tile-subtitle">University of British Columbia</p>
+            <h2 id="ubc-title" class="research-page-title">Vision-based kinematic assessment of the upper limb after stroke</h2>
+            <div class="research-tile-prose">
+              <p>
+                The following studies evaluate whether commodity pose-estimation software can support quantitative kinematic analysis in stroke at cohort scales that are impractical for laboratory motion capture alone. Data volumes span large numbers of reaching actions and video frames, with statistical linkage to clinically relevant compensation patterns.
+              </p>
+              <h3 class="research-tile-h3">Reaching kinematics with MediaPipe</h3>
+              <p>
+                A gamified upper-limb reaching protocol was instrumented with OpenCV and MediaPipe; subsequent analysis related estimated kinematics to maladaptive compensation strategies.                 Results are reported in the <em>Journal of Neuroengineering and Rehabilitation</em> (2025):
+                <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">journal article (Springer)</a>.
+              </p>
+              <h3 class="research-tile-h3">Fine two-dimensional trajectories versus motion capture</h3>
+              <p>
+                Low-cost hand tracking was compared to a laboratory gold standard on a large set of brief, dexterous tracing movements; agreement metrics support scalable monitoring workflows. Results appear in <em>JMIR Formative Research</em> (2024):
+                <a href="https://formative.jmir.org/2024/1/e56682/">journal article (JMIR)</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section research-section--example" aria-labelledby="example-heading">
+        <h2 id="example-heading" class="research-section-title">Representative interaction</h2>
         <blockquote class="research-quote">
           <p>“Can you help me a little more when I step forward?”</p>
         </blockquote>
-        <div class="research-body">
+        <div class="research-prose-wide">
           <p>
-            Speech carries intent (more assist, different timing). The egocentric view nudges how big a change makes sense for the scene. The model answers in JSON the controller can parse; the device smooths updates so torque does not lurch.
+            In a representative closed-loop interaction, the wearer articulates a desire for increased assistance contingent on forward progression, while the system conditions that request on contemporaneous egocentric context. Linguistic content is treated as the primary determinant of which control parameters are adjusted, whereas visual evidence informs the magnitude of the proposed change with respect to terrain and task demands. The interface ultimately issues structured commands suitable for actuation on the assistive device, with temporal smoothing to maintain continuity of delivered torque.
           </p>
         </div>
       </section>
 
-      <section class="research-section" aria-labelledby="motivation">
-        <h2 id="motivation" class="research-section-title">Motivation</h2>
-        <div class="research-body">
-          <p>
-            Manual tuning and a lot of HILO work optimize numbers experts care about and leave out language, comfort, and the hallway you are actually in. I want intent and context in the same loop the wearer can steer.
-          </p>
-        </div>
-      </section>
-
-      <section class="research-section" aria-labelledby="contributions">
-        <h2 id="contributions" class="research-section-title">What this pushes</h2>
-        <ul class="research-plain-list">
-          <li>VLMs tied to real assist parameters, not just chat.</li>
-          <li>Egocentric glasses (Meta Aria) as the main wearable sensing path.</li>
-          <li>Shared autonomy: user language steers, vision backs scene-scale judgment, hardware limits still matter.</li>
-          <li>Session-level learning when one sentence is not enough (e.g. contextual bandits), without pretending every label is clean.</li>
-        </ul>
-      </section>
-
-      <section class="research-section" aria-labelledby="controller">
-        <h2 id="controller" class="research-section-title">Controller interface</h2>
-        <div class="research-body">
-          <p>
-            The hip spline is steered mainly by assistance magnitude and phase delay relative to gait. The VLM is pushed toward strict JSON so the stack does not have to guess free text.
-          </p>
-          <pre class="research-code" aria-label="Example JSON output"><code>{
-  "scale": +2.0,
-  "delay": -0.03
-}</code></pre>
-        </div>
-      </section>
-
-      <section class="research-section" aria-labelledby="limits-next">
-        <h2 id="limits-next" class="research-section-title">Limits and next steps</h2>
-        <div class="research-body">
-          <p>
-            Still wrestling with prose instead of JSON, wrong knob or sign, vision talking over clear audio, and vague phrases with no safe default. Next up: gait-phase-aware updates, richer preference memory, gaze if it actually helps.
-          </p>
-        </div>
-      </section>
-
-      <section class="research-section" aria-labelledby="torque-estimation">
-        <h2 id="torque-estimation" class="research-section-title">Torque modeling (parallel track)</h2>
-        <div class="research-torque-simple">
-          <div class="research-media-ph research-media-ph--inline" role="img" aria-label="Torque or ASB figure placeholder">
-            <span class="research-media-ph-label">Figure</span>
-            <span>torque / ASB</span>
-          </div>
-          <div class="research-body">
-            <p>
-              Separate question: how little post-stroke data do you need for joint-moment estimates during gait? OpenSim + MATLAB for IMU alignment, simulated sensors from mocap, TCNs in PyTorch, transfer from big able-bodied runs. <a href="pdfs/ASB.pdf">ASB 2025 (PDF)</a> · <a href="pdfs/poster.png">Poster</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr class="research-divider">
-
-      <section class="research-section research-section--prior" aria-labelledby="prior-research">
-        <h2 id="prior-research" class="research-section-title">Earlier research at UBC</h2>
-        <div class="research-body">
-          <p>
-            Neuroplasticity, Imagery and Motor Behaviour Lab: can cheap cameras and MediaPipe do real stroke kinematics, not just demos?
-          </p>
-        </div>
-
-        <div class="research-prior">
-          <article class="research-prior-item">
-            <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Reaching study figure placeholder">
-              <span class="research-media-ph-label">Fig.</span>
-              <span>reaching</span>
-            </div>
-            <div class="research-prior-text">
-              <h3 class="research-prior-title">Post-stroke reaching (MediaPipe)</h3>
-              <p>
-                Gamified reaching, lots of trials, links to compensation patterns. <em>JNER</em> (2025). <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
-              </p>
-            </div>
-          </article>
-          <article class="research-prior-item">
-            <div class="research-media-ph research-media-ph--thumb" role="img" aria-label="Fine motion study figure placeholder">
-              <span class="research-media-ph-label">Fig.</span>
-              <span>fine motion</span>
-            </div>
-            <div class="research-prior-text">
-              <h3 class="research-prior-title">Fine 2D motion vs. mocap</h3>
-              <p>
-                Fast tracing trials vs. lab gold standard. <em>JMIR Formative</em> (2024). <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <p class="research-note">Thumbnails and PDFs on the <a href="index.html#publications">home page</a>.</p>
+      <p class="research-note">Additional publication entries and thumbnails are listed on the <a href="index.html#publications">home page</a>.</p>
 
     </main>
   </div>
