@@ -660,7 +660,7 @@ h3::after {
 .about p {
   margin-bottom: 0.85rem;
   font-size: 0.95rem;
-  line-height: 1.55;
+  line-height: 1.62;
   color: var(--color-body);
 }
 
@@ -675,16 +675,26 @@ h3::after {
 .layout-home .cards.projects .card {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
-.layout-home .cards.research .card img,
-.layout-home .cards.projects .card img {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: var(--radius);
+/* Uniform preview tiles (fixed aspect so GIFs/PNGs align) */
+.layout-home .home-card-thumb {
   flex-shrink: 0;
+  width: 152px;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #e5e7eb;
+  align-self: flex-start;
+}
+
+.layout-home .home-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .layout-home .cards.research .card-info strong,
@@ -1198,11 +1208,18 @@ h3::after {
     flex-direction: column;
   }
 
-  .layout-home .cards.research .card img,
-  .layout-home .cards.projects .card img {
+  .layout-home .home-card-thumb {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    max-width: 320px;
+    aspect-ratio: 16 / 9;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .layout-home .home-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .cards.teaching .card {
