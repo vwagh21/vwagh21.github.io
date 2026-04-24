@@ -13,9 +13,9 @@
   <meta charset="UTF-8">
   <title>Research | Vaidehi Wagh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thesis work at CMU MetaMobility: hip exoskeleton adaptation with egocentric VLMs, edge deployment, contextual bandits, and personalized torque models. Earlier UBC work on MediaPipe and stroke kinematics.">
+  <meta name="description" content="VLMs + Meta Aria egocentric sensing for real-time hip exoskeleton personalization: speech intent, scene context, JSON controller updates, Jetson deployment, pilot metrics, and OpenSim torque modeling at CMU MetaMobility.">
   <meta property="og:title" content="Research | Vaidehi Wagh">
-  <meta property="og:description" content="CMU MetaMobility: multimodal interfaces and learning for wearable assist. UBC: vision-based clinical kinematics.">
+  <meta property="og:description" content="Shared autonomy for assistive hip control: multimodal VLMs, Aria, Whisper, edge transfer, and clinical-scale kinematics work.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://vwagh21.github.io/research-cmu.html">
   <link rel="canonical" href="https://vwagh21.github.io/research-cmu.html">
@@ -40,70 +40,244 @@
 
       <p class="research-kicker">Research</p>
       <p class="page-lede">
-        At CMU, the focus is one thing: hip exoskeleton assistance that responds to what the wearer sees and says, on real hardware, within real latency budgets. Before that, at UBC, off-the-shelf pose estimation was used to study upper-limb movement after stroke — at a scale that would be painful with traditional mocap alone.
+        At CMU I work on one main line: hip exoskeleton assistance that listens to what you say and looks at what you see through glasses, then updates control on real hardware inside a few seconds. Before that, at UBC, I used off-the-shelf pose estimation to study upper-limb movement after stroke at a scale that would be painful with traditional mocap alone.
       </p>
 
-      <section class="research-hero" aria-labelledby="thesis-title">
-        <figure class="research-hero-media">
-          <div class="research-media-ph" role="img" aria-label="Thesis figure placeholder">
-            <span class="research-media-ph-label">Thesis</span>
-            <span>hardware / scene</span>
+      <section class="research-hero-card" aria-labelledby="thesis-title">
+        <div class="research-hero-card-inner">
+          <figure class="research-hero-media">
+            <div class="research-media-ph research-media-ph--hero" role="img" aria-label="Thesis figure or diagram placeholder">
+              <span class="research-media-ph-label">Thesis</span>
+              <span>figure / video</span>
+            </div>
+          </figure>
+          <div class="research-hero-text">
+            <p class="research-hero-tag">Thesis · MetaMobility Lab</p>
+            <h1 id="thesis-title" class="research-page-title">Vision-language models for real-time personalized hip exoskeleton control</h1>
+            <p class="research-hero-meta">
+              <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>, Carnegie Mellon University ·
+              Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a>
+            </p>
+            <p class="research-hero-lede">
+              People tweak how much assist they want all the time. That should be normal, not a lab visit. The thread I own is shared autonomy: transcribed speech plus egocentric context go into a VLM, come out as structured controller updates, and land on the device without leaving the wearer hanging.
+            </p>
+            <ul class="research-chip-row" aria-label="Focus areas">
+              <li>Meta Aria · fisheye + mic</li>
+              <li>Whisper + VLM reasoning</li>
+              <li>JSON → Jetson → hip torque</li>
+              <li>Pilot metrics + HRI scales</li>
+            </ul>
           </div>
-        </figure>
-        <div class="research-hero-text">
-          <h1 id="thesis-title" class="research-page-title">Human-in-the-loop adaptation for hip exoskeleton control</h1>
-          <p class="research-hero-meta">
-            <a href="https://metamobility.cmu.edu/home">MetaMobility Lab</a>, Carnegie Mellon University ·
-            Advised by <a href="https://metamobility.cmu.edu/people/inseung-kang">Dr. Inseung Kang</a>
-          </p>
-          <p class="research-hero-lede">
-            People adjust how much assist they want all the time. That should be normal, not a lab visit. The work connects rough speech and egocentric video to actual controller changes — without requiring clean labels per person, and without making the wearer wait.
-          </p>
-          <ul class="research-chip-row" aria-label="Focus areas">
-            <li>Egocentric vision + speech</li>
-            <li>VLMs &amp; edge deployment</li>
-            <li>Preference &amp; context learning</li>
-            <li>Hardware-integrated pipelines</li>
-          </ul>
         </div>
       </section>
 
-      <section class="research-section" aria-labelledby="problem-framing">
-        <h2 id="problem-framing" class="research-section-title">Problem framing</h2>
+      <div class="research-stats-bar" role="region" aria-label="Pilot system highlights">
+        <div class="research-stat">
+          <span class="research-stat-value">~2.7s</span>
+          <span class="research-stat-label">Measured end-to-end latency (full pipeline)</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">25</span>
+          <span class="research-stat-label">Curated multimodal pilot samples (frame + phrase + labels)</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">Jetson</span>
+          <span class="research-stat-label">Orin Nano-class edge target for parameter handoff</span>
+        </div>
+        <div class="research-stat">
+          <span class="research-stat-value">~27%</span>
+          <span class="research-stat-label">Torque-model gain with minimal per-subject data (parallel track)</span>
+        </div>
+      </div>
+
+      <section class="research-section research-section--tight-top" aria-labelledby="example-interaction">
+        <h2 id="example-interaction" class="research-section-title">What the system is trying to do</h2>
+        <blockquote class="research-quote">
+          <p>“Can you help me a little more when I step forward?”</p>
+        </blockquote>
         <div class="research-body">
           <p>
-            The hip controller exposes a handful of timing and gain knobs. They matter a lot for how the device feels. Hand tuning doesn't scale. Pure imitation from demos misses the harder part: preferences shift mid-walk. The full loop matters — reading multimodal signals, proposing updates that respect how the controller actually works, and staying honest about model uncertainty and vague feedback.
+            Rough sketch: glasses record audio and a fisheye frame. A laptop runs Whisper, preprocesses the image, runs the VLM with a prompt that privileges speech for <em>which</em> knob to move and vision for <em>how big</em> a step in context (incline, clutter, indoor vs outdoor). The model emits JSON the controller can parse; values slew smoothly on the device so torque does not jump. Gait-phase-aligned updates are on the wishlist, not the baseline yet.
           </p>
         </div>
       </section>
 
-      <section class="research-section" aria-labelledby="multimodal-stack">
-        <h2 id="multimodal-stack" class="research-section-title">Multimodal interface and edge stack</h2>
+      <section class="research-section" aria-labelledby="motivation">
+        <h2 id="motivation" class="research-section-title">Why not stop at manual tuning or HILO</h2>
         <div class="research-body">
           <p>
-            Pipelines start on the body: smart-glasses video and whatever the person said into the mic. Audio gets transcribed, then the frame, transcript, and a short snapshot of recent parameters go into a vision-language model — so it's not guessing in a vacuum. Outputs are mapped to structured assist settings for the biotorque-style hip controller. A lot of the work is wiring record, inference, and push-to-device to behave on something Jetson-sized, with quantization and latency that don't leave the wearer hanging.
+            Classic tuning and human-in-the-loop optimization often chase metabolic cost or expert-picked setpoints. They underweight comfort, language, and what the hallway actually looks like. I care about a loop where intent and environment both show up in the same update, in time for the next few steps, not after the session is over.
           </p>
-          <p>
-            Contextual bandits handle the cases where one sentence isn't enough to pick a good assist regime. The goal is slow improvement across sessions, without treating every label as ground truth.
-          </p>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="contributions">
+        <h2 id="contributions" class="research-section-title">What is actually new here</h2>
+        <ul class="research-card-grid" role="list">
+          <li>
+            <span class="research-card-grid-title">VLMs on the exo problem</span>
+            <span class="research-card-grid-body">Using a vision-language model to pick and nudge hip assist parameters, not just to chat about them.</span>
+          </li>
+          <li>
+            <span class="research-card-grid-title">Aria egocentric context</span>
+            <span class="research-card-grid-body">Fisheye egocentric video plus mic from Meta Aria glasses as the primary wearable sensing path (gaze is a plausible extension later).</span>
+          </li>
+          <li>
+            <span class="research-card-grid-title">Real-time personalization</span>
+            <span class="research-card-grid-body">Closing the loop from speech to parameter file on the order of a few seconds in measured pilot timing, not offline batch relabeling.</span>
+          </li>
+          <li>
+            <span class="research-card-grid-title">Shared autonomy framing</span>
+            <span class="research-card-grid-body">User language steers the controller; vision backs magnitude and scene; the robot still respects actuator limits and smooth slews.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="research-section" aria-labelledby="architecture">
+        <h2 id="architecture" class="research-section-title">Hardware layout</h2>
+        <div class="research-lane-wrap" role="list">
+          <div class="research-lane" role="listitem">
+            <span class="research-lane-name">Meta Aria</span>
+            <span class="research-lane-detail">Egocentric fisheye + microphone on the head</span>
+          </div>
+          <div class="research-lane research-lane--accent" role="listitem">
+            <span class="research-lane-name">GPU laptop</span>
+            <span class="research-lane-detail">Whisper · frame prep · VLM inference · JSON validation</span>
+          </div>
+          <div class="research-lane" role="listitem">
+            <span class="research-lane-name">Jetson Orin Nano</span>
+            <span class="research-lane-detail">8GB-class edge node; receives parameter updates (e.g. over USB in the bench setup)</span>
+          </div>
+          <div class="research-lane" role="listitem">
+            <span class="research-lane-name">Hip exoskeleton</span>
+            <span class="research-lane-detail">Spline-based assist torque from updated scale and delay</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="pipeline">
+        <h2 id="pipeline" class="research-section-title">Pipeline</h2>
+        <ol class="research-pipeline" aria-label="Processing stages">
+          <li><span class="research-pipeline-step">Aria</span> capture image + audio</li>
+          <li><span class="research-pipeline-step">Laptop</span> extract frame · extract clip · Whisper transcript</li>
+          <li><span class="research-pipeline-step">VLM</span> multimodal reasoning → JSON parameter delta</li>
+          <li><span class="research-pipeline-step">Transfer</span> to Jetson / controller</li>
+          <li><span class="research-pipeline-step">Exo</span> slew toward new assist timing and magnitude</li>
+        </ol>
+        <p class="research-table-caption">Approximate pilot timing breakdown (seconds)</p>
+        <div class="research-table-wrap">
+          <table class="research-timing">
+            <thead>
+              <tr>
+                <th scope="col">Stage</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Locate recording</td><td>0.05</td></tr>
+              <tr><td>Extract frame</td><td>0.08</td></tr>
+              <tr><td>Extract audio</td><td>0.05</td></tr>
+              <tr><td>Whisper</td><td>0.71</td></tr>
+              <tr><td>Fetch current parameters</td><td>0.57</td></tr>
+              <tr><td>VLM inference</td><td>0.70</td></tr>
+              <tr><td>Transfer to Jetson</td><td>0.53</td></tr>
+              <tr><th scope="row">Total</th><td><strong>~2.67</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="controller-eval">
+        <h2 id="controller-eval" class="research-section-title">Controller knobs, schema, and what we measure</h2>
+        <div class="research-two-col">
+          <div class="research-body">
+            <p>
+              The hip controller uses a spline to shape assist torque. The two levers I talk about most are <strong>assistance magnitude (scale)</strong> and <strong>phase delay (delay)</strong> relative to the gait cycle. Phrases like “help me more” push scale; “it feels too late” pushes delay the other way. The VLM is prompted to output strict JSON the controller can parse; invalid text is a first-class failure mode.
+            </p>
+            <pre class="research-code" aria-label="Example JSON output"><code>{
+  "scale": +2.0,
+  "delay": -0.03
+}</code></pre>
+            <p>
+              Field names in deployment match whatever the device stack expects; the idea is the same: small structured deltas, not prose to the motor.
+            </p>
+          </div>
+          <div class="research-body research-body--metrics">
+            <p class="research-metrics-head">Pilot / system checks</p>
+            <ul class="research-metrics-list">
+              <li>Correct parameter (scale vs delay)</li>
+              <li>Direction (increase vs decrease)</li>
+              <li>Magnitude language (“a little” vs “a lot”)</li>
+              <li>Valid JSON, parseable end to end</li>
+              <li>Wall-clock latency budget</li>
+            </ul>
+            <p class="research-metrics-head">Human side</p>
+            <ul class="research-metrics-list">
+              <li>System Usability Scale (SUS)</li>
+              <li>Likert comfort, satisfaction, perceived control</li>
+              <li>NASA-TLX workload</li>
+              <li>Open-ended debriefs</li>
+            </ul>
+            <p class="research-dataset-note">
+              The pilot label set is small but deliberate: 25 multimodal samples (fisheye frame + utterance), including five out-of-distribution phrases, with labels for which parameter should move and in which direction (magnitude left underspecified on purpose because it is user-specific).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="hypotheses">
+        <h2 id="hypotheses" class="research-section-title">Hypotheses and open questions</h2>
+        <div class="research-body">
+          <p><strong>Hypotheses.</strong> (1) A VLM can turn free-form feedback into usable parameter edits. (2) Vision improves magnitude judgments, not just pretty captions. (3) Multimodal control feels better on comfort and perceived-control scores than speech alone in our protocol.</p>
+          <p><strong>Questions I still poke at.</strong> How robust is this under vague phrases like “make it feel more natural”? How much does scene context actually move the numbers vs. overfitting to texture? What step size can people even perceive? Does this framing beat static tuning on the scales we care about?</p>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="failure-future">
+        <h2 id="failure-future" class="research-section-title">Failure modes and next builds</h2>
+        <div class="research-split-bullets">
+          <div>
+            <p class="research-split-label">Observed or expected breaks</p>
+            <ul class="research-list-tight">
+              <li>Model returns prose instead of JSON</li>
+              <li>Wrong parameter or wrong sign</li>
+              <li>Vision overweighted vs. clear audio intent</li>
+              <li>Ambiguous instructions with no safe default</li>
+            </ul>
+          </div>
+          <div>
+            <p class="research-split-label">Roadmap items</p>
+            <ul class="research-list-tight">
+              <li>Gait-phase synchronized updates</li>
+              <li>Gaze as another signal</li>
+              <li>Obstacle and terrain hooks</li>
+              <li>Preference models + history (bandits / session learning)</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="research-section" aria-labelledby="torque-estimation">
         <h2 id="torque-estimation" class="research-section-title">Personalized torque estimation (locomotion)</h2>
-        <div class="research-cmu-secondary">
-          <div class="research-media-ph research-media-ph--inline" role="img" aria-label="Torque / ASB figure placeholder">
-            <span class="research-media-ph-label">Figure</span>
-            <span>torque / ASB</span>
-          </div>
-          <div class="research-body">
-            <p>
-              A separate CMU thread, same big picture: how little post-stroke data do you need to predict joint moments during gait? Messy IMU setups are aligned using OpenSim and MATLAB, consistent sensor streams are simulated from mocap-driven models, and temporal convnets are trained in PyTorch. Pretraining on large able-bodied runs and finetuning with a small per-subject slice yielded about a 27% accuracy improvement — with well under one percent of subject-specific training data.
-            </p>
-            <p>
-              <a href="pdfs/ASB.pdf">ASB 2025 paper (PDF)</a> ·
-              <a href="pdfs/poster.png">Poster</a>
-            </p>
+        <div class="research-torque-panel">
+          <aside class="research-torque-stat" aria-label="Result highlight">
+            <span class="research-torque-stat-value">~27%</span>
+            <span class="research-torque-stat-caption">accuracy lift with tiny per-subject finetune (TCN + transfer, stroke cohort)</span>
+          </aside>
+          <div class="research-torque-body">
+            <div class="research-media-ph research-media-ph--inline" role="img" aria-label="Torque or ASB figure placeholder">
+              <span class="research-media-ph-label">Figure</span>
+              <span>torque / ASB</span>
+            </div>
+            <div class="research-body">
+              <p>
+                Parallel CMU track: how little post-stroke data do you need to predict joint moments during gait? I align messy IMU stacks in OpenSim with MATLAB glue, simulate consistent sensor streams from mocap-driven models, and train temporal convnets in PyTorch. Pretrain on large able-bodied corpora, finetune with well under one percent of subject-specific labels in our setting, still get a large jump in prediction quality.
+              </p>
+              <p>
+                <a href="pdfs/ASB.pdf">ASB 2025 paper (PDF)</a> ·
+                <a href="pdfs/poster.png">Poster</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -114,7 +288,7 @@
         <h2 id="prior-research" class="research-section-title">Earlier research at UBC</h2>
         <div class="research-body">
           <p>
-            Several years in the Neuroplasticity, Imagery and Motor Behaviour Lab, asking a straightforward question: can cheap cameras and MediaPipe do real kinematics work for stroke, beyond just demos?
+            Several years in the Neuroplasticity, Imagery and Motor Behaviour Lab on a blunt question: can cheap cameras and MediaPipe do real kinematics work for stroke, not just demos?
           </p>
         </div>
 
@@ -127,7 +301,7 @@
             <div class="research-prior-text">
               <h3 class="research-prior-title">Post-stroke reaching (MediaPipe)</h3>
               <p>
-                OpenCV and MediaPipe on a gamified reaching task — many trials and frames, then statistics tying kinematics to compensation patterns that matter in rehab. Published in <em>Journal of Neuroengineering and Rehabilitation</em> (2025).
+                OpenCV and MediaPipe on a gamified reaching task: lots of trials and frames, then statistics tying kinematics to compensation patterns that matter in rehab. <em>Journal of Neuroengineering and Rehabilitation</em> (2025).
                 <a href="https://link.springer.com/article/10.1186/s12984-025-01808-4">DOI</a>
               </p>
             </div>
@@ -140,7 +314,7 @@
             <div class="research-prior-text">
               <h3 class="research-prior-title">Fine 2D upper-limb motion vs. mocap</h3>
               <p>
-                Cheap hand tracking versus lab gold standard on short, fast tracing trials. Agreement was good enough to suggest real scaling potential for monitoring. <em>JMIR Formative Research</em> (2024).
+                Cheap hand tracking vs. lab gold standard on short, fast tracing trials. Agreement strong enough to argue for scalable monitoring. <em>JMIR Formative Research</em> (2024).
                 <a href="https://formative.jmir.org/2024/1/e56682/">DOI</a>
               </p>
             </div>
@@ -148,7 +322,7 @@
         </div>
       </section>
 
-      <p class="research-note">The publication list with real thumbnails is still on the <a href="index.html#publications">home page</a>.</p>
+      <p class="research-note">Publication thumbnails and PDFs also live on the <a href="index.html#publications">home page</a>.</p>
 
     </main>
   </div>
