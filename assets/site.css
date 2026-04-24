@@ -289,22 +289,6 @@ h3::after {
   margin-top: 0.75rem;
 }
 
-.page-research .research-prose-wide {
-  max-width: none;
-  width: 100%;
-}
-
-.page-research .research-prose-wide p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--color-body);
-}
-
-.page-research .research-section--example > h2.research-section-title {
-  margin-top: 2.5rem;
-}
-
 /* Compact figure slots (drop in <img> later if you want) */
 .page-research .research-media-ph {
   box-sizing: border-box;
@@ -382,23 +366,6 @@ h3::after {
 
 .page-research .research-hero-meta a {
   font-weight: 500;
-}
-
-.page-research .research-quote {
-  margin: 0 0 1rem 0;
-  padding: 1rem 1.15rem;
-  border-left: 3px solid #2563eb;
-  background: #f8fafc;
-  border-radius: 0 10px 10px 0;
-}
-
-.page-research .research-quote p {
-  margin: 0;
-  font-size: 1.05rem;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--color-heading);
-  line-height: 1.45;
 }
 
 .page-research .research-code {
